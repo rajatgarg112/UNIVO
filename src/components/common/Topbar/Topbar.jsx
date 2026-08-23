@@ -7,18 +7,10 @@ import {
   Settings,
   User,
   LogOut,
-  ChevronDown,
   X,
   Sun,
   Moon,
-  BookOpen,
-  FileText,
-  Users,
-  Calendar,
-  ShoppingBag,
-  HelpCircle,
-  Briefcase,
-  Home
+  FileText
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import { useNotifications } from '../../../context/NotificationContext';
@@ -27,13 +19,6 @@ import { useTheme } from '../../../context/ThemeContext';
 // Import seed data for global search indexing
 import initialStudents from '../../../data/students.json';
 import initialAssignments from '../../../data/assignments.json';
-import initialBooks from '../../../data/books.json';
-import initialClubs from '../../../data/clubs.json';
-import initialEvents from '../../../data/events.json';
-import initialMarketplace from '../../../data/marketplace.json';
-import initialLostFound from '../../../data/lostFound.json';
-import initialCompanies from '../../../data/companies.json';
-import initialHostel from '../../../data/hostel.json';
 import initialNotes from '../../../data/notes.json';
 import './Topbar.css';
 
@@ -81,7 +66,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  /* Global Live Search Algorithm */
+  /* Global Live Search Algorithm (Evaluation 1: Students, Assignments, Notes) */
   useEffect(() => {
     if (!searchQuery.trim()) {
       setSearchResults([]);
@@ -103,13 +88,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
 
     const students = getLocalOrSeed('uv_students_data', initialStudents);
     const assignments = getLocalOrSeed('uv_assignments_local_v1', initialAssignments);
-    const books = getLocalOrSeed('uv_library_books_v2', initialBooks);
-    const clubs = getLocalOrSeed('uv_clubs_data_v2', initialClubs);
-    const events = getLocalOrSeed('uv_events_data_v2', initialEvents);
-    const marketplace = getLocalOrSeed('uv_marketplace_data_v3', initialMarketplace);
-    const lostFound = getLocalOrSeed('uv_lost_found_data_v3', initialLostFound);
     const notes = getLocalOrSeed('uv_notes_hub_v2', initialNotes);
-    const complaints = getLocalOrSeed('uv_hostel_complaints_v3', initialHostel.maintenanceRequests || []);
 
     // 1. Students
     students.forEach((s) => {
@@ -125,52 +104,10 @@ const Topbar = ({ isCollapsed, onToggle }) => {
       }
     });
 
-    // 3. Books
-    books.forEach((b) => {
-      if ((b.title && b.title.toLowerCase().includes(q)) || (b.author && b.author.toLowerCase().includes(q))) {
-        results.push({ id: `bk_${b.id}`, title: b.title, subtitle: `Author: ${b.author} • Category: ${b.category}`, category: 'Library Book', path: '/library', icon: <BookOpen size={14} /> });
-      }
-    });
-
-    // 4. Clubs
-    clubs.forEach((c) => {
-      if ((c.name && c.name.toLowerCase().includes(q)) || (c.description && c.description.toLowerCase().includes(q))) {
-        results.push({ id: `clb_${c.id}`, title: c.name, subtitle: `${c.members} Members • ${c.type}`, category: 'Club / Society', path: '/clubs', icon: <Users size={14} /> });
-      }
-    });
-
-    // 5. Events
-    events.forEach((ev) => {
-      if ((ev.title && ev.title.toLowerCase().includes(q)) || (ev.venue && ev.venue.toLowerCase().includes(q))) {
-        results.push({ id: `ev_${ev.id}`, title: ev.title, subtitle: `Date: ${ev.date} • ${ev.venue}`, category: 'Campus Event', path: '/events', icon: <Calendar size={14} /> });
-      }
-    });
-
-    // 6. Marketplace
-    marketplace.forEach((m) => {
-      if ((m.title && m.title.toLowerCase().includes(q)) || (m.category && m.category.toLowerCase().includes(q))) {
-        results.push({ id: `mkt_${m.id}`, title: m.title, subtitle: `Price: ₹${m.price} • ${m.category}`, category: 'Marketplace', path: '/marketplace', icon: <ShoppingBag size={14} /> });
-      }
-    });
-
-    // 7. Lost & Found
-    lostFound.forEach((lf) => {
-      if ((lf.title && lf.title.toLowerCase().includes(q)) || (lf.location && lf.location.toLowerCase().includes(q))) {
-        results.push({ id: `lf_${lf.id}`, title: lf.title, subtitle: `${lf.type.toUpperCase()} at ${lf.location}`, category: 'Lost & Found', path: '/lost-found', icon: <HelpCircle size={14} /> });
-      }
-    });
-
-    // 8. Notes Hub
+    // 3. Notes Hub
     notes.forEach((n) => {
       if ((n.title && n.title.toLowerCase().includes(q)) || (n.subject && n.subject.toLowerCase().includes(q))) {
         results.push({ id: `nt_${n.id}`, title: n.title, subtitle: `Subject: ${n.subject} • ${n.type}`, category: 'Notes Resource', path: '/notes', icon: <FileText size={14} /> });
-      }
-    });
-
-    // 9. Placement Companies
-    initialCompanies.forEach((comp) => {
-      if ((comp.name && comp.name.toLowerCase().includes(q)) || (comp.sector && comp.sector.toLowerCase().includes(q))) {
-        results.push({ id: `cmp_${comp.id}`, title: comp.name, subtitle: `Package: ${comp.package} • ${comp.sector}`, category: 'Placement Drive', path: '/placement', icon: <Briefcase size={14} /> });
       }
     });
 
@@ -227,7 +164,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
           <input
             type="text"
             className="topbar-search-input"
-            placeholder="Search anything (students, notes, books, events…)"
+            placeholder="Search students, assignments, notes..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => searchQuery.trim() && setIsSearchOpen(true)}

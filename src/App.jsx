@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './router/AppRouter';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
-import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 
@@ -13,9 +12,7 @@ function App() {
       <ThemeProvider>
         <AuthProvider>
           <NotificationProvider>
-            <SearchProvider>
-              <AppRouter />
-            </SearchProvider>
+            <AppRouter />
           </NotificationProvider>
         </AuthProvider>
       </ThemeProvider>
