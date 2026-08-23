@@ -34,7 +34,10 @@ export default function Profile() {
     if (savedAtt) {
       try {
         const attMap = JSON.parse(savedAtt);
-        const subjects = attMap['Semester 6'] || [];
+        const semKey = String(currentStudent?.semester).startsWith('Semester')
+          ? currentStudent.semester
+          : `Semester ${currentStudent?.semester || 6}`;
+        const subjects = attMap[semKey] || attMap['Semester 6'] || Object.values(attMap)[0] || [];
         if (subjects.length > 0) {
           let totalClasses = 0;
           let attendedClasses = 0;
@@ -50,7 +53,7 @@ export default function Profile() {
         }
       } catch (e) {}
     }
-  }, []);
+  }, [currentStudent?.semester]);
 
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);

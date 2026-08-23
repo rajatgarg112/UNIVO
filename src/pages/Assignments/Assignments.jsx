@@ -283,8 +283,7 @@ export default function Assignments() {
                 <p className="modal-text">{selectedAssignment.description}</p>
               </div>
 
-              {/* Instructions note (shown when description exists, as instructions
-                  are embedded in the description for this data structure) */}
+              {/* Instructions */}
               <div className="modal-section" style={{
                 background: 'var(--uv-primary-light)',
                 border: '1px solid rgba(99,102,241,0.2)',
@@ -294,8 +293,7 @@ export default function Assignments() {
                   Instructions
                 </span>
                 <p className="modal-text" style={{ color: 'var(--uv-primary)', margin: 0 }}>
-                  Read the description carefully. Submit your solution before the due date.
-                  Late submissions may not be accepted.
+                  {selectedAssignment.instructions || 'No specific instructions provided. Follow standard submission guidelines.'}
                 </p>
               </div>
 
