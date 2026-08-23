@@ -1,16 +1,7 @@
 import React from 'react';
 import { CheckCircle, Clock, Award, AlertCircle } from 'lucide-react';
 
-// AssignmentCard is a reusable functional component.
-// It receives one assignment object as a prop, plus two callback functions.
-//
-// Props:
-//   assignment     - the full assignment data object from assignments.json
-//   onViewDetails  - function called when the student clicks "View Details"
-//   onStatusToggle - function called when the student clicks Submit / Unsubmit
 export default function AssignmentCard({ assignment, onViewDetails, onStatusToggle }) {
-
-  // Destructure every field we need from the assignment prop
   const {
     id,
     title,
@@ -27,33 +18,27 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
     type
   } = assignment;
 
-  // --- LATE CHECK ---
-  // An assignment is "late" if it is still pending AND the due date has already passed.
-  // Comparing YYYY-MM-DD strings works correctly because they are lexicographically ordered.
+  // Check if the assignment is overdue and still pending
   const today = new Date().toISOString().split('T')[0];
   const isLate = status === 'pending' && dueDate < today;
 
-  // --- PRIORITY COLOUR ---
-  // Map the priority level to a colour that matches the design system.
+  // Map priority to theme color
   const priorityColor =
-    priority === 'high'   ? '#ef4444' :   // red
-    priority === 'medium' ? '#f59e0b' :   // amber
-                            '#10b981';    // green for low
+    priority === 'high' ? '#ef4444' :
+    priority === 'medium' ? '#f59e0b' : '#10b981';
 
   return (
     <div className="assignment-item">
 
-      {/* ── ROW 1: Subject chip (left)  +  Status badge (right) ── */}
+      {/* ── ROW 1: Subject badge & Status badge ── */}
       <div className="assignment-header-row">
-
         <span className="subject-badge">
           {subject}&nbsp;
           <span style={{ opacity: 0.7, fontSize: '10px' }}>({subjectCode})</span>
         </span>
 
-        {/* Show LATE badge when the due date has already passed, otherwise show normal status */}
         {isLate ? (
-          <span className="status-badge late" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+          <span className="status-badge late status-late-badge">
             <AlertCircle size={11} /> LATE
           </span>
         ) : (
@@ -61,13 +46,12 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
             {status.toUpperCase()}
           </span>
         )}
-
       </div>
 
-      {/* ── ROW 2: Assignment title ── */}
+      {/* ── ROW 2: Title ── */}
       <h4 className="assignment-title">{title}</h4>
 
-      {/* ── ROW 3: Short description, capped at 2 lines ── */}
+      {/* ── ROW 3: Short Description (max 2 lines) ── */}
       <p
         className="assignment-desc"
         style={{
@@ -80,12 +64,11 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
         {description}
       </p>
 
-      {/* ── ROW 4: Metadata (left)  +  Action buttons (right) ── */}
+      {/* ── ROW 4: Metadata & Action Buttons ── */}
       <div className="assignment-footer-row">
 
-        {/* Left side — key metadata shown as small inline labels */}
+        {/* Left Side: Metadata Labels */}
         <div className="assignment-meta-left">
-
           <span>Faculty: <strong className="meta-strong-text">{faculty}</strong></span>
           <span>•</span>
           <span>
@@ -106,7 +89,6 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
             Priority: <strong style={{ color: priorityColor }}>{priority}</strong>
           </span>
 
-          {/* Score is only shown after the assignment has been graded */}
           {marks !== null && marks !== undefined && (
             <>
               <span>•</span>
@@ -115,13 +97,10 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
               </span>
             </>
           )}
-
         </div>
 
-        {/* Right side — action buttons */}
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-
-          {/* View Details button — always visible regardless of status */}
+        {/* Right Side: Action Buttons */}
+        <div className="card-actions-group">
           <button
             className="btn-view-details"
             onClick={() => onViewDetails(assignment)}
@@ -129,7 +108,6 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
             View Details
           </button>
 
-          {/* Submit / Unsubmit / Graded — disabled once the assignment is graded */}
           <button
             onClick={() => onStatusToggle(id, status, assignment)}
             className={`btn-toggle-status ${status}-btn`}
@@ -137,12 +115,12 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
             style={{ cursor: status === 'graded' ? 'not-allowed' : 'pointer' }}
           >
             {status === 'pending' && isLate && <><AlertCircle size={14} /> Submit Late</>}
-            {status === 'pending' && !isLate  && <><CheckCircle size={14} /> Submit Work</>}
-            {status === 'submitted'           && <><Clock size={14} /> Unsubmit</>}
-            {status === 'graded'              && <><Award size={14} /> Graded ({grade || 'A'})</>}
+            {status === 'pending' && !isLate && <><CheckCircle size={14} /> Submit Work</>}
+            {status === 'submitted' && <><Clock size={14} /> Unsubmit</>}
+            {status === 'graded' && <><Award size={14} /> Graded ({grade || 'A'})</>}
           </button>
-
         </div>
+
       </div>
 
     </div>
