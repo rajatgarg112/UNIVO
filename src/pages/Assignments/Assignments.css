@@ -44,11 +44,7 @@
   letter-spacing: 0.2px;
 }
 
-.action-buttons-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+
 
 .status-badge {
   font-size: 11px;
@@ -76,38 +72,6 @@
 .status-badge.late {
   color: #ef4444;
   background: rgba(239, 68, 68, 0.12);
-}
-
-.icon-edit-btn {
-  background: none;
-  border: none;
-  color: var(--uv-primary);
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  transition: background 0.2s ease;
-}
-
-.icon-edit-btn:hover {
-  background: var(--uv-primary-light);
-}
-
-.icon-delete-btn {
-  background: none;
-  border: none;
-  color: var(--uv-danger);
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  transition: background 0.2s ease;
-}
-
-.icon-delete-btn:hover {
-  background: var(--uv-danger-bg);
 }
 
 .assignment-title {
