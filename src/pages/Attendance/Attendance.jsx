@@ -29,36 +29,6 @@ export default function Attendance() {
 
   const currentSubjects = semesterData[selectedSemester] || [];
 
-  // Actions: Present / Absent
-  const handleMarkClass = (subjectId, isPresent) => {
-    setSemesterData((prevMap) => {
-      const currentList = prevMap[selectedSemester] || [];
-      const updatedList = currentList.map((subj) => {
-        if (subj.id === subjectId || subj.code === subjectId) {
-          const att = subj.attendedClasses !== undefined ? subj.attendedClasses : (subj.attended || 0);
-          const tot = subj.totalClasses !== undefined ? subj.totalClasses : (subj.total || 0);
-
-          const newAttended = isPresent ? att + 1 : att;
-          const newTotal = tot + 1;
-
-          return {
-            ...subj,
-            attendedClasses: newAttended,
-            totalClasses: newTotal,
-            attended: newAttended,
-            total: newTotal
-          };
-        }
-        return subj;
-      });
-
-      return {
-        ...prevMap,
-        [selectedSemester]: updatedList
-      };
-    });
-  };
-
   // Helper Stats Computation
   let totalClassesCount = 0;
   let attendedClassesCount = 0;
@@ -102,8 +72,23 @@ export default function Attendance() {
       {/* 1. HEADER & CONTROLS */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
         <div>
-          <h2 style={{ fontSize: '26px', fontWeight: '800', color: 'var(--uv-text-primary)', margin: '0 0 4px' }}>Attendance Portal</h2>
-          <p style={{ color: 'var(--uv-text-muted)', fontSize: '14px', margin: 0 }}>Semester subject-wise class attendance tracking and 75% target calculator</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px', flexWrap: 'wrap' }}>
+            <h2 style={{ fontSize: '26px', fontWeight: '800', color: 'var(--uv-text-primary)', margin: 0 }}>Attendance Portal</h2>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '4px 10px',
+              borderRadius: '999px',
+              background: 'var(--uv-input-bg)',
+              border: '1px solid var(--uv-border)',
+              color: 'var(--uv-text-muted)',
+              fontSize: '12px',
+              fontWeight: '600'
+            }}>
+              View-only • Attendance is updated by faculty
+            </span>
+          </div>
+          <p style={{ color: 'var(--uv-text-muted)', fontSize: '14px', margin: 0 }}>Semester subject-wise class attendance tracking and summary</p>
         </div>
 
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
@@ -216,7 +201,6 @@ export default function Attendance() {
             <AttendanceCard
               key={subj.id || subj.code}
               subject={subj}
-              onMarkClass={handleMarkClass}
             />
           ))}
         </div>
@@ -232,7 +216,6 @@ export default function Attendance() {
                 <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Total</th>
                 <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Attendance %</th>
                 <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Status</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', textAlign: 'right' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -254,22 +237,6 @@ export default function Attendance() {
                       <span style={{ padding: '3px 10px', borderRadius: '999px', background: statusInfo.bg, color: statusInfo.color, fontSize: '11px', fontWeight: '700', textTransform: 'uppercase' }}>
                         {statusInfo.label}
                       </span>
-                    </td>
-                    <td style={{ padding: '14px 16px', textAlign: 'right' }}>
-                      <div style={{ display: 'flex', gap: '6px', justifyContent: 'flex-end' }}>
-                        <button
-                          onClick={() => handleMarkClass(subj.id, true)}
-                          style={{ padding: '5px 12px', background: 'var(--uv-success-bg)', color: '#10b981', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: '700' }}
-                        >
-                          + Present
-                        </button>
-                        <button
-                          onClick={() => handleMarkClass(subj.id, false)}
-                          style={{ padding: '5px 12px', background: 'var(--uv-danger-bg)', color: '#ef4444', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: '700' }}
-                        >
-                          + Absent
-                        </button>
-                      </div>
                     </td>
                   </tr>
                 );

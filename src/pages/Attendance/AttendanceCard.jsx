@@ -49,7 +49,7 @@ function ProgressRing({ percent, size = 56, strokeWidth = 5, status }) {
 }
 
 /* ── Compact Redesigned AttendanceCard Component ── */
-function AttendanceCard({ subject, onMarkClass }) {
+function AttendanceCard({ subject }) {
   const {
     id,
     name,
@@ -113,24 +113,6 @@ function AttendanceCard({ subject, onMarkClass }) {
           <span className="sac-stat-val" style={{ color: '#ef4444' }}>{missedClasses}</span>
         </div>
       </div>
-
-      {/* ACTION BUTTONS: Present / Absent */}
-      {onMarkClass && (
-        <div className="sac-btn-group">
-          <button
-            onClick={() => onMarkClass(id, true)}
-            className="btn-mark-present"
-          >
-            + Present
-          </button>
-          <button
-            onClick={() => onMarkClass(id, false)}
-            className="btn-mark-absent"
-          >
-            + Absent
-          </button>
-        </div>
-      )}
 
       {/* BOTTOM SECTION: Attendance Guidance Text */}
       <div className={`sac-guidance-box ${status !== 'safe' ? 'warning-guidance' : ''}`}>
