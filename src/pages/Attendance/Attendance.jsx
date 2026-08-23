@@ -1,49 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import initialAttendanceData from '../../data/attendance.json';
 import AttendanceCard from './AttendanceCard';
 import AttendanceChart from '../../components/charts/AttendanceChart/AttendanceChart';
 import { LayoutGrid, List } from 'lucide-react';
 import './Attendance.css';
 
-const STORAGE_KEY = 'uv_attendance_data_v2';
 const SEMESTERS = ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4', 'Semester 5', 'Semester 6'];
 
 export default function Attendance() {
   const [selectedSemester, setSelectedSemester] = useState('Semester 6');
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'table'
-  const [semesterData, setSemesterData] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) return JSON.parse(saved);
-    } catch (e) {}
-    const initialMap = {
-      'Semester 6': initialAttendanceData.subjects || []
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialMap));
-    return initialMap;
-  });
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'table'
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(semesterData));
-  }, [semesterData]);
+  const subjects = initialAttendanceData.subjects || [];
 
-  const currentSubjects = semesterData[selectedSemester] || [];
-
-  // Helper Stats Computation
+  // Summary Calculations
   let totalClassesCount = 0;
   let attendedClassesCount = 0;
 
-  currentSubjects.forEach((s) => {
-    const t = s.totalClasses !== undefined ? s.totalClasses : (s.total || 0);
-    const a = s.attendedClasses !== undefined ? s.attendedClasses : (s.attended || 0);
-    totalClassesCount += t;
-    attendedClassesCount += a;
+  subjects.forEach((s) => {
+    totalClassesCount += s.attended !== undefined ? s.total : (s.totalClasses || 0);
+    attendedClassesCount += s.attended !== undefined ? s.attended : (s.attendedClasses || 0);
   });
 
   const missedClassesCount = Math.max(0, totalClassesCount - attendedClassesCount);
-  const subjectsTrackedCount = currentSubjects.length;
-
-  const overallPercentage = totalClassesCount > 0 ? Math.round((attendedClassesCount / totalClassesCount) * 1000) / 10 : 0;
+  const subjectsTrackedCount = subjects.length;
+  const overallPercentage = totalClassesCount > 0 ? Math.round((attendedClassesCount / totalClassesCount) * 100) : 0;
   const needed75Overall = overallPercentage < 75 ? Math.max(0, Math.ceil((0.75 * totalClassesCount - attendedClassesCount) / 0.25)) : 0;
 
   const getStatus = (pct) => {
@@ -52,15 +33,15 @@ export default function Attendance() {
     return { label: 'Danger', color: '#ef4444', bg: 'var(--uv-danger-bg)' };
   };
 
-  // Prepare chart dataset
+  // Chart Dataset
   const chartData = {
-    labels: currentSubjects.map((s) => s.code || s.name.substring(0, 6)),
+    labels: subjects.map((s) => s.code),
     datasets: [
       {
         label: 'Attendance %',
-        data: currentSubjects.map((s) => {
-          const att = s.attendedClasses !== undefined ? s.attendedClasses : (s.attended || 0);
-          const tot = s.totalClasses !== undefined ? s.totalClasses : (s.total || 0);
+        data: subjects.map((s) => {
+          const att = s.attended !== undefined ? s.attended : (s.attendedClasses || 0);
+          const tot = s.total !== undefined ? s.total : (s.totalClasses || 0);
           return tot > 0 ? Math.round((att / tot) * 100) : 0;
         })
       }
@@ -69,7 +50,7 @@ export default function Attendance() {
 
   return (
     <div className="attendance-page">
-      {/* 1. HEADER & CONTROLS */}
+      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px', flexWrap: 'wrap' }}>
@@ -92,7 +73,6 @@ export default function Attendance() {
         </div>
 
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-          {/* Semester Dropdown */}
           <select
             value={selectedSemester}
             onChange={(e) => setSelectedSemester(e.target.value)}
@@ -113,7 +93,6 @@ export default function Attendance() {
             ))}
           </select>
 
-          {/* View Mode Toggle: Grid vs Table */}
           <div style={{ display: 'flex', gap: '4px', background: 'var(--uv-input-bg)', padding: '4px', borderRadius: '10px', border: '1px solid var(--uv-border)' }}>
             <button
               onClick={() => setViewMode('grid')}
@@ -157,7 +136,7 @@ export default function Attendance() {
         </div>
       </div>
 
-      {/* 2. SUMMARY CARDS (4-Column Layout) */}
+      {/* Summary Cards */}
       <div className="attendance-summary-grid">
         <div className="attendance-summary-card">
           <span className="summary-card-lbl">Overall Attendance</span>
@@ -194,14 +173,11 @@ export default function Attendance() {
         </div>
       </div>
 
-      {/* 3 & 7. GRID OR TABLE VIEW */}
+      {/* Grid or Table View */}
       {viewMode === 'grid' ? (
         <div className="attendance-subjects-grid">
-          {currentSubjects.map((subj) => (
-            <AttendanceCard
-              key={subj.id || subj.code}
-              subject={subj}
-            />
+          {subjects.map((subj) => (
+            <AttendanceCard key={subj.id || subj.code} subject={subj} />
           ))}
         </div>
       ) : (
@@ -219,9 +195,9 @@ export default function Attendance() {
               </tr>
             </thead>
             <tbody>
-              {currentSubjects.map((subj) => {
-                const att = subj.attendedClasses !== undefined ? subj.attendedClasses : (subj.attended || 0);
-                const tot = subj.totalClasses !== undefined ? subj.totalClasses : (subj.total || 0);
+              {subjects.map((subj) => {
+                const att = subj.attended !== undefined ? subj.attended : (subj.attendedClasses || 0);
+                const tot = subj.total !== undefined ? subj.total : (subj.totalClasses || 0);
                 const pct = tot > 0 ? Math.round((att / tot) * 100) : 0;
                 const statusInfo = getStatus(pct);
 
@@ -229,7 +205,7 @@ export default function Attendance() {
                   <tr key={subj.id || subj.code} style={{ borderBottom: '1px solid var(--uv-border)' }}>
                     <td style={{ padding: '14px 16px', color: 'var(--uv-text-primary)', fontWeight: '700' }}>{subj.name}</td>
                     <td style={{ padding: '14px 16px', color: 'var(--uv-primary)', fontSize: '13px', fontWeight: '700' }}>{subj.code}</td>
-                    <td style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '13px' }}>{subj.faculty || 'Dr. Faculty'}</td>
+                    <td style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '13px' }}>{subj.faculty}</td>
                     <td style={{ padding: '14px 16px', color: '#10b981', fontWeight: '700' }}>{att}</td>
                     <td style={{ padding: '14px 16px', color: 'var(--uv-text-primary)', fontWeight: '700' }}>{tot}</td>
                     <td style={{ padding: '14px 16px', color: statusInfo.color, fontWeight: '800', fontSize: '15px' }}>{pct}%</td>
@@ -246,7 +222,7 @@ export default function Attendance() {
         </div>
       )}
 
-      {/* Distribution Chart */}
+      {/* Chart */}
       <div style={{ marginTop: '24px' }}>
         <AttendanceChart data={chartData} title={`Subject-wise Attendance Distribution (${selectedSemester})`} />
       </div>

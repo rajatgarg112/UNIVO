@@ -5,40 +5,32 @@
       "code": "CS301",
       "name": "Data Structures & Algorithms",
       "faculty": "Dr. Priya Nair",
-      "totalClasses": 40,
-      "attendedClasses": 36,
-      "percentage": 90,
-      "lastAttended": "2026-07-25"
+      "attended": 36,
+      "total": 40
     },
     {
       "id": "s2",
       "code": "CS302",
       "name": "Database Management Systems",
       "faculty": "Prof. Rajesh Kumar",
-      "totalClasses": 38,
-      "attendedClasses": 32,
-      "percentage": 84.2,
-      "lastAttended": "2026-07-24"
+      "attended": 32,
+      "total": 38
     },
     {
       "id": "s3",
       "code": "CS303",
       "name": "Computer Networks",
       "faculty": "Dr. Sunita Rao",
-      "totalClasses": 35,
-      "attendedClasses": 26,
-      "percentage": 74.2,
-      "lastAttended": "2026-07-25"
+      "attended": 26,
+      "total": 35
     },
     {
       "id": "s4",
       "code": "CS304",
       "name": "Software Engineering",
       "faculty": "Prof. Amit Verma",
-      "totalClasses": 30,
-      "attendedClasses": 28,
-      "percentage": 93.3,
-      "lastAttended": "2026-07-23"
+      "attended": 28,
+      "total": 30
     }
   ]
 }
