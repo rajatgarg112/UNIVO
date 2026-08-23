@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, LayoutGrid, Clock, MapPin, User, Coffee, Plus, Edit2, Trash2, X } from 'lucide-react';
+import { Calendar, LayoutGrid, Clock, MapPin, User, Coffee } from 'lucide-react';
 import initialTimetableData from '../../data/timetable.json';
 import './Timetable.css';
 
@@ -73,10 +73,14 @@ function normalizeSlot(slot) {
   };
 }
 
-function ClassCard({ slot, isCurrent, onEdit, onDelete }) {
+function ClassCard({ slot, isCurrent, onClick }) {
   const typeClass = (slot.type || 'lecture').toLowerCase();
   return (
-    <div className={`class-card type-${typeClass} ${isCurrent ? 'current-class' : ''}`}>
+    <div
+      className={`class-card type-${typeClass} ${isCurrent ? 'current-class' : ''}`}
+      onClick={() => onClick && onClick(slot)}
+      style={{ cursor: onClick ? 'pointer' : 'default' }}
+    >
       <div className="class-card-header">
         <div>
           <p className="class-subject">{slot.subject}</p>
@@ -85,16 +89,6 @@ function ClassCard({ slot, isCurrent, onEdit, onDelete }) {
         <div className="class-badges" style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           <span className={`type-badge ${typeClass}`}>{slot.type}</span>
           {isCurrent && <span className="current-badge">● Live</span>}
-          {onEdit && (
-            <button onClick={() => onEdit(slot)} style={{ background: 'none', border: 'none', color: '#818cf8', cursor: 'pointer', padding: '2px' }} title="Edit">
-              <Edit2 size={14} />
-            </button>
-          )}
-          {onDelete && (
-            <button onClick={() => onDelete(slot.id)} style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '2px' }} title="Delete">
-              <Trash2 size={14} />
-            </button>
-          )}
         </div>
       </div>
       <div className="class-meta">
@@ -119,12 +113,13 @@ function ClassCard({ slot, isCurrent, onEdit, onDelete }) {
 export default function Timetable() {
   const [activeDay, setActiveDay] = useState(getTodayIndex());
   const [viewMode, setViewMode] = useState('day'); // 'day' | 'week'
+  const [selectedSlotDetails, setSelectedSlotDetails] = useState(null);
   const [nowMin, setNowMin] = useState(() => {
     const n = new Date();
     return n.getHours() * 60 + n.getMinutes();
   });
 
-  const [schedule, setSchedule] = useState(() => {
+  const [schedule] = useState(() => {
     const rawMap = initialTimetableData.schedule || {};
     const seedNormalized = {};
     DAYS.forEach((d) => {
@@ -136,7 +131,6 @@ export default function Timetable() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        // Merge so Wednesday-Friday receive seed slots if missing in cached storage
         const merged = { ...seedNormalized };
         DAYS.forEach((d) => {
           if (parsed[d] && parsed[d].length > 0) {
@@ -149,27 +143,8 @@ export default function Timetable() {
       // Fallback
     }
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(seedNormalized));
     return seedNormalized;
   });
-
-  // Modal State
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editingSlot, setEditingSlot] = useState(null);
-  const [formData, setFormData] = useState({
-    subject: '',
-    code: '',
-    faculty: '',
-    room: '',
-    type: 'Lecture',
-    startTime: '09:00 AM',
-    endTime: '10:00 AM',
-    day: DAYS[activeDay]
-  });
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(schedule));
-  }, [schedule]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -191,79 +166,45 @@ export default function Timetable() {
   });
 
   const daySlots = schedule[DAYS[activeDay]] || [];
+  const todaySlots = schedule[DAYS[todayIdx]] || [];
 
   const isCurrent = (slot) => {
     if (activeDay !== todayIdx || slot.isBreak) return false;
     return nowMin >= timeToMin(slot.startTime) && nowMin < timeToMin(slot.endTime);
   };
 
-  const handleOpenAdd = () => {
-    setEditingSlot(null);
-    setFormData({
-      subject: '',
-      code: 'CS301',
-      faculty: '',
-      room: 'LH-101',
-      type: 'Lecture',
-      startTime: '09:00 AM',
-      endTime: '10:00 AM',
-      day: DAYS[activeDay]
-    });
-    setModalOpen(true);
-  };
-
-  const handleOpenEdit = (slot) => {
-    setEditingSlot(slot);
-    setFormData({
-      ...slot,
-      day: DAYS[activeDay]
-    });
-    setModalOpen(true);
-  };
-
-  const handleDelete = (slotId) => {
-    const currentDayName = DAYS[activeDay];
-    const updated = (schedule[currentDayName] || []).filter((s) => s.id !== slotId);
-    setSchedule((prev) => ({ ...prev, [currentDayName]: updated }));
-  };
-
-  const handleSaveSlot = (e) => {
-    e.preventDefault();
-    const targetDay = formData.day;
-    const slotData = normalizeSlot({
-      ...formData,
-      id: editingSlot ? editingSlot.id : 'slot_' + Date.now()
-    });
-
-    setSchedule((prev) => {
-      const dayList = prev[targetDay] || [];
-      let updated;
-      if (editingSlot) {
-        updated = dayList.map((s) => (s.id === editingSlot.id ? slotData : s));
-      } else {
-        updated = [...dayList, slotData];
-      }
-      return { ...prev, [targetDay]: updated };
-    });
-
-    setModalOpen(false);
-  };
+  // Find next upcoming class for today
+  const upcomingClassToday = todaySlots.find(
+    (slot) => !slot.isBreak && timeToMin(slot.startTime) > nowMin
+  );
+  const currentClassToday = todaySlots.find(
+    (slot) => !slot.isBreak && nowMin >= timeToMin(slot.startTime) && nowMin < timeToMin(slot.endTime)
+  );
 
   return (
     <div className="timetable-page">
       {/* Header */}
-      <div className="timetable-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      <div className="timetable-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '14px' }}>
         <div className="timetable-header-left">
-          <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#f8fafc' }}>Class Timetable</h1>
-          <p style={{ color: '#94a3b8', fontSize: '14px' }}>Semester schedule — track and manage your classes</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px', flexWrap: 'wrap' }}>
+            <h1 style={{ fontSize: '26px', fontWeight: '700', color: 'var(--uv-text-primary)', margin: 0 }}>Class Timetable</h1>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '4px 10px',
+              borderRadius: '999px',
+              background: 'var(--uv-input-bg)',
+              border: '1px solid var(--uv-border)',
+              color: 'var(--uv-text-muted)',
+              fontSize: '12px',
+              fontWeight: '600'
+            }}>
+              View-only • Official Faculty Schedule
+            </span>
+          </div>
+          <p style={{ color: 'var(--uv-text-muted)', fontSize: '14px', margin: 0 }}>View your weekly class schedule and upcoming classes</p>
         </div>
         <div className="timetable-header-actions" style={{ display: 'flex', gap: '8px' }}>
-          <button
-            onClick={handleOpenAdd}
-            style={{ padding: '8px 16px', background: '#6366f1', color: '#fff', borderRadius: '8px', border: 'none', fontWeight: '600', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
-          >
-            <Plus size={16} /> Add Class
-          </button>
           <button
             className={`tt-action-btn ${viewMode === 'day' ? 'active' : ''}`}
             onClick={() => setViewMode('day')}
@@ -278,6 +219,41 @@ export default function Timetable() {
           </button>
         </div>
       </div>
+
+      {/* Today's Schedule & Next Class Status Indicator Banner */}
+      {(currentClassToday || upcomingClassToday) && (
+        <div style={{
+          background: 'var(--uv-bg-card)',
+          border: '1px solid var(--uv-border)',
+          borderLeft: '4px solid var(--uv-primary)',
+          borderRadius: '12px',
+          padding: '12px 16px',
+          marginBottom: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          justify: 'space-between',
+          gap: '12px',
+          boxShadow: 'var(--uv-card-shadow)',
+          flexWrap: 'wrap'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <Clock size={18} style={{ color: 'var(--uv-primary)' }} />
+            <div>
+              <span style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
+                {currentClassToday ? 'Live Now:' : 'Next Upcoming Class:'}
+              </span>
+              <span style={{ fontSize: '13px', color: 'var(--uv-text-muted)', marginLeft: '6px' }}>
+                {currentClassToday
+                  ? `${currentClassToday.subject} (${currentClassToday.code}) in Room ${currentClassToday.room}`
+                  : `${upcomingClassToday.subject} (${upcomingClassToday.code}) at ${fmt12(upcomingClassToday.startTime)} in Room ${upcomingClassToday.room}`}
+              </span>
+            </div>
+          </div>
+          <span className="type-badge lecture" style={{ fontSize: '11px' }}>
+            {currentClassToday ? currentClassToday.type : upcomingClassToday.type}
+          </span>
+        </div>
+      )}
 
       {/* Day Tabs */}
       <div className="day-tabs">
@@ -321,8 +297,7 @@ export default function Timetable() {
                       <ClassCard
                         slot={slot}
                         isCurrent={current}
-                        onEdit={handleOpenEdit}
-                        onDelete={handleDelete}
+                        onClick={(s) => setSelectedSlotDetails(s)}
                       />
                     </div>
                   </div>
@@ -360,9 +335,13 @@ export default function Timetable() {
                     ) : (
                       dayClasses.map((s) => {
                         const typeLower = (s.type || 'lecture').toLowerCase();
-                        const isLab = typeLower === 'lab';
                         return (
-                          <div key={s.id} className={`week-class-card ${typeLower}`}>
+                          <div
+                            key={s.id}
+                            className={`week-class-card ${typeLower}`}
+                            onClick={() => setSelectedSlotDetails(s)}
+                            style={{ cursor: 'pointer' }}
+                          >
                             <div className="week-card-top">
                               <span className="week-card-subject">{s.subject}</span>
                               <span className="week-card-code">{s.code}</span>
@@ -393,122 +372,50 @@ export default function Timetable() {
         </div>
       )}
 
-      {/* Add/Edit Modal */}
-      {modalOpen && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}>
-          <form onSubmit={handleSaveSlot} style={{ background: '#0f172a', padding: '24px', borderRadius: '16px', width: '420px', border: '1px solid rgba(255,255,255,0.1)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '18px', color: '#f8fafc' }}>{editingSlot ? 'Edit Class' : 'Add Class'}</h3>
-              <button type="button" onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer' }}><X size={18} /></button>
+      {/* Read-Only Class Details Modal */}
+      {selectedSlotDetails && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '16px' }}>
+          <div style={{ background: 'var(--uv-bg-card)', padding: '24px', borderRadius: '16px', width: '100%', maxWidth: '400px', border: '1px solid var(--uv-border)', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+              <div>
+                <span className={`type-badge ${(selectedSlotDetails.type || 'lecture').toLowerCase()}`} style={{ display: 'inline-block', marginBottom: '6px' }}>
+                  {selectedSlotDetails.type}
+                </span>
+                <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--uv-text-primary)', margin: 0 }}>{selectedSlotDetails.subject}</h3>
+                <span style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-primary)' }}>{selectedSlotDetails.code}</span>
+              </div>
             </div>
 
-            <div style={{ marginBottom: '12px' }}>
-              <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Day</label>
-              <select
-                value={formData.day}
-                onChange={(e) => setFormData((prev) => ({ ...prev, day: e.target.value }))}
-                style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#1e293b', color: '#fff', border: '1px solid #334155' }}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', background: 'var(--uv-input-bg)', padding: '14px', borderRadius: '12px', border: '1px solid var(--uv-border)', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--uv-text-secondary)' }}>
+                <Clock size={16} style={{ color: 'var(--uv-primary)' }} />
+                <span><strong>Time:</strong> {fmt12(selectedSlotDetails.startTime)} – {fmt12(selectedSlotDetails.endTime)}</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--uv-text-secondary)' }}>
+                <MapPin size={16} style={{ color: 'var(--uv-info)' }} />
+                <span><strong>Room:</strong> {selectedSlotDetails.room}</span>
+              </div>
+              {selectedSlotDetails.faculty && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--uv-text-secondary)' }}>
+                  <User size={16} style={{ color: 'var(--uv-success)' }} />
+                  <span><strong>Faculty:</strong> {selectedSlotDetails.faculty}</span>
+                </div>
+              )}
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <button
+                type="button"
+                onClick={() => setSelectedSlotDetails(null)}
+                style={{ padding: '8px 20px', background: 'var(--uv-primary)', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontSize: '13px' }}
               >
-                {DAYS.map((d) => (
-                  <option key={d} value={d}>{d}</option>
-                ))}
-              </select>
+                Close
+              </button>
             </div>
-
-            <div style={{ marginBottom: '12px' }}>
-              <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Subject Name</label>
-              <input
-                type="text"
-                placeholder="e.g. Operating Systems"
-                value={formData.subject}
-                onChange={(e) => setFormData((prev) => ({ ...prev, subject: e.target.value }))}
-                required
-                style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid #334155' }}
-              />
-            </div>
-
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
-              <div style={{ flex: 1 }}>
-                <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Code</label>
-                <input
-                  type="text"
-                  placeholder="CS301"
-                  value={formData.code}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, code: e.target.value }))}
-                  style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid #334155' }}
-                />
-              </div>
-              <div style={{ flex: 1 }}>
-                <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Class Type</label>
-                <select
-                  value={formData.type}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, type: e.target.value }))}
-                  style={{ width: '100%', padding: '10px', borderRadius: '8px', background: '#1e293b', color: '#fff', border: '1px solid #334155' }}
-                >
-                  <option value="Lecture">Lecture</option>
-                  <option value="Lab">Lab</option>
-                  <option value="Tutorial">Tutorial</option>
-                  <option value="Seminar">Seminar</option>
-                  <option value="Workshop">Workshop</option>
-                </select>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
-              <div style={{ flex: 1 }}>
-                <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Faculty</label>
-                <input
-                  type="text"
-                  placeholder="Dr. Priya Nair"
-                  value={formData.faculty}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, faculty: e.target.value }))}
-                  style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid #334155' }}
-                />
-              </div>
-              <div style={{ flex: 1 }}>
-                <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Room</label>
-                <input
-                  type="text"
-                  placeholder="LH-101"
-                  value={formData.room}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, room: e.target.value }))}
-                  style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid #334155' }}
-                />
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
-              <div style={{ flex: 1 }}>
-                <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Start Time</label>
-                <input
-                  type="text"
-                  placeholder="09:00 AM"
-                  value={formData.startTime}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, startTime: e.target.value }))}
-                  required
-                  style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid #334155' }}
-                />
-              </div>
-              <div style={{ flex: 1 }}>
-                <label style={{ fontSize: '12px', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>End Time</label>
-                <input
-                  type="text"
-                  placeholder="10:00 AM"
-                  value={formData.endTime}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, endTime: e.target.value }))}
-                  required
-                  style={{ width: '100%', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: '#fff', border: '1px solid #334155' }}
-                />
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
-              <button type="button" onClick={() => setModalOpen(false)} style={{ padding: '8px 16px', background: 'transparent', color: '#94a3b8', border: 'none', cursor: 'pointer' }}>Cancel</button>
-              <button type="submit" style={{ padding: '8px 16px', background: '#6366f1', color: '#fff', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: '600' }}>Save Class</button>
-            </div>
-          </form>
+          </div>
         </div>
       )}
     </div>
   );
 }
+
