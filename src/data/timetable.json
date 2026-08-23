@@ -1,0 +1,30 @@
+{
+  "schedule": {
+    "monday": [
+      { "id": "t1", "time": "09:00 AM - 10:00 AM", "subject": "Data Structures & Algorithms", "subjectCode": "CS301", "faculty": "Dr. Priya Nair", "room": "LH-101", "type": "lecture", "duration": "1h" },
+      { "id": "t2", "time": "10:00 AM - 11:00 AM", "subject": "Database Systems", "subjectCode": "CS302", "faculty": "Prof. Rajesh Kumar", "room": "LH-101", "type": "lecture", "duration": "1h" },
+      { "id": "t3", "time": "11:15 AM - 01:15 PM", "subject": "Computer Networks Lab", "subjectCode": "CS303L", "faculty": "Dr. Sunita Rao", "room": "Lab-3", "type": "lab", "duration": "2h" }
+    ],
+    "tuesday": [
+      { "id": "t4", "time": "09:00 AM - 10:00 AM", "subject": "Software Engineering", "subjectCode": "CS304", "faculty": "Prof. Amit Verma", "room": "LH-102", "type": "lecture", "duration": "1h" },
+      { "id": "t5", "time": "10:00 AM - 11:00 AM", "subject": "Computer Networks", "subjectCode": "CS303", "faculty": "Dr. Sunita Rao", "room": "LH-102", "type": "lecture", "duration": "1h" },
+      { "id": "t6", "time": "02:00 PM - 03:00 PM", "subject": "Database Systems", "subjectCode": "CS302", "faculty": "Prof. Rajesh Kumar", "room": "LH-103", "type": "lecture", "duration": "1h" }
+    ],
+    "wednesday": [
+      { "id": "t7", "time": "09:00 AM - 10:00 AM", "subject": "Data Structures & Algorithms", "subjectCode": "CS301", "faculty": "Dr. Priya Nair", "room": "LH-101", "type": "lecture", "duration": "1h" },
+      { "id": "t8", "time": "11:00 AM - 12:00 PM", "subject": "Software Engineering", "subjectCode": "CS304", "faculty": "Prof. Amit Verma", "room": "LH-102", "type": "lecture", "duration": "1h" },
+      { "id": "t9", "time": "02:00 PM - 03:00 PM", "subject": "Computer Networks", "subjectCode": "CS303", "faculty": "Dr. Sunita Rao", "room": "LH-103", "type": "lecture", "duration": "1h" }
+    ],
+    "thursday": [
+      { "id": "t10", "time": "10:00 AM - 11:00 AM", "subject": "Database Systems", "subjectCode": "CS302", "faculty": "Prof. Rajesh Kumar", "room": "LH-101", "type": "lecture", "duration": "1h" },
+      { "id": "t11", "time": "11:15 AM - 12:15 PM", "subject": "Data Structures & Algorithms", "subjectCode": "CS301", "faculty": "Dr. Priya Nair", "room": "LH-101", "type": "lecture", "duration": "1h" },
+      { "id": "t12", "time": "02:00 PM - 04:00 PM", "subject": "Software Engineering Lab", "subjectCode": "CS304L", "faculty": "Prof. Amit Verma", "room": "Lab-2", "type": "lab", "duration": "2h" }
+    ],
+    "friday": [
+      { "id": "t13", "time": "09:00 AM - 10:00 AM", "subject": "Computer Networks", "subjectCode": "CS303", "faculty": "Dr. Sunita Rao", "room": "LH-102", "type": "lecture", "duration": "1h" },
+      { "id": "t14", "time": "10:00 AM - 11:00 AM", "subject": "Software Engineering", "subjectCode": "CS304", "faculty": "Prof. Amit Verma", "room": "LH-102", "type": "lecture", "duration": "1h" },
+      { "id": "t15", "time": "11:15 AM - 01:15 PM", "subject": "Data Structures Lab", "subjectCode": "CS301L", "faculty": "Dr. Priya Nair", "room": "Lab-1", "type": "lab", "duration": "2h" }
+    ],
+    "saturday": []
+  }
+}

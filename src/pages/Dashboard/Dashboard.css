@@ -1,0 +1,370 @@
+/* Dashboard Page Styles - Matching Assignments & Attendance Light Theme */
+
+.dashboard-page {
+  animation: fadeIn 0.4s ease;
+  color: var(--uv-text-secondary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 1. Page Header */
+.dashboard-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-greeting {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--uv-text-primary);
+  margin: 0 0 4px;
+}
+
+.dashboard-subtitle {
+  font-size: 14px;
+  color: var(--uv-text-muted);
+  margin: 0;
+}
+
+.header-meta-badge {
+  background: var(--uv-primary-light);
+  color: var(--uv-primary);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 2. Top Summary Stat Cards Grid */
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dash-summary-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dash-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.dash-summary-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--uv-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dash-summary-val {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 2px 0;
+  line-height: 1;
+}
+
+.dash-summary-sub {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dash-summary-btn {
+  background: none;
+  border: none;
+  color: var(--uv-primary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.dash-summary-btn:hover {
+  text-decoration: underline;
+}
+
+/* 2-Column Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.dashboard-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* General White Card Container */
+.dashboard-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--uv-text-primary);
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.card-header-flex .card-title {
+  margin-bottom: 0;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--uv-primary);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-link:hover {
+  opacity: 0.8;
+}
+
+/* Attendance Progress Row */
+.attendance-prog-item {
+  margin-bottom: 14px;
+}
+
+.attendance-prog-item:last-child {
+  margin-bottom: 0;
+}
+
+.attendance-lbl-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.attendance-prog-bg {
+  width: 100%;
+  height: 7px;
+  background: var(--uv-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.attendance-prog-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* Common List Containers */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-item-row {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.subject-code-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--uv-primary);
+  background: var(--uv-primary-light);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--uv-text-primary);
+  margin: 0;
+}
+
+.item-sub {
+  font-size: 12px;
+  color: var(--uv-text-muted);
+}
+
+.status-badge-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status-badge-tag.status-pending {
+  background: var(--uv-warning-bg);
+  color: var(--uv-warning);
+}
+
+.status-badge-tag.status-submitted {
+  background: var(--uv-info-bg);
+  color: var(--uv-info);
+}
+
+.status-badge-tag.status-graded {
+  background: var(--uv-success-bg);
+  color: var(--uv-success);
+}
+
+/* Timetable Rows */
+.timetable-item-row {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  border-left: 4px solid var(--uv-primary);
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tt-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--uv-primary);
+  white-space: nowrap;
+}
+
+/* Placement Snapshot Metric Table */
+.placement-snap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.snap-metric-item {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Campus Updates Rows */
+.update-item-row {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.event-type-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--uv-info);
+  background: var(--uv-info-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+/* Quick Actions Grid */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.quick-action-btn {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--uv-text-primary);
+  transition: all 0.2s ease;
+}
+
+.quick-action-btn:hover {
+  background: var(--uv-primary-light);
+  color: var(--uv-primary);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,507 @@
+.assignments-page {
+  animation: fadeIn 0.4s ease;
+  color: var(--uv-text-secondary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.assignments-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.assignment-item {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.assignment-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.assignment-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.subject-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--uv-primary);
+  background: var(--uv-primary-light);
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+.status-badge.pending {
+  color: var(--uv-warning);
+  background: var(--uv-warning-bg);
+}
+
+.status-badge.submitted {
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.15);
+}
+
+.status-badge.graded {
+  color: var(--uv-success);
+  background: var(--uv-success-bg);
+}
+
+.status-badge.late {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.icon-edit-btn {
+  background: none;
+  border: none;
+  color: var(--uv-primary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.icon-edit-btn:hover {
+  background: var(--uv-primary-light);
+}
+
+.icon-delete-btn {
+  background: none;
+  border: none;
+  color: var(--uv-danger);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.icon-delete-btn:hover {
+  background: var(--uv-danger-bg);
+}
+
+.assignment-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--uv-text-primary);
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.assignment-desc {
+  font-size: 13px;
+  color: var(--uv-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.assignment-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--uv-text-muted);
+  border-top: 1px solid var(--uv-border);
+  padding-top: 10px;
+}
+
+.assignment-meta-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta-strong-text {
+  color: var(--uv-text-primary);
+  font-weight: 600;
+}
+
+.meta-due-text {
+  color: var(--uv-primary);
+  font-weight: 700;
+}
+
+.meta-marks-text {
+  color: var(--uv-success);
+  font-weight: 700;
+}
+
+.btn-toggle-status {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-toggle-status:hover {
+  opacity: 0.9;
+}
+
+.btn-toggle-status.pending-btn {
+  background: var(--uv-success-bg);
+  color: var(--uv-success);
+}
+
+.btn-toggle-status.submitted-btn {
+  background: var(--uv-warning-bg);
+  color: var(--uv-warning);
+}
+
+.btn-toggle-status.graded-btn {
+  background: var(--uv-primary-light);
+  color: var(--uv-primary);
+}
+
+/* View Details button on each assignment card */
+.btn-view-details {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--uv-border);
+  background: var(--uv-bg-card);
+  color: var(--uv-text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-view-details:hover {
+  background: var(--uv-input-bg);
+}
+
+.search-input-field {
+  width: 100%;
+  padding: 10px 16px 10px 36px;
+  border-radius: 10px;
+  border: 1px solid var(--uv-input-border);
+  background: var(--uv-input-bg);
+  color: var(--uv-input-text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input-field:focus {
+  border-color: var(--uv-primary);
+}
+
+.filter-select-field {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-input-border);
+  color: var(--uv-input-text);
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.status-pill-group {
+  display: flex;
+  gap: 4px;
+  background: var(--uv-input-bg);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--uv-border);
+}
+
+.filter-pill-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: capitalize;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Assignments Summary Cards Grid */
+.assignments-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.assignments-stat-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assignments-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--uv-card-shadow);
+}
+
+.stat-card-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--uv-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card-val {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+  .assignments-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .assignments-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   VIEW DETAILS MODAL
+   ══════════════════════════════════════════════ */
+
+/* Dark translucent overlay that sits on top of everything */
+.modal-overlay {
+  position: fixed;
+  inset: 0;                           /* top/right/bottom/left = 0 */
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* The white/dark card that contains the modal content */
+.modal-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  animation: modalSlideIn 0.22s ease;
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+/* Header row: title on the left, close × on the right */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--uv-border);
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--uv-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* The ✕ button in the top-right corner */
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: var(--uv-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--uv-border);
+  color: var(--uv-text-primary);
+}
+
+/* Scrollable body area */
+.modal-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--uv-text-secondary);
+}
+
+/* A labelled section inside the body */
+.modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modal-section-bordered {
+  border-top: 1px solid var(--uv-border);
+  padding-top: 14px;
+}
+
+/* Small uppercase label above a value */
+.modal-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--uv-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.modal-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--uv-text-primary);
+  margin-top: 2px;
+}
+
+.modal-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--uv-text-secondary);
+  margin: 4px 0 0 0;
+}
+
+/* 2-column responsive metadata grid */
+.modal-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .modal-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual cell inside the grid */
+.modal-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Grading result box (green tinted) */
+.modal-grading-box {
+  background: var(--uv-success-bg);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-grading-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--uv-success);
+  margin: 0;
+}
+
+/* Attachment link chip */
+.attachment-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--uv-primary);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.attachment-chip:hover {
+  background: var(--uv-primary-light);
+}
+
+/* Footer row with the Close / Submit buttons */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px 20px;
+  border-top: 1px solid var(--uv-border);
+}
+
+/* The solid "Close" button at the bottom of the View Details modal */
+.btn-modal-close {
+  padding: 8px 22px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-modal-close:hover {
+  opacity: 0.88;
+}

@@ -1,0 +1,36 @@
+{
+  "hostels": [
+    {
+      "id": "h1",
+      "name": "Aryabhata Hostel (Block A)",
+      "type": "boys",
+      "totalRooms": 150,
+      "occupiedRooms": 142,
+      "warden": { "name": "Prof. S. K. Gupta", "phone": "+91 98765 11111", "email": "gupta.warden@universityverse.edu" },
+      "amenities": ["24/7 Wi-Fi (50Mbps)", "Study Table & Chair", "Attached Balcony", "Geyser Support", "24/7 Electricity", "Room Cleaning", "Drinking Water", "Common Laundry"]
+    }
+  ],
+  "messMenu": {
+    "monday": { "breakfast": "Aloo Paratha, Curd, Tea", "lunch": "Rajma Chawal, Roti, Salad", "snacks": "Samosa, Coffee", "dinner": "Paneer Butter Masala, Roti, Kheer" },
+    "tuesday": { "breakfast": "Poha, Boiled Egg, Tea", "lunch": "Dal Tadka, Jeera Rice, Roti, Salad", "snacks": "Bread Pakora, Tea", "dinner": "Mix Veg, Dal, Roti, Gulab Jamun" },
+    "wednesday": { "breakfast": "Idli, Sambar, Coconut Chutney", "lunch": "Chole Rice, Roti, Salad", "snacks": "Sandwich, Coffee", "dinner": "Kadhai Paneer, Naan, Dal" },
+    "thursday": { "breakfast": "Aloo Puri, Curd, Tea", "lunch": "Veg Biryani, Raita, Salad", "snacks": "Maggi, Tea", "dinner": "Dal Makhani, Roti, Rice, Halwa" },
+    "friday": { "breakfast": "Upma, Banana, Tea", "lunch": "Kadhi Chawal, Roti, Salad", "snacks": "Pakora, Tea", "dinner": "Shahi Paneer, Roti, Rice, Ice Cream" },
+    "saturday": { "breakfast": "Chole Bhature, Tea", "lunch": "Fried Rice, Manchurian, Salad", "snacks": "Samosa, Cold Drink", "dinner": "Dal Fry, Roti, Mix Veg, Sweet" },
+    "sunday": { "breakfast": "Masala Dosa, Sambar, Chutney", "lunch": "Special Veg Biryani, Raita", "snacks": "Cake, Coffee", "dinner": "Paneer Tikka, Naan, Dal, Dessert" }
+  },
+  "notices": [
+    { "id": "hn1", "title": "Hostel Gate Timings Strict 10 PM Entry", "message": "All residents must return to the hostel before 10:00 PM.", "date": "2026-07-20", "priority": "urgent" },
+    { "id": "hn2", "title": "Mess Fee Payment Deadline", "message": "Monthly mess fees must be paid before the 25th of every month.", "date": "2026-07-22", "priority": "important" },
+    { "id": "hn3", "title": "Hostel Room Inspection", "message": "Routine room inspection will be conducted this Friday.", "date": "2026-07-24", "priority": "general" },
+    { "id": "hn4", "title": "Water Supply Maintenance", "message": "Water supply may remain unavailable between 11 AM and 2 PM.", "date": "2026-07-26", "priority": "general" },
+    { "id": "hn5", "title": "Visitor Registration Mandatory", "message": "All visitors must be registered at the hostel reception.", "date": "2026-07-28", "priority": "important" },
+    { "id": "hn6", "title": "Laundry Service Schedule Updated", "message": "New laundry collection timings are now available.", "date": "2026-07-30", "priority": "general" }
+  ],
+  "maintenanceRequests": [
+    { "id": "mr1", "type": "Plumbing", "description": "Tap leaking in Room 304 bathroom", "status": "resolved", "date": "2026-07-15", "roomNumber": "A-304", "priority": "medium" },
+    { "id": "mr2", "type": "Electrical", "description": "Ceiling fan making unusual noise in Room A-304", "status": "in_progress", "date": "2026-07-18", "roomNumber": "A-304", "priority": "medium" },
+    { "id": "mr3", "type": "Cleaning", "description": "Bathroom cleaning required", "status": "resolved", "date": "2026-07-19", "roomNumber": "A-304", "priority": "low" },
+    { "id": "mr4", "type": "Internet", "description": "Wi-Fi signal weak in Room A-304", "status": "pending", "date": "2026-07-21", "roomNumber": "A-304", "priority": "high" }
+  ]
+}

@@ -1,0 +1,96 @@
+/* ========================
+   DashboardLayout CSS
+   ======================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--uv-bg-page);
+  position: relative;
+}
+
+/* Sidebar mobile overlay */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  backdrop-filter: blur(2px);
+}
+
+/* Main body area (everything to the right of sidebar) */
+.dashboard-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.dashboard-body.collapsed {
+  margin-left: 72px;
+}
+
+.dashboard-body.mobile {
+  margin-left: 0;
+}
+
+/* Scrollable main area */
+.dashboard-main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--uv-bg-page);
+  transition: all 0.3s ease;
+}
+
+/* Content wrapper with fade-in */
+.dashboard-content {
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+  animation: fadeInContent 0.3s ease forwards;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================
+   Responsive – Mobile
+   ======================== */
+
+@media (max-width: 767px) {
+  .dashboard-body {
+    margin-left: 0;
+  }
+
+  .dashboard-body.collapsed {
+    margin-left: 0;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 12px;
+  }
+}

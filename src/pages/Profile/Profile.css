@@ -1,0 +1,324 @@
+/* Compact Profile Page Styles - Matching Settings & Analytics Light Theme */
+
+.profile-page {
+  animation: fadeIn 0.4s ease;
+  color: var(--uv-text-secondary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.profile-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--uv-text-primary);
+  margin: 0 0 4px;
+}
+
+.profile-subtitle {
+  font-size: 14px;
+  color: var(--uv-text-muted);
+  margin: 0;
+}
+
+/* Success Alert Toast */
+.profile-alert-success {
+  background: var(--uv-success-bg);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--uv-success);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 1. Compact Profile Header Card */
+.profile-hero {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.profile-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--uv-text-primary);
+  margin: 0 0 2px;
+}
+
+.profile-dept {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--uv-primary);
+  margin: 0 0 4px;
+}
+
+.profile-meta-row {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--uv-text-muted);
+  flex-wrap: wrap;
+}
+
+.edit-button {
+  background: var(--uv-primary-light);
+  color: var(--uv-primary);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+  background: var(--uv-primary);
+  color: #ffffff;
+}
+
+/* 2-Column Main Section */
+.profile-grid-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.profile-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.profile-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--uv-text-primary);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 2. Academic Information Grid (4 Small Boxes + Compact Rows Below) */
+.academic-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.acad-info-box {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.acad-info-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--uv-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.acad-info-val {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--uv-text-primary);
+}
+
+/* 3. Skills Badge Wrap */
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-badge {
+  background: var(--uv-primary-light);
+  color: var(--uv-primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* 4. Contact Info List */
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-item-row {
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Modal Styling */
+.profile-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.profile-modal-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-input {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--uv-input-border);
+  background: var(--uv-input-bg);
+  color: var(--uv-input-text);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .profile-grid-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .academic-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Progress Bar styling for Profile Completion */
+.completion-bar-container {
+  width: 100%;
+  height: 8px;
+  background: var(--uv-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.completion-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* Social link button styling */
+.social-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+
+.linkedin-btn {
+  background: #0077b5;
+}
+
+.linkedin-btn:hover {
+  background: #005987;
+}
+
+.github-btn {
+  background: #24292e;
+}
+
+.github-btn:hover {
+  background: #1a1e22;
+}
+
+/* Profile list item formatting */
+.profile-list-item {
+  line-height: 1.4;
+  padding: 2px 0;
+}

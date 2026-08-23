@@ -1,0 +1,429 @@
+/* =============================================
+   UniversityVerse – Global Design Tokens & Theme Architecture
+   Centralized CSS Tokens for Dark Mode (default) and Light Mode ([data-theme="light"])
+   ============================================= */
+
+:root {
+  /* ── DARK MODE TOKENS (Default) ── */
+  --uv-bg-page: #0a0f1e;
+  --uv-bg-card: #0f172a;
+  --uv-bg-card-rgb: 15, 23, 42;
+  --uv-bg-secondary: #1e293b;
+  --uv-bg-hover: rgba(255, 255, 255, 0.05);
+  
+  --uv-text-primary: #f8fafc;
+  --uv-text-secondary: #cbd5e1;
+  --uv-text-muted: #94a3b8;
+  --uv-text-subtle: #64748b;
+  
+  --uv-border: rgba(255, 255, 255, 0.08);
+  --uv-border-strong: rgba(255, 255, 255, 0.15);
+  
+  --uv-input-bg: rgba(255, 255, 255, 0.05);
+  --uv-input-border: rgba(255, 255, 255, 0.1);
+  --uv-input-text: #f8fafc;
+  
+  --uv-sidebar-bg: #0f172a;
+  --uv-header-bg: rgba(15, 23, 42, 0.95);
+  --uv-header-title: #f8fafc;
+  
+  --uv-primary: #6366f1;
+  --uv-primary-hover: #4f46e5;
+  --uv-primary-light: rgba(99, 102, 241, 0.15);
+  
+  --uv-success: #10b981;
+  --uv-success-bg: rgba(16, 185, 129, 0.15);
+  
+  --uv-warning: #f59e0b;
+  --uv-warning-bg: rgba(245, 158, 11, 0.15);
+  
+  --uv-danger: #ef4444;
+  --uv-danger-bg: rgba(239, 68, 68, 0.15);
+  
+  --uv-info: #06b6d4;
+  --uv-info-bg: rgba(6, 182, 212, 0.15);
+  
+  --uv-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --uv-modal-bg: #0f172a;
+  --uv-dropdown-bg: #0f172a;
+  --uv-scrollbar-track: #0f172a;
+  --uv-scrollbar-thumb: #334155;
+}
+
+html[data-theme="light"] {
+  /* ── LIGHT MODE TOKENS ── */
+  --uv-bg-page: #f1f5f9;
+  --uv-bg-card: #ffffff;
+  --uv-bg-card-rgb: 255, 255, 255;
+  --uv-bg-secondary: #f8fafc;
+  --uv-bg-hover: rgba(99, 102, 241, 0.06);
+  
+  --uv-text-primary: #0f172a;      /* #0f172a / #111827 strong dark text */
+  --uv-text-secondary: #334155;    /* #334155 readable body text */
+  --uv-text-muted: #475569;        /* #475569 / #64748b subtitles & labels */
+  --uv-text-subtle: #64748b;       /* #64748b secondary text */
+  
+  --uv-border: #e2e8f0;
+  --uv-border-strong: #cbd5e1;
+  
+  --uv-input-bg: #ffffff;
+  --uv-input-border: #cbd5e1;
+  --uv-input-text: #0f172a;
+  
+  --uv-sidebar-bg: #ffffff;
+  --uv-header-bg: rgba(255, 255, 255, 0.95);
+  --uv-header-title: #0f172a;
+  
+  --uv-primary: #4f46e5;
+  --uv-primary-hover: #4338ca;
+  --uv-primary-light: rgba(79, 70, 229, 0.1);
+  
+  --uv-success: #059669;
+  --uv-success-bg: rgba(5, 150, 105, 0.1);
+  
+  --uv-warning: #d97706;
+  --uv-warning-bg: rgba(217, 119, 6, 0.1);
+  
+  --uv-danger: #dc2626;
+  --uv-danger-bg: rgba(220, 38, 38, 0.1);
+  
+  --uv-info: #0891b2;
+  --uv-info-bg: rgba(8, 145, 178, 0.1);
+  
+  --uv-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --uv-modal-bg: #ffffff;
+  --uv-dropdown-bg: #ffffff;
+  --uv-scrollbar-track: #e2e8f0;
+  --uv-scrollbar-thumb: #cbd5e1;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--uv-bg-page);
+  color: var(--uv-text-secondary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--uv-text-primary);
+  transition: color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+}
+
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--uv-scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--uv-scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--uv-primary);
+}
+
+/* =============================================
+   SHARED PAGE HEADER RULES (Guarantees Dark Heading & Muted Subtitle in Light Mode)
+   ============================================= */
+
+/* Targets all main page title headings across all routes */
+.page-title,
+.page-header h1,
+.page-header h2,
+.attendance-header-left h1,
+.timetable-header-left h1,
+.assignments-header h1,
+.assignments-header h2,
+.hostel-title,
+.career-header h1,
+.map-header h1,
+.marketplace-header h1,
+.lostfound-header h1,
+.parent-page-header h1,
+.parent-page h2 {
+  color: var(--uv-text-primary) !important;
+}
+
+/* Targets all page subtitle paragraphs across all routes */
+.page-subtitle,
+.page-header p,
+.attendance-header-left p,
+.timetable-header-left p,
+.assignments-header p,
+.hostel-subtitle,
+.career-header p,
+.map-header p,
+.marketplace-header p,
+.lostfound-header p,
+.parent-page-header p,
+.parent-page p {
+  color: var(--uv-text-muted) !important;
+}
+
+/* =============================================
+   GLOBAL THEME APPLIER
+   ============================================= */
+
+/* Layout & Main Containers */
+.dashboard-wrapper {
+  background-color: var(--uv-bg-page) !important;
+}
+
+.dashboard-main {
+  background-color: var(--uv-bg-page);
+}
+
+/* Sidebar & Navigation */
+.sidebar {
+  background-color: var(--uv-sidebar-bg) !important;
+  border-right: 1px solid var(--uv-border) !important;
+}
+
+.sidebar-logo-text {
+  color: var(--uv-text-primary) !important;
+}
+
+.sidebar-nav-item {
+  color: var(--uv-text-muted) !important;
+}
+
+.sidebar-nav-item:hover {
+  background: var(--uv-bg-hover) !important;
+  color: var(--uv-primary) !important;
+}
+
+.sidebar-nav-item.active {
+  background: var(--uv-primary-light) !important;
+  color: var(--uv-primary) !important;
+  border-left: 3px solid var(--uv-primary) !important;
+}
+
+.sidebar-user-name {
+  color: var(--uv-text-primary) !important;
+}
+
+.sidebar-user-role {
+  color: var(--uv-text-subtle) !important;
+}
+
+/* Topbar Header */
+.topbar {
+  background: var(--uv-header-bg) !important;
+  border-bottom: 1px solid var(--uv-border) !important;
+}
+
+.topbar-title {
+  color: var(--uv-header-title) !important;
+}
+
+.topbar-search-input {
+  background: var(--uv-input-bg) !important;
+  border: 1px solid var(--uv-input-border) !important;
+  color: var(--uv-input-text) !important;
+}
+
+.topbar-dropdown {
+  background: var(--uv-dropdown-bg) !important;
+  border: 1px solid var(--uv-border) !important;
+  box-shadow: var(--uv-card-shadow) !important;
+}
+
+.topbar-dropdown-name {
+  color: var(--uv-text-primary) !important;
+}
+
+.topbar-dropdown-email {
+  color: var(--uv-text-muted) !important;
+}
+
+.topbar-dropdown-item {
+  color: var(--uv-text-secondary) !important;
+}
+
+.topbar-dropdown-item:hover {
+  background: var(--uv-bg-hover) !important;
+}
+
+/* Reusable Cards & Surfaces */
+.dashboard-section,
+.stat-card,
+.assignment-card,
+.assignment-item,
+.book-card,
+.note-card,
+.club-card,
+.event-card,
+.company-card,
+.login-card,
+.class-card,
+.subject-attendance-card,
+.faculty-stat-card,
+.academic-stat-card,
+.achievement-card,
+.cert-card {
+  background: var(--uv-bg-card) !important;
+  border: 1px solid var(--uv-border) !important;
+  box-shadow: var(--uv-card-shadow) !important;
+  color: var(--uv-text-secondary);
+}
+
+.dashboard-welcome {
+  background: linear-gradient(135deg, var(--uv-primary-light), var(--uv-info-bg)) !important;
+  border: 1px solid var(--uv-border) !important;
+}
+
+.dashboard-greeting {
+  color: var(--uv-text-primary) !important;
+}
+
+/* Form Controls & Inputs */
+input:not([type="button"]):not([type="submit"]):not([type="reset"]),
+select,
+textarea {
+  background-color: var(--uv-input-bg) !important;
+  border: 1px solid var(--uv-input-border) !important;
+  color: var(--uv-input-text) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--uv-primary) !important;
+}
+
+.form-label {
+  color: var(--uv-text-muted) !important;
+}
+
+/* Modals */
+.modal-content,
+.modal-box {
+  background-color: var(--uv-modal-bg) !important;
+  border: 1px solid var(--uv-border) !important;
+  color: var(--uv-text-primary) !important;
+}
+
+.modal-title, .modal-header h3 {
+  color: var(--uv-text-primary) !important;
+}
+
+/* Global Utility Classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--uv-primary), var(--uv-info));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Global Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

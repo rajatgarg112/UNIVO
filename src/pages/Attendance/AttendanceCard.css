@@ -1,0 +1,188 @@
+/* Redesigned Subject Attendance Card Styles */
+
+.subject-attendance-card {
+  background: var(--uv-bg-card);
+  border: 1px solid var(--uv-border);
+  border-left: 4px solid #6366f1;
+  box-shadow: var(--uv-card-shadow);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subject-attendance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.subject-attendance-card.safe-card {
+  border-left-color: #10b981;
+}
+
+.subject-attendance-card.warning-card {
+  border-left-color: #f59e0b;
+  background: var(--uv-bg-card);
+}
+
+.subject-attendance-card.danger-card {
+  border-left-color: #ef4444;
+  background: var(--uv-bg-card);
+}
+
+/* Card Header Block */
+.sac-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.subject-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--uv-text-primary);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.subject-faculty-row {
+  font-size: 12px;
+  color: var(--uv-text-subtle);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.code-pill {
+  font-weight: 700;
+  color: var(--uv-primary);
+  background: var(--uv-primary-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* Circular Ring Wrapper */
+.progress-ring-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.progress-ring-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-ring-percent {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Middle Stats Row */
+.sac-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--uv-input-bg);
+  border: 1px solid var(--uv-border);
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.sac-stat-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sac-stat-label {
+  font-size: 11px;
+  color: var(--uv-text-subtle);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sac-stat-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--uv-text-primary);
+}
+
+.status-badge-inline {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.status-badge-inline.safe { background: var(--uv-success-bg); color: var(--uv-success); }
+.status-badge-inline.warning { background: var(--uv-warning-bg); color: var(--uv-warning); }
+.status-badge-inline.danger { background: var(--uv-danger-bg); color: var(--uv-danger); }
+
+/* Action Buttons */
+.sac-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-mark-present {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--uv-success-bg);
+  color: var(--uv-success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mark-present:hover {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.btn-mark-absent {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--uv-danger-bg);
+  color: var(--uv-danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mark-absent:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Footer Guidance Text */
+.sac-guidance-box {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--uv-text-muted);
+  line-height: 1.4;
+  padding-top: 4px;
+}
+
+.sac-guidance-box.warning-guidance {
+  color: var(--uv-warning);
+}

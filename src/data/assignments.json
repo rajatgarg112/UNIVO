@@ -1,0 +1,130 @@
+[
+  {
+    "id": "1",
+    "title": "Data Structures & Algorithms Assignment 3",
+    "subject": "Data Structures",
+    "subjectCode": "CS301",
+    "faculty": "Dr. Priya Nair",
+    "dueDate": "2026-08-25",
+    "submittedDate": null,
+    "status": "pending",
+    "grade": null,
+    "marks": null,
+    "totalMarks": 100,
+    "description": "Implement Binary Search Trees, AVL Trees, and Graph Traversal algorithms (BFS / DFS) in Java or C++. Submit a zipped source folder with a README explaining your approach.",
+    "instructions": "Use only standard libraries. Code must compile without errors. Include at least 3 test cases per data structure.",
+    "attachments": [
+      "dsa_assignment_3_guidelines.pdf",
+      "sample_test_cases.zip"
+    ],
+    "priority": "high",
+    "type": "assignment"
+  },
+  {
+    "id": "2",
+    "title": "Database Systems Mini Project",
+    "subject": "Database Systems",
+    "subjectCode": "CS302",
+    "faculty": "Prof. Rajesh Kumar",
+    "dueDate": "2026-08-28",
+    "submittedDate": null,
+    "status": "pending",
+    "grade": null,
+    "marks": null,
+    "totalMarks": 50,
+    "description": "Design a complete ER Diagram and implement SQL DDL + DML queries for a University Management Portal. Include at least 6 tables with proper constraints and foreign keys.",
+    "instructions": "Submit a PDF containing your ER diagram, all SQL scripts, and a 1-page reflection. Scripts must be runnable in MySQL 8.",
+    "attachments": [
+      "db_project_requirements.pdf",
+      "er_diagram_template.drawio"
+    ],
+    "priority": "high",
+    "type": "project"
+  },
+  {
+    "id": "3",
+    "title": "Computer Networks Lab Report 4",
+    "subject": "Computer Networks",
+    "subjectCode": "CS303",
+    "faculty": "Dr. Sunita Rao",
+    "dueDate": "2026-08-18",
+    "submittedDate": "2026-08-17",
+    "status": "submitted",
+    "grade": null,
+    "marks": null,
+    "totalMarks": 20,
+    "description": "Wireshark packet capture analysis: identify TCP handshake, analyse HTTP headers, and compare UDP vs TCP behaviour under simulated packet loss.",
+    "instructions": "Include at least 5 annotated screenshots from Wireshark. Explain each observation in 2-3 sentences. Submit as a single PDF.",
+    "attachments": [
+      "cn_lab4_template.pdf"
+    ],
+    "priority": "medium",
+    "type": "lab",
+    "submitNotes": "https://github.com/aryan-sharma/cn-lab4-report",
+    "submitAttachmentName": "aryan_cn_lab4_report.pdf"
+  },
+  {
+    "id": "4",
+    "title": "Software Engineering Case Study",
+    "subject": "Software Engineering",
+    "subjectCode": "CS304",
+    "faculty": "Prof. Amit Verma",
+    "dueDate": "2026-07-20",
+    "submittedDate": "2026-07-19",
+    "status": "graded",
+    "grade": "A",
+    "marks": 48,
+    "totalMarks": 50,
+    "description": "Agile Scrum Sprint Planning for an E-Commerce application. Prepare a product backlog, sprint backlog, user stories, and a 2-week burndown chart.",
+    "instructions": "Use the Agile Scrum template provided. Each user story must have acceptance criteria. Include a retrospective section.",
+    "attachments": [
+      "se_case_study_template.pdf"
+    ],
+    "priority": "low",
+    "type": "assignment",
+    "submitNotes": "https://github.com/aryan-sharma/se-case-study",
+    "submitAttachmentName": "aryan_se_case_study.pdf",
+    "feedback": "Excellent sprint backlog division and burndown chart design. Acceptance criteria were clearly written. Great work overall!"
+  },
+  {
+    "id": "5",
+    "title": "Operating Systems Process Scheduling Report",
+    "subject": "Operating Systems",
+    "subjectCode": "CS305",
+    "faculty": "Dr. Meera Iyer",
+    "dueDate": "2026-08-10",
+    "submittedDate": null,
+    "status": "pending",
+    "grade": null,
+    "marks": null,
+    "totalMarks": 30,
+    "description": "Compare CPU scheduling algorithms: FCFS, SJF, Round Robin, and Priority Scheduling. Simulate each algorithm with the given process table and calculate average waiting time and turnaround time.",
+    "instructions": "Show all calculations step-by-step using Gantt charts. Implement at least one algorithm in C and attach the source code.",
+    "attachments": [
+      "os_scheduling_process_table.pdf"
+    ],
+    "priority": "high",
+    "type": "assignment"
+  },
+  {
+    "id": "6",
+    "title": "Machine Learning Mini Assignment – Linear Regression",
+    "subject": "Machine Learning",
+    "subjectCode": "CS401",
+    "faculty": "Prof. Kavita Sharma",
+    "dueDate": "2026-09-05",
+    "submittedDate": null,
+    "status": "pending",
+    "grade": null,
+    "marks": null,
+    "totalMarks": 25,
+    "description": "Implement Linear Regression from scratch using Python and NumPy (no sklearn). Train on the provided housing dataset and plot the cost function convergence over 1000 iterations.",
+    "instructions": "Submit a Jupyter Notebook (.ipynb) with all cells executed and output visible. Include a brief explanation of each step as markdown cells.",
+    "attachments": [
+      "ml_housing_dataset.csv",
+      "ml_assignment_guidelines.pdf"
+    ],
+    "priority": "medium",
+    "type": "assignment"
+  }
+]

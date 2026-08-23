@@ -1,0 +1,62 @@
+[
+  {
+    "id": "n1",
+    "title": "Data Structures Module 1-4 Complete Notes",
+    "subject": "CS301",
+    "author": "Dr. Priya Nair",
+    "type": "PPT",
+    "date": "2026-07-20",
+    "downloadCount": 145,
+    "contentSnippet": "Lecture notes covering arrays, linked lists, stacks, queues and trees."
+  },
+  {
+    "id": "n2",
+    "title": "Relational Algebra & Normalization Handbook",
+    "subject": "CS302",
+    "author": "Prof. Rajesh Kumar",
+    "type": "PPT",
+    "date": "2026-07-22",
+    "downloadCount": 98,
+    "contentSnippet": "Lecture notes and reference material for relational algebra, functional dependencies and normalization."
+  },
+  {
+    "id": "n3",
+    "title": "TCP/IP Model and Subnetting Cheatsheet",
+    "subject": "CS303",
+    "author": "Dr. Sunita Rao",
+    "type": "PDF",
+    "date": "2026-07-25",
+    "downloadCount": 210,
+    "contentSnippet": "Quick reference guide for TCP/IP layers, IPv4 addressing and subnetting."
+  },
+  {
+    "id": "n4",
+    "title": "Software Engineering Unit 1-3 Notes",
+    "subject": "CS304",
+    "author": "Prof. Amit Verma",
+    "type": "PDF",
+    "date": "2026-07-27",
+    "downloadCount": 176,
+    "contentSnippet": "Software development life cycle, Agile methodology, requirements engineering and software models."
+  },
+  {
+    "id": "n5",
+    "title": "Trees, Graphs & Traversal Algorithms",
+    "subject": "CS301",
+    "author": "Dr. Priya Nair",
+    "type": "PPT",
+    "date": "2026-07-30",
+    "downloadCount": 132,
+    "contentSnippet": "Important concepts and algorithms for trees, graphs, BFS, DFS and shortest path."
+  },
+  {
+    "id": "n6",
+    "title": "SQL Queries & Database Revision Notes",
+    "subject": "CS302",
+    "author": "Prof. Rajesh Kumar",
+    "type": "PDF",
+    "date": "2026-08-01",
+    "downloadCount": 189,
+    "contentSnippet": "SQL commands, joins, aggregate functions, subqueries and database revision material."
+  }
+]

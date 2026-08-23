@@ -1,0 +1,52 @@
+[
+  {
+    "id": "lf1",
+    "title": "Black Boat Earbuds Case",
+    "type": "Lost",
+    "location": "Central Library 2nd Floor",
+    "date": "2026-07-25",
+    "status": "Unclaimed",
+    "contact": "aryan@universityverse.edu",
+    "description": "Black magnetic charging case for Boat Airdopes left on study desk."
+  },
+  {
+    "id": "lf2",
+    "title": "College ID Card (CS Dept)",
+    "type": "Found",
+    "location": "Cafeteria Table 4",
+    "date": "2026-07-26",
+    "status": "Claimed",
+    "contact": "security@universityverse.edu",
+    "description": "Student ID card found near cafeteria tables."
+  },
+  {
+    "id": "lf3",
+    "title": "Blue Water Bottle",
+    "type": "Lost",
+    "location": "Library Reading Area",
+    "date": "2026-07-28",
+    "status": "Unclaimed",
+    "contact": "student@universityverse.edu",
+    "description": "Blue stainless-steel water bottle left near the library reading tables."
+  },
+  {
+    "id": "lf4",
+    "title": "Black USB Drive",
+    "type": "Lost",
+    "location": "Computer Lab 2",
+    "date": "2026-07-29",
+    "status": "Unclaimed",
+    "contact": "arjun@universityverse.edu",
+    "description": "Black 32GB USB drive misplaced after a practical session."
+  },
+  {
+    "id": "lf5",
+    "title": "Student ID Card",
+    "type": "Found",
+    "location": "Academic Block Reception",
+    "date": "2026-07-30",
+    "status": "Claimed",
+    "contact": "security@universityverse.edu",
+    "description": "Student ID card found near the academic block reception desk."
+  }
+]

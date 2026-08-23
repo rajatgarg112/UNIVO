@@ -1,0 +1,32 @@
+[
+  {
+    "id": "n1",
+    "title": "Mid-Semester Examination Schedule Out",
+    "message": "The mid-semester exam timetable for B.Tech Semester 6 is now published. Exams start Aug 20th.",
+    "type": "academic",
+    "isRead": false,
+    "timestamp": "2026-07-26T10:00:00Z",
+    "priority": "high",
+    "link": "/timetable"
+  },
+  {
+    "id": "n2",
+    "title": "Google Placement Drive Announced",
+    "message": "Google Software Engineer Role drive registration open for 2027 batch. Min CGPA: 8.0.",
+    "type": "placement",
+    "isRead": false,
+    "timestamp": "2026-07-25T14:30:00Z",
+    "priority": "high",
+    "link": "/placement"
+  },
+  {
+    "id": "n3",
+    "title": "HackVerse 2026 Registration Open",
+    "message": "Register your team of 2-4 members before Aug 10th for the annual hackathon.",
+    "type": "event",
+    "isRead": true,
+    "timestamp": "2026-07-24T09:15:00Z",
+    "priority": "medium",
+    "link": "/events"
+  }
+]

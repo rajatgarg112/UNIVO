@@ -1,0 +1,8 @@
+Evaluation 1 scope
+
+The project is intentionally limited to the first marked sidebar group(s):
+Main: Dashboard, Profile
+Academic: Attendance, Timetable, Assignments, Notes
+
+Later evaluation pages/routes were removed from this working copy.
+The original complete project ZIP remains untouched.

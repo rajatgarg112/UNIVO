@@ -1,0 +1,232 @@
+/* ========================
+   AuthLayout CSS
+   ======================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.auth-wrapper {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  min-height: 100vh;
+}
+
+/* ─── Left Panel ─────────────────────────── */
+
+.auth-left {
+  background: linear-gradient(135deg, #0a0f1e 0%, #1e1b4b 60%, #0f172a 100%);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background glow blobs */
+.auth-left::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.auth-left::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.auth-left-top {
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand */
+.auth-left-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 48px;
+}
+
+.auth-left-brand-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  flex-shrink: 0;
+}
+
+.auth-left-brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+/* Title */
+.auth-left-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.auth-left-title-accent {
+  background: linear-gradient(90deg, #818cf8, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-left-subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+
+/* Features list */
+.auth-left-features {
+  list-style: none;
+}
+
+.auth-left-feature-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.auth-left-feature-icon {
+  color: #6366f1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Stat Cards */
+.auth-left-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 16px 20px;
+  flex: 1;
+  min-width: 120px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.auth-stat-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.auth-stat-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.auth-stat-label {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* ─── Right Panel ─────────────────────────── */
+
+.auth-right {
+  background: #0f172a;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.auth-right-inner {
+  width: 100%;
+  max-width: 440px;
+}
+
+/* ─── Responsive ────────────────────────── */
+
+@media (max-width: 900px) {
+  .auth-left {
+    padding: 40px;
+  }
+
+  .auth-right {
+    padding: 40px 32px;
+  }
+
+  .auth-left-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .auth-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    padding: 40px 24px;
+    min-height: 100vh;
+    border-left: none;
+  }
+}

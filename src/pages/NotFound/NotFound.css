@@ -1,0 +1,9 @@
+.notfound-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0f1e;
+  text-align: center;
+}

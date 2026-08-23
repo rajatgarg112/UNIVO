@@ -1,0 +1,230 @@
+/* ========================
+   LandingNavbar CSS
+   ======================== */
+
+.landing-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  background: transparent;
+}
+
+/* ─── Scrolled state: glassmorphism ── */
+.landing-navbar.scrolled {
+  background: rgba(10, 15, 30, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Inner container ─────────────── */
+
+.landing-navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ─── Logo ────────────────────────── */
+
+.landing-navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.landing-navbar-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.landing-navbar-logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+/* ─── Desktop Nav Links ───────────── */
+
+.landing-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.landing-navbar-link {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.landing-navbar-link:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── CTA Buttons ─────────────────── */
+
+.landing-navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.landing-navbar-btn-ghost {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-navbar-btn-ghost:hover {
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.landing-navbar-btn-primary {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-navbar-btn-primary:hover {
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.landing-navbar-btn-primary.full-width,
+.landing-navbar-btn-ghost.full-width {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+}
+
+/* ─── Hamburger ───────────────────── */
+
+.landing-navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.landing-navbar-hamburger:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+}
+
+/* ─── Mobile Menu ─────────────────── */
+
+.landing-navbar-mobile-menu {
+  background: rgba(10, 15, 30, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px 24px;
+  animation: mobileMenuSlide 0.2s ease forwards;
+}
+
+@keyframes mobileMenuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.landing-navbar-mobile-link {
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.landing-navbar-mobile-link:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.landing-navbar-mobile-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ─── Responsive ──────────────────── */
+
+@media (max-width: 768px) {
+  .landing-navbar-links,
+  .landing-navbar-cta {
+    display: none;
+  }
+
+  .landing-navbar-hamburger {
+    display: flex;
+  }
+}

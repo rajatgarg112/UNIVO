@@ -1,0 +1,299 @@
+/* ========================
+   LandingFooter CSS
+   ======================== */
+
+.landing-footer {
+  background: #050b1a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Gradient accent top border ─── */
+
+.footer-accent-bar {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #6366f1 25%,
+    #06b6d4 50%,
+    #8b5cf6 75%,
+    transparent
+  );
+}
+
+/* Subtle background glow */
+.landing-footer::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── Inner container ─────────────── */
+
+.landing-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 24px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Top Section ─────────────────── */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 60px;
+  margin-bottom: 48px;
+}
+
+/* ─── Brand Column ────────────────── */
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.footer-brand-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.footer-brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+/* ─── Newsletter ──────────────────── */
+
+.footer-newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-newsletter-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease;
+}
+
+.footer-newsletter-form:focus-within {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.footer-newsletter-input::placeholder {
+  color: #475569;
+}
+
+.footer-newsletter-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.footer-newsletter-btn:hover {
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+}
+
+.footer-newsletter-success {
+  font-size: 14px;
+  color: #10b981;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+/* ─── Link Columns Grid ───────────── */
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.footer-link-col-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+}
+
+.footer-link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.footer-link:hover {
+  color: #94a3b8;
+}
+
+/* ─── Divider ─────────────────────── */
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 32px;
+}
+
+/* ─── Bottom Bar ──────────────────── */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-social-btn:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #818cf8;
+  transform: translateY(-2px);
+}
+
+/* ─── Responsive ──────────────────── */
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .footer-brand-col {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-footer-inner {
+    padding: 48px 20px 32px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
