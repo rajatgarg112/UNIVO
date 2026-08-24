@@ -1,74 +1,107 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  GraduationCap, Mail, Phone, MapPin, Code,
-  Edit3, Check, X, Award, FileText, Globe, Link2, CheckCircle2, Circle, BookOpen, Home
+  Award, BookOpen, Check, CheckCircle2, Circle, Code, Edit3, FileText,
+  Globe, GraduationCap, Home, Link2, Mail, MapPin, Phone, X
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import initialStudents from '../../data/students.json';
 import './Profile.css';
 
+const getSavedData = (key, fallback) => {
+  try {
+    const saved = localStorage.getItem(key);
+    return saved ? JSON.parse(saved) : fallback;
+  } catch {
+    return fallback;
+  }
+};
+
+function Card({ icon: Icon, color, title, children }) {
+  return (
+    <div className="profile-card">
+      <h3 className="profile-card-title">
+        <Icon size={18} color={color} /> {title}
+      </h3>
+      {children}
+    </div>
+  );
+}
+
+function InfoBox({ label, value, className = '' }) {
+  return (
+    <div className="acad-info-box">
+      <div className="acad-info-lbl">{label}</div>
+      <div className={`acad-info-val ${className}`}>{value}</div>
+    </div>
+  );
+}
+
+function ContactItem({ icon: Icon, color, label, value, children }) {
+  return (
+    <div className="contact-item-row">
+      <Icon size={16} color={color} style={{ flexShrink: 0 }} />
+      <div>
+        <div className="acad-info-lbl">{label}</div>
+        {children || (
+          <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
+            {value}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SimpleListCard({ icon: Icon, color, title, items, emptyText }) {
+  return (
+    <Card icon={Icon} color={color} title={title}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        {items?.length ? items.map((item, index) => (
+          <div key={index} className="profile-list-item" style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px' }}>
+            <span style={{ color, fontWeight: 'bold' }}>•</span>
+            <span style={{ color: 'var(--uv-text-secondary)' }}>{item}</span>
+          </div>
+        )) : <span className="profile-empty-text">{emptyText}</span>}
+      </div>
+    </Card>
+  );
+}
+
 export default function Profile() {
   const { user, updateUser } = useAuth();
-
-  // ─── STUDENTS DATA PERSISTENCE ─────────────────────────────────────────────
-  const [studentsList, setStudentsList] = useState(() => {
-    try {
-      const saved = localStorage.getItem('uv_students_data');
-      if (saved) return JSON.parse(saved);
-    } catch (e) {}
-    return initialStudents;
+  const [studentsList, setStudentsList] = useState(() => getSavedData('uv_students_data', initialStudents));
+  const [attendancePercentage, setAttendancePercentage] = useState(85.3);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [successToast, setSuccessToast] = useState(false);
+  const [formData, setFormData] = useState({
+    phone: '', email: '', location: '', address: '', bio: '', skills: '', avatar: ''
   });
 
   useEffect(() => {
     localStorage.setItem('uv_students_data', JSON.stringify(studentsList));
   }, [studentsList]);
 
-  // Current logged-in student record
   const currentStudent = studentsList.find(s => s.id === (user?.id || 'STU001')) || studentsList[0];
 
-  // ─── ATTENDANCE CALCULATION ───────────────────────────────────────────────
-  const [attendancePercentage, setAttendancePercentage] = useState(85.3);
-
   useEffect(() => {
-    try {
-      const savedAtt = localStorage.getItem('uv_attendance_data_v2');
-      if (!savedAtt) return;
+    const attMap = getSavedData('uv_attendance_data_v2', null);
+    if (!attMap) return;
 
-      const attMap = JSON.parse(savedAtt);
-      const semKey = String(currentStudent?.semester).startsWith('Semester')
-        ? currentStudent.semester
-        : `Semester ${currentStudent?.semester || 6}`;
+    const semester = String(currentStudent?.semester || '6');
+    const semKey = semester.startsWith('Semester') ? semester : `Semester ${semester}`;
+    const subjects = attMap[semKey] || attMap['Semester 6'] || Object.values(attMap)[0] || [];
 
-      const subjects = attMap[semKey] || attMap['Semester 6'] || Object.values(attMap)[0] || [];
+    let total = 0;
+    let attended = 0;
+    subjects.forEach(subject => {
+      total += subject.attendedClasses ?? subject.totalClasses ?? subject.total ?? 0;
+      attended += subject.attendedClasses ?? subject.attended ?? 0;
+    });
 
-      let totalClasses = 0;
-      let attendedClasses = 0;
-      subjects.forEach(subj => {
-        totalClasses += subj.attendedClasses ?? subj.totalClasses ?? subj.total ?? 0;
-        attendedClasses += subj.attendedClasses ?? subj.attended ?? 0;
-      });
-
-      if (totalClasses > 0) {
-        setAttendancePercentage(parseFloat(((attendedClasses / totalClasses) * 100).toFixed(1)));
-      }
-    } catch (e) {}
+    if (total) setAttendancePercentage(Number(((attended / total) * 100).toFixed(1)));
   }, [currentStudent?.semester]);
 
-  // ─── MODAL & FORM STATE ───────────────────────────────────────────────────
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [successToast, setSuccessToast] = useState(false);
-
-  const [formData, setFormData] = useState({
-    phone: '',
-    email: '',
-    location: '',
-    address: '',
-    bio: '',
-    skills: '',
-    avatar: ''
-  });
-
-  const handleOpenModal = () => {
+  const openModal = () => {
     setFormData({
       phone: currentStudent.phone || '',
       email: currentStudent.email || '',
@@ -81,64 +114,45 @@ export default function Profile() {
     setIsModalOpen(true);
   };
 
-  const handleSave = (e) => {
-    e.preventDefault();
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
-    const updatedList = studentsList.map(s => {
-      if (s.id !== currentStudent.id) return s;
-      return {
-        ...s,
-        phone: formData.phone,
-        email: formData.email,
-        location: formData.location,
-        address: formData.address,
-        bio: formData.bio,
-        skills: formData.skills.split(',').map(item => item.trim()).filter(Boolean),
-        avatar: formData.avatar
-      };
-    });
+  const handleSave = event => {
+    event.preventDefault();
+    const updatedStudent = {
+      ...currentStudent,
+      ...formData,
+      skills: formData.skills.split(',').map(skill => skill.trim()).filter(Boolean)
+    };
 
-    setStudentsList(updatedList);
+    setStudentsList(list => list.map(student => (
+      student.id === currentStudent.id ? updatedStudent : student
+    )));
     updateUser({ email: formData.email, avatar: formData.avatar });
     setIsModalOpen(false);
-
     setSuccessToast(true);
     setTimeout(() => setSuccessToast(false), 3500);
   };
 
-  // Helper for student initials avatar fallback
   const initials = currentStudent.name
-    ? currentStudent.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+    ? currentStudent.name.split(' ').map(name => name[0]).join('').toUpperCase().slice(0, 2)
     : 'ST';
 
-  // ─── PROFILE COMPLETION CALCULATIONS ──────────────────────────────────────
   const completionItems = [
-    {
-      label: 'Basic Information (Name, Department, Roll No)',
-      completed: Boolean(currentStudent.name && currentStudent.department && currentStudent.rollNo)
-    },
-    {
-      label: 'Academic Information (CGPA, Credits)',
-      completed: Boolean(currentStudent.cgpa && currentStudent.totalCredits && currentStudent.completedCredits)
-    },
-    {
-      label: 'Contact & Address details (Phone, Email, Address)',
-      completed: Boolean(currentStudent.phone && currentStudent.email && currentStudent.address)
-    },
-    {
-      label: 'Personal Bio & Skills',
-      completed: Boolean(currentStudent.bio && currentStudent.skills && currentStudent.skills.length > 0)
-    }
-  ];
+    ['Basic Information (Name, Department, Roll No)', currentStudent.name && currentStudent.department && currentStudent.rollNo],
+    ['Academic Information (CGPA, Credits)', currentStudent.cgpa && currentStudent.totalCredits && currentStudent.completedCredits],
+    ['Contact & Address details (Phone, Email, Address)', currentStudent.phone && currentStudent.email && currentStudent.address],
+    ['Personal Bio & Skills', currentStudent.bio && currentStudent.skills?.length > 0]
+  ].map(([label, completed]) => ({ label, completed: Boolean(completed) }));
 
-  const completedCount = completionItems.filter(item => item.completed).length;
-  const completionPercent = Math.round((completedCount / completionItems.length) * 100);
+  const completionPercent = Math.round(
+    completionItems.filter(item => item.completed).length / completionItems.length * 100
+  );
 
-  // ───────────────────────────────────────────────────────────────────────────
   return (
     <div className="profile-page">
-
-      {/* ── PAGE HEADER ── */}
       <div className="profile-header">
         <div>
           <h1 className="profile-title">Student Profile</h1>
@@ -146,22 +160,18 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* ── SUCCESS TOAST NOTIFICATION ── */}
       {successToast && (
         <div className="profile-alert-success">
           <Check size={18} /> Profile updated successfully
         </div>
       )}
 
-      {/* ── 1. STUDENT PROFILE HEADER CARD ── */}
       <div className="profile-hero">
         <div className="profile-hero-left">
           <div className="profile-avatar">
             {currentStudent.avatar ? (
               <img src={currentStudent.avatar} alt={currentStudent.name} className="profile-avatar-img" />
-            ) : (
-              initials
-            )}
+            ) : initials}
           </div>
           <div>
             <h2 className="profile-name">{currentStudent.name}</h2>
@@ -175,65 +185,25 @@ export default function Profile() {
             </div>
           </div>
         </div>
-
-        <button onClick={handleOpenModal} className="edit-button">
+        <button onClick={openModal} className="edit-button">
           <Edit3 size={15} /> Edit Personal Info
         </button>
       </div>
 
-      {/* ── TWO-COLUMN MAIN GRID ── */}
       <div className="profile-grid-two-col">
-
-        {/* ── LEFT COLUMN ── */}
         <div className="profile-col-stack">
-
-          {/* 2. ACADEMIC OVERVIEW CARD */}
-          <div className="profile-card">
-            <h3 className="profile-card-title">
-              <GraduationCap size={18} color="#6366f1" /> Academic Overview
-            </h3>
-
+          <Card icon={GraduationCap} color="#6366f1" title="Academic Overview">
             <div className="academic-info-grid">
-              <div className="acad-info-box">
-                <div className="acad-info-lbl">Current CGPA</div>
-                <div className="acad-info-val acad-color-cgpa">{currentStudent.cgpa}</div>
-              </div>
-
-              <div className="acad-info-box">
-                <div className="acad-info-lbl">Attendance</div>
-                <div className="acad-info-val acad-color-att">{attendancePercentage}%</div>
-              </div>
-
-              <div className="acad-info-box">
-                <div className="acad-info-lbl">Semester</div>
-                <div className="acad-info-val">Semester {currentStudent.semester}</div>
-              </div>
-
-              <div className="acad-info-box">
-                <div className="acad-info-lbl">Section</div>
-                <div className="acad-info-val">Section {currentStudent.section || 'A'}</div>
-              </div>
-
-              <div className="acad-info-box">
-                <div className="acad-info-lbl">Academic Year</div>
-                <div className="acad-info-val">Year {currentStudent.year || '3'}</div>
-              </div>
-
-              <div className="acad-info-box">
-                <div className="acad-info-lbl">Credits Completed</div>
-                <div className="acad-info-val acad-color-credits">
-                  {currentStudent.completedCredits} / {currentStudent.totalCredits || '180'}
-                </div>
-              </div>
+              <InfoBox label="Current CGPA" value={currentStudent.cgpa} className="acad-color-cgpa" />
+              <InfoBox label="Attendance" value={`${attendancePercentage}%`} className="acad-color-att" />
+              <InfoBox label="Semester" value={`Semester ${currentStudent.semester}`} />
+              <InfoBox label="Section" value={`Section ${currentStudent.section || 'A'}`} />
+              <InfoBox label="Academic Year" value={`Year ${currentStudent.year || '3'}`} />
+              <InfoBox label="Credits Completed" value={`${currentStudent.completedCredits} / ${currentStudent.totalCredits || '180'}`} className="acad-color-credits" />
             </div>
-          </div>
+          </Card>
 
-          {/* 3. PROFILE COMPLETION CARD */}
-          <div className="profile-card">
-            <h3 className="profile-card-title">
-              <CheckCircle2 size={18} color="#10b981" /> Profile Completion
-            </h3>
-
+          <Card icon={CheckCircle2} color="#10b981" title="Profile Completion">
             <div style={{ marginBottom: '16px' }}>
               <div className="completion-header">
                 <span className="completion-title">Overall Progress</span>
@@ -243,10 +213,9 @@ export default function Profile() {
                 <div className="completion-bar-fill" style={{ width: `${completionPercent}%` }} />
               </div>
             </div>
-
             <div className="completion-items-list">
-              {completionItems.map((item, idx) => (
-                <div key={idx} className="completion-item">
+              {completionItems.map((item, index) => (
+                <div key={index} className="completion-item">
                   {item.completed ? (
                     <CheckCircle2 size={16} color="#10b981" style={{ flexShrink: 0 }} />
                   ) : (
@@ -258,92 +227,36 @@ export default function Profile() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
-          {/* 5. SKILLS & EXPERTISE CARD */}
-          <div className="profile-card">
-            <h3 className="profile-card-title">
-              <Code size={18} color="#06b6d4" /> Skills & Expertise
-            </h3>
-
+          <Card icon={Code} color="#06b6d4" title="Skills & Expertise">
             <div className="skills-wrap">
-              {currentStudent.skills && currentStudent.skills.length > 0 ? (
-                currentStudent.skills.map((skill, idx) => (
-                  <span key={idx} className="skill-badge">
-                    {skill}
-                  </span>
-                ))
-              ) : (
+              {currentStudent.skills?.length ? currentStudent.skills.map((skill, index) => (
+                <span key={index} className="skill-badge">{skill}</span>
+              )) : (
                 <span className="profile-empty-text">No skills added. Click "Edit Personal Info" to add skills.</span>
               )}
             </div>
-          </div>
-
+          </Card>
         </div>
 
-        {/* ── RIGHT COLUMN ── */}
         <div className="profile-col-stack">
-
-          {/* 4. PERSONAL & CONTACT INFORMATION CARD */}
-          <div className="profile-card">
-            <h3 className="profile-card-title">
-              <Mail size={18} color="#10b981" /> Personal & Contact Information
-            </h3>
-
+          <Card icon={Mail} color="#10b981" title="Personal & Contact Information">
             <div className="contact-info-list">
-              
-              <div className="contact-item-row">
-                <Mail size={16} color="var(--uv-primary)" style={{ flexShrink: 0 }} />
-                <div>
-                  <div className="acad-info-lbl">University Email</div>
-                  <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
-                    {currentStudent.email}
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-item-row">
-                <Phone size={16} color="var(--uv-success)" style={{ flexShrink: 0 }} />
-                <div>
-                  <div className="acad-info-lbl">Phone Number</div>
-                  <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
-                    {currentStudent.phone || 'Not Specified'}
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-item-row">
-                <MapPin size={16} color="var(--uv-warning)" style={{ flexShrink: 0 }} />
-                <div>
-                  <div className="acad-info-lbl">Current Location</div>
-                  <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
-                    {currentStudent.location || 'Chandigarh, India'}
-                  </div>
-                </div>
-              </div>
+              <ContactItem icon={Mail} color="var(--uv-primary)" label="University Email" value={currentStudent.email} />
+              <ContactItem icon={Phone} color="var(--uv-success)" label="Phone Number" value={currentStudent.phone || 'Not Specified'} />
+              <ContactItem icon={MapPin} color="var(--uv-warning)" label="Current Location" value={currentStudent.location || 'Chandigarh, India'} />
 
               {currentStudent.address && (
-                <div className="contact-item-row">
-                  <BookOpen size={16} color="#ec4899" style={{ flexShrink: 0 }} />
-                  <div>
-                    <div className="acad-info-lbl">Permanent Address</div>
-                    <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)', lineHeight: '1.4' }}>
-                      {currentStudent.address}
-                    </div>
+                <ContactItem icon={BookOpen} color="#ec4899" label="Permanent Address">
+                  <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)', lineHeight: '1.4' }}>
+                    {currentStudent.address}
                   </div>
-                </div>
+                </ContactItem>
               )}
 
               {currentStudent.hostelRoom && (
-                <div className="contact-item-row">
-                  <Home size={16} color="#6366f1" style={{ flexShrink: 0 }} />
-                  <div>
-                    <div className="acad-info-lbl">Hostel Accommodation</div>
-                    <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
-                      Room {currentStudent.hostelRoom}
-                    </div>
-                  </div>
-                </div>
+                <ContactItem icon={Home} color="#6366f1" label="Hostel Accommodation" value={`Room ${currentStudent.hostelRoom}`} />
               )}
 
               <div className="contact-item-row contact-bio-box">
@@ -352,88 +265,47 @@ export default function Profile() {
                   {currentStudent.bio || 'Computer Science student passionate about software engineering.'}
                 </p>
               </div>
-
             </div>
-          </div>
+          </Card>
 
-          {/* 6. KEY ACHIEVEMENTS CARD */}
-          <div className="profile-card">
-            <h3 className="profile-card-title">
-              <Award size={18} color="#f59e0b" /> Key Achievements
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {currentStudent.achievements && currentStudent.achievements.length > 0 ? (
-                currentStudent.achievements.map((ach, idx) => (
-                  <div key={idx} className="profile-list-item" style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px' }}>
-                    <span style={{ color: '#f59e0b', fontWeight: 'bold' }}>•</span>
-                    <span style={{ color: 'var(--uv-text-secondary)' }}>{ach}</span>
-                  </div>
-                ))
-              ) : (
-                <span className="profile-empty-text">No achievements recorded.</span>
-              )}
-            </div>
-          </div>
+          <SimpleListCard
+            icon={Award}
+            color="#f59e0b"
+            title="Key Achievements"
+            items={currentStudent.achievements}
+            emptyText="No achievements recorded."
+          />
 
-          {/* 7. CERTIFICATIONS CARD */}
-          <div className="profile-card">
-            <h3 className="profile-card-title">
-              <FileText size={18} color="#a855f7" /> Certifications
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {currentStudent.certificates && currentStudent.certificates.length > 0 ? (
-                currentStudent.certificates.map((cert, idx) => (
-                  <div key={idx} className="profile-list-item" style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px' }}>
-                    <span style={{ color: '#a855f7', fontWeight: 'bold' }}>•</span>
-                    <span style={{ color: 'var(--uv-text-secondary)' }}>{cert}</span>
-                  </div>
-                ))
-              ) : (
-                <span className="profile-empty-text">No certifications listed.</span>
-              )}
-            </div>
-          </div>
+          <SimpleListCard
+            icon={FileText}
+            color="#a855f7"
+            title="Certifications"
+            items={currentStudent.certificates}
+            emptyText="No certifications listed."
+          />
 
-          {/* 8. PROFESSIONAL PROFILES CARD */}
           {currentStudent.socialLinks && (currentStudent.socialLinks.linkedin || currentStudent.socialLinks.github) && (
-            <div className="profile-card">
-              <h3 className="profile-card-title">
-                <Globe size={18} color="#06b6d4" /> Professional Profiles
-              </h3>
+            <Card icon={Globe} color="#06b6d4" title="Professional Profiles">
               <div className="social-links-wrap">
                 {currentStudent.socialLinks.linkedin && (
-                  <a
-                    href={currentStudent.socialLinks.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-btn linkedin-btn social-btn-link"
-                  >
+                  <a href={currentStudent.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-btn linkedin-btn social-btn-link">
                     <Link2 size={15} /> LinkedIn Profile
                   </a>
                 )}
                 {currentStudent.socialLinks.github && (
-                  <a
-                    href={currentStudent.socialLinks.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-btn github-btn social-btn-link"
-                  >
+                  <a href={currentStudent.socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-btn github-btn social-btn-link">
                     <Code size={15} /> GitHub Profile
                   </a>
                 )}
               </div>
-            </div>
+            </Card>
           )}
-
         </div>
-
       </div>
 
-      {/* ── EDIT PROFILE MODAL ── */}
       {isModalOpen && (
         <div className="profile-modal-overlay">
           <div className="profile-modal-card">
-
             <div className="modal-header-row">
               <h3 className="modal-title-text">Edit Personal Information</h3>
               <button onClick={() => setIsModalOpen(false)} className="modal-close-btn-icon">
@@ -442,119 +314,47 @@ export default function Profile() {
             </div>
 
             <form onSubmit={handleSave}>
-
-              {/* Read-only student profile summary */}
               <div className="modal-readonly-header">
                 <div className="modal-readonly-tag">Student Profile (Read-Only)</div>
                 <div className="modal-readonly-name">{currentStudent.name}</div>
-                <div className="modal-readonly-meta">
-                  Roll No: {currentStudent.rollNo} • {currentStudent.department}
-                </div>
+                <div className="modal-readonly-meta">Roll No: {currentStudent.rollNo} • {currentStudent.department}</div>
               </div>
 
               <div className="modal-grid-2col">
-                <div>
-                  <label htmlFor="edit-email" className="acad-info-lbl modal-field-lbl">Personal Email</label>
-                  <input
-                    id="edit-email"
-                    type="email"
-                    className="modal-input"
-                    value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="edit-phone" className="acad-info-lbl modal-field-lbl">Phone Number</label>
-                  <input
-                    id="edit-phone"
-                    type="text"
-                    className="modal-input"
-                    value={formData.phone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                    required
-                  />
-                </div>
+                <EditField id="email" label="Personal Email" type="email" value={formData.email} onChange={handleChange} required />
+                <EditField id="phone" label="Phone Number" value={formData.phone} onChange={handleChange} required />
               </div>
-
               <div className="modal-grid-2col">
-                <div>
-                  <label htmlFor="edit-location" className="acad-info-lbl modal-field-lbl">Location</label>
-                  <input
-                    id="edit-location"
-                    type="text"
-                    className="modal-input"
-                    value={formData.location}
-                    onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="edit-avatar" className="acad-info-lbl modal-field-lbl">Profile Image URL</label>
-                  <input
-                    id="edit-avatar"
-                    type="text"
-                    className="modal-input"
-                    placeholder="https://example.com/avatar.jpg"
-                    value={formData.avatar}
-                    onChange={(e) => setFormData(prev => ({ ...prev, avatar: e.target.value }))}
-                  />
-                </div>
+                <EditField id="location" label="Location" value={formData.location} onChange={handleChange} required />
+                <EditField id="avatar" label="Profile Image URL" placeholder="https://example.com/avatar.jpg" value={formData.avatar} onChange={handleChange} />
               </div>
 
-              <label htmlFor="edit-address" className="acad-info-lbl modal-field-lbl">Permanent Address</label>
-              <input
-                id="edit-address"
-                type="text"
-                className="modal-input"
-                value={formData.address}
-                onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
-              />
+              <EditField id="address" label="Permanent Address" value={formData.address} onChange={handleChange} />
+              <EditField id="bio" label="Biography" as="textarea" value={formData.bio} onChange={handleChange} />
+              <EditField id="skills" label="Skills (comma-separated)" placeholder="React, Python, Machine Learning..." value={formData.skills} onChange={handleChange} />
 
-              <label htmlFor="edit-bio" className="acad-info-lbl modal-field-lbl">Biography</label>
-              <textarea
-                id="edit-bio"
-                className="modal-input modal-textarea"
-                value={formData.bio}
-                onChange={(e) => setFormData(prev => ({ ...prev, bio: e.target.value }))}
-              />
-
-              <label htmlFor="edit-skills" className="acad-info-lbl modal-field-lbl">Skills (comma-separated)</label>
-              <input
-                id="edit-skills"
-                type="text"
-                className="modal-input"
-                placeholder="React, Python, Machine Learning..."
-                value={formData.skills}
-                onChange={(e) => setFormData(prev => ({ ...prev, skills: e.target.value }))}
-              />
-
-              {/* Read-only note */}
               <div className="modal-note-box">
                 <strong>Note:</strong> Academic records (Name, Roll No, CGPA, Semester, Section, and Hostel room) can only be updated by the university administration.
               </div>
 
               <div className="modal-actions-row">
-                <button
-                  type="button"
-                  onClick={() => setIsModalOpen(false)}
-                  className="btn-modal-cancel"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="btn-modal-save"
-                >
-                  Save Profile
-                </button>
+                <button type="button" onClick={() => setIsModalOpen(false)} className="btn-modal-cancel">Cancel</button>
+                <button type="submit" className="btn-modal-save">Save Profile</button>
               </div>
-
             </form>
           </div>
         </div>
       )}
+    </div>
+  );
+}
 
+function EditField({ id, label, type = 'text', as = 'input', ...props }) {
+  const Field = as;
+  return (
+    <div>
+      <label htmlFor={`edit-${id}`} className="acad-info-lbl modal-field-lbl">{label}</label>
+      <Field id={`edit-${id}`} name={id} type={as === 'input' ? type : undefined} className={`modal-input ${as === 'textarea' ? 'modal-textarea' : ''}`} {...props} />
     </div>
   );
 }
