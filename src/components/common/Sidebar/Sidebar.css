@@ -5,7 +5,7 @@
 .sidebar {
   width: 260px;
   min-height: 100vh;
-  background: #0f172a;
+  background: #0B1220;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@ body.light-theme .sidebar {
 .sidebar-logo-icon {
   width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  background: linear-gradient(135deg, #D71920, #B5121B);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ body.light-theme .sidebar {
 }
 
 body.light-theme .sidebar-logo-text {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .sidebar-logo {
@@ -113,14 +113,14 @@ body.light-theme .sidebar-nav-item {
 }
 
 body.light-theme .sidebar-nav-item:hover {
-  background: rgba(99, 102, 241, 0.08);
-  color: #4f46e5;
+  background: rgba(215, 25, 32, 0.08);
+  color: #B5121B;
 }
 
 body.light-theme .sidebar-nav-item.active {
-  background: rgba(79, 70, 229, 0.1);
-  color: #4f46e5;
-  border-left-color: #4f46e5;
+  background: rgba(215, 25, 32, 0.1);
+  color: #B5121B;
+  border-left-color: #B5121B;
 }
 
 body.light-theme .sidebar-user {
@@ -128,7 +128,7 @@ body.light-theme .sidebar-user {
 }
 
 body.light-theme .sidebar-user-name {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 .sidebar.collapsed .sidebar-logo-text {
@@ -211,18 +211,18 @@ body.light-theme .sidebar-user-name {
 }
 
 .sidebar-nav-item:hover {
-  background: rgba(99, 102, 241, 0.1);
-  color: #a5b4fc;
+  background: rgba(215, 25, 32, 0.1);
+  color: #F07075;
 }
 
 .sidebar-nav-item.active {
   background: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.2),
+    rgba(215, 25, 32, 0.2),
     rgba(6, 182, 212, 0.08)
   );
-  color: #818cf8;
-  border-left-color: #6366f1;
+  color: #E8333A;
+  border-left-color: #D71920;
 }
 
 .sidebar-nav-icon {
@@ -255,7 +255,7 @@ body.light-theme .sidebar-user-name {
 }
 
 .sidebar.collapsed .sidebar-nav-item.active {
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(215, 25, 32, 0.2);
   border-left-color: transparent;
   border-radius: 10px;
 }
@@ -275,7 +275,7 @@ body.light-theme .sidebar-user-name {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #D71920, #E8333A);
   display: flex;
   align-items: center;
   justify-content: center;

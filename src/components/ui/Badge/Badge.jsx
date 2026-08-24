@@ -12,7 +12,7 @@ const Badge = ({
     warning: '#f59e0b',
     danger:  '#ef4444',
     info:    '#06b6d4',
-    purple:  '#818cf8',
+    purple:  '#E8333A',
     default: '#94a3b8',
   };
 

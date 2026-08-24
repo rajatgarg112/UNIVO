@@ -43,8 +43,8 @@ const LandingNavbar = () => {
       <div className="landing-navbar-inner">
         {/* ── Logo ── */}
         <Link to="/" className="landing-navbar-logo">
-          <div className="landing-navbar-logo-icon">UV</div>
-          <span className="landing-navbar-logo-text">UniversityVerse</span>
+          <div className="landing-navbar-logo-icon">U</div>
+          <span className="landing-navbar-logo-text">UNIVO</span>
         </Link>
 
         {/* ── Desktop nav links ── */}
@@ -65,7 +65,7 @@ const LandingNavbar = () => {
             title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
             onClick={toggleTheme}
           >
-            {isDark ? <Sun size={18} color="#f59e0b" /> : <Moon size={18} color="#6366f1" />}
+            {isDark ? <Sun size={18} color="#f59e0b" /> : <Moon size={18} color="#64748b" />}
           </button>
           <Link to="/login" className="landing-navbar-btn-ghost">
             Login

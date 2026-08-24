@@ -78,8 +78,8 @@ const LandingFooter = () => {
           {/* Brand + tagline + newsletter */}
           <div className="footer-brand-col">
             <Link to="/" className="footer-brand">
-              <div className="footer-brand-icon">UV</div>
-              <span className="footer-brand-name">UniversityVerse</span>
+              <div className="footer-brand-icon">U</div>
+              <span className="footer-brand-name">UNIVO</span>
             </Link>
             <p className="footer-tagline">
               Transforming the university experience — one campus at a time.
@@ -139,7 +139,7 @@ const LandingFooter = () => {
         {/* ── Bottom bar ── */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} UniversityVerse. All rights reserved.
+            © {new Date().getFullYear()} UNIVO. All rights reserved.
             Built with ❤️ for students everywhere.
           </p>
           <div className="footer-socials">

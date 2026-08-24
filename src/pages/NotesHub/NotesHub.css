@@ -10,7 +10,7 @@ body.light-theme .notes-page {
 }
 
 body.light-theme .note-title {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .note-desc,
@@ -49,7 +49,7 @@ body.light-theme .note-card {
 }
 
 .note-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -63,7 +63,7 @@ body.light-theme .note-card {
 
 .note-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(99, 102, 241, 0.35);
+  border-color: rgba(215, 25, 32, 0.35);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
 }
 
@@ -91,8 +91,8 @@ body.light-theme .note-card {
 .subject-badge {
   font-size: 11px;
   font-weight: 700;
-  color: #6366f1;
-  background: rgba(99, 102, 241, 0.15);
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.15);
   padding: 3px 10px;
   border-radius: 999px;
   letter-spacing: 0.2px;
@@ -136,9 +136,9 @@ body.light-theme .note-card {
 .download-btn {
   width: 100%;
   padding: 9px 12px;
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
+  border: 1px solid rgba(215, 25, 32, 0.25);
   border-radius: 10px;
   font-size: 13px;
   font-weight: 700;
@@ -151,6 +151,6 @@ body.light-theme .note-card {
 }
 
 .download-btn:hover {
-  background: #6366f1;
+  background: #D71920;
   color: #ffffff;
 }

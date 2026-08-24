@@ -13,7 +13,7 @@ body.light-theme .meta-strong-text,
 body.light-theme .modal-title,
 body.light-theme .modal-value,
 body.light-theme .btn-view-details {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .assignments-page-subtitle,
@@ -42,7 +42,7 @@ body.light-theme .submit-readonly-title,
 body.light-theme .submit-input-field {
   background: #f8fafc;
   border-color: #e2e8f0;
-  color: #0f172a;
+  color: #0B1220;
 }
 
 @keyframes fadeIn {
@@ -57,7 +57,7 @@ body.light-theme .submit-input-field {
 }
 
 .assignment-item {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
@@ -79,8 +79,8 @@ body.light-theme .submit-input-field {
 .subject-badge {
   font-size: 11px;
   font-weight: 700;
-  color: #6366f1;
-  background: rgba(99, 102, 241, 0.15);
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.15);
   padding: 4px 10px;
   border-radius: 999px;
   letter-spacing: 0.2px;
@@ -154,7 +154,7 @@ body.light-theme .submit-input-field {
 }
 
 .meta-due-text {
-  color: #6366f1;
+  color: #D71920;
   font-weight: 700;
 }
 
@@ -191,8 +191,8 @@ body.light-theme .submit-input-field {
 }
 
 .btn-toggle-status.graded-btn {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
 }
 
 /* View Details button on each assignment card */
@@ -200,7 +200,7 @@ body.light-theme .submit-input-field {
   padding: 6px 14px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0f172a;
+  background: #0B1220;
   color: #f8fafc;
   font-size: 12px;
   font-weight: 700;
@@ -225,7 +225,7 @@ body.light-theme .submit-input-field {
 }
 
 .search-input-field:focus {
-  border-color: #6366f1;
+  border-color: #D71920;
 }
 
 .filter-select-field {
@@ -268,7 +268,7 @@ body.light-theme .submit-input-field {
 }
 
 .assignments-stat-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
@@ -328,7 +328,7 @@ body.light-theme .submit-input-field {
 
 /* The white/dark card that contains the modal content */
 .modal-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   width: 100%;
@@ -474,14 +474,14 @@ body.light-theme .submit-input-field {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   text-decoration: none;
-  color: #6366f1;
+  color: #D71920;
   font-size: 12px;
   font-weight: 600;
   transition: background 0.15s ease;
 }
 
 .attachment-chip:hover {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(215, 25, 32, 0.15);
 }
 
 /* Footer row with the Close / Submit buttons */
@@ -496,7 +496,7 @@ body.light-theme .submit-input-field {
 /* The solid "Close" button at the bottom of the View Details modal */
 .btn-modal-close {
   padding: 8px 22px;
-  background: #6366f1;
+  background: #D71920;
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -528,7 +528,7 @@ body.light-theme .submit-input-field {
   margin: 0;
 }
 
-.stat-val-total { color: #6366f1; }
+.stat-val-total { color: #D71920; }
 .stat-val-pending { color: #f59e0b; }
 .stat-val-submitted { color: #06b6d4; }
 .stat-val-graded { color: #10b981; }
@@ -558,7 +558,7 @@ body.light-theme .submit-input-field {
 .assignments-empty-box {
   text-align: center;
   padding: 50px 20px;
-  background: #0f172a;
+  background: #0B1220;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #94a3b8;
@@ -575,23 +575,23 @@ body.light-theme .submit-input-field {
 }
 
 .modal-instructions-box {
-  background: rgba(99, 102, 241, 0.15);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(215, 25, 32, 0.15);
+  border: 1px solid rgba(215, 25, 32, 0.2);
   border-radius: 10px;
   padding: 10px 14px;
 }
 
 .modal-instructions-lbl {
-  color: #6366f1;
+  color: #D71920;
 }
 
 .modal-instructions-text {
-  color: #6366f1;
+  color: #D71920;
   margin: 0;
 }
 
 .modal-meta-due {
-  color: #6366f1;
+  color: #D71920;
   font-weight: 700;
 }
 
@@ -702,7 +702,7 @@ body.light-theme .submit-input-field {
 
 .btn-submit-confirm {
   padding: 8px 20px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #D71920, #E8333A);
   color: #fff;
   border: none;
   border-radius: 10px;

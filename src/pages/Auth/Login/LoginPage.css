@@ -1,7 +1,7 @@
 .login-card {
   width: 100%;
   max-width: 440px;
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 36px 32px;
@@ -52,9 +52,9 @@
 }
 
 .role-tab.active {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #D71920, #E8333A);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
 }
 
 /* Form Controls */
@@ -98,8 +98,8 @@
 }
 
 .login-input:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  border-color: #D71920;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.18);
 }
 
 .toggle-pass-btn {
@@ -146,7 +146,7 @@
 .login-btn {
   width: 100%;
   padding: 13px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #D71920, #E8333A);
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -155,12 +155,12 @@
   cursor: pointer;
   transition: all 0.25 ease;
   margin-top: 6px;
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 8px 20px rgba(215, 25, 32, 0.35);
 }
 
 .login-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 12px 28px rgba(215, 25, 32, 0.45);
 }
 
 /* Demo Section */
@@ -190,7 +190,7 @@
   padding: 9px 12px;
   background: #e0e7ff;
   color: #3730a3;
-  border: 1px solid #818cf8;
+  border: 1px solid #E8333A;
   border-radius: 10px;
   font-size: 12px;
   font-weight: 700;
@@ -202,14 +202,14 @@
 .demo-btn:hover {
   background: #c7d2fe;
   color: #1e1b4b;
-  border-color: #6366f1;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  border-color: #D71920;
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.25);
   transform: translateY(-1px);
 }
 
 .demo-btn.active {
-  background: #4f46e5;
+  background: #B5121B;
   color: #ffffff;
-  border-color: #4338ca;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+  border-color: #8B0E14;
+  box-shadow: 0 4px 14px rgba(215, 25, 32, 0.4);
 }

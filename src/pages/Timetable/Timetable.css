@@ -15,7 +15,7 @@ body.light-theme .slot-time-start,
 body.light-theme .class-subject,
 body.light-theme .week-card-subject,
 body.light-theme .timetable-modal-subject {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .tt-action-btn,
@@ -38,7 +38,7 @@ body.light-theme .tt-action-btn {
 
 body.light-theme .tt-action-btn:hover {
   background: #f8fafc;
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .day-tab {
@@ -47,7 +47,7 @@ body.light-theme .day-tab {
 
 body.light-theme .day-tab:hover {
   background: #f8fafc;
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .week-day-column,
@@ -114,7 +114,7 @@ body.light-theme .timetable-modal-body {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: #0f172a;
+  background: #0B1220;
   color: #cbd5e1;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
@@ -131,10 +131,10 @@ body.light-theme .timetable-modal-body {
 }
 
 .tt-action-btn.active {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #D71920, #E8333A);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.35);
 }
 
 /* ── Day Tabs ── */
@@ -142,7 +142,7 @@ body.light-theme .timetable-modal-body {
   display: flex;
   gap: 6px;
   margin-bottom: 24px;
-  background: #0f172a;
+  background: #0B1220;
   padding: 6px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -172,13 +172,13 @@ body.light-theme .timetable-modal-body {
 }
 
 .day-tab.active {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
   font-weight: 700;
 }
 
 .day-tab.today-tab .day-tab-name {
-  color: #6366f1;
+  color: #D71920;
   font-weight: 700;
 }
 
@@ -195,7 +195,7 @@ body.light-theme .timetable-modal-body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #6366f1;
+  background: #D71920;
   margin-top: 2px;
 }
 
@@ -244,14 +244,14 @@ body.light-theme .timetable-modal-body {
   height: 12px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid #0a0f1e;
+  border: 2px solid #070B14;
   z-index: 1;
   flex-shrink: 0;
 }
 
 .slot-dot.current-dot {
-  background: #6366f1;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  background: #D71920;
+  box-shadow: 0 0 0 4px rgba(215, 25, 32, 0.2);
 }
 
 .slot-line {
@@ -268,10 +268,10 @@ body.light-theme .timetable-modal-body {
 
 /* ── Class Card (Day View) ── */
 .class-card {
-  background: #0f172a;
+  background: #0B1220;
   border-radius: 14px;
   padding: 16px 20px;
-  border-left: 4px solid #6366f1;
+  border-left: 4px solid #D71920;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -285,8 +285,8 @@ body.light-theme .timetable-modal-body {
 }
 
 .class-card.current-class {
-  border-left-color: #6366f1;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3), 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-left-color: #D71920;
+  box-shadow: 0 0 0 2px rgba(215, 25, 32, 0.3), 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .class-card.type-lab { border-left-color: #06b6d4; }
@@ -309,7 +309,7 @@ body.light-theme .timetable-modal-body {
 
 .class-code {
   font-size: 12px;
-  color: #6366f1;
+  color: #D71920;
   font-weight: 700;
   margin: 0;
 }
@@ -330,8 +330,8 @@ body.light-theme .timetable-modal-body {
 }
 
 .type-badge.lecture {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
 }
 
 .type-badge.lab {
@@ -352,8 +352,8 @@ body.light-theme .timetable-modal-body {
 .current-badge {
   font-size: 11px;
   font-weight: 700;
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
   padding: 4px 10px;
   border-radius: 6px;
   animation: pulse 2s infinite;
@@ -383,7 +383,7 @@ body.light-theme .timetable-modal-body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #0f172a;
+  background: #0B1220;
   border: 1px dashed rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 12px 18px;
@@ -402,7 +402,7 @@ body.light-theme .timetable-modal-body {
   padding: 60px 20px;
   color: #64748b;
   gap: 12px;
-  background: #0f172a;
+  background: #0B1220;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -414,12 +414,12 @@ body.light-theme .timetable-modal-body {
 
 .schedule-empty-icon {
   margin-bottom: 12px;
-  color: #6366f1;
+  color: #D71920;
 }
 
 /* ── 6-Column Equal Width Week View ── */
 .week-view-container {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -455,7 +455,7 @@ body.light-theme .timetable-modal-body {
 .week-day-title {
   font-size: 14px;
   font-weight: 700;
-  color: #6366f1;
+  color: #D71920;
 }
 
 .week-day-count {
@@ -473,9 +473,9 @@ body.light-theme .timetable-modal-body {
 }
 
 .week-class-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 3.5px solid #6366f1;
+  border-left: 3.5px solid #D71920;
   border-radius: 8px;
   padding: 8px 10px;
   display: flex;
@@ -518,8 +518,8 @@ body.light-theme .timetable-modal-body {
 .week-card-code {
   font-size: 10px;
   font-weight: 800;
-  color: #6366f1;
-  background: rgba(99, 102, 241, 0.15);
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.15);
   padding: 1px 5px;
   border-radius: 4px;
   flex-shrink: 0;
@@ -555,7 +555,7 @@ body.light-theme .timetable-modal-body {
   align-items: center;
   justify-content: center;
   padding: 24px 10px;
-  background: #0f172a;
+  background: #0B1220;
   border: 1px dashed rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   color: #64748b;
@@ -588,7 +588,7 @@ body.light-theme .timetable-modal-body {
 }
 
 .timetable-modal-card {
-  background: #0f172a;
+  background: #0B1220;
   padding: 24px;
   border-radius: 16px;
   width: 100%;
@@ -619,7 +619,7 @@ body.light-theme .timetable-modal-body {
 .timetable-modal-code {
   font-size: 13px;
   font-weight: 700;
-  color: #6366f1;
+  color: #D71920;
 }
 
 .timetable-modal-body {
@@ -641,7 +641,7 @@ body.light-theme .timetable-modal-body {
   color: #cbd5e1;
 }
 
-.timetable-modal-row .icon-clock { color: #6366f1; }
+.timetable-modal-row .icon-clock { color: #D71920; }
 .timetable-modal-row .icon-room { color: #06b6d4; }
 .timetable-modal-row .icon-user { color: #10b981; }
 
@@ -652,7 +652,7 @@ body.light-theme .timetable-modal-body {
 
 .timetable-modal-close-btn {
   padding: 8px 20px;
-  background: #6366f1;
+  background: #D71920;
   color: #ffffff;
   border: none;
   border-radius: 8px;

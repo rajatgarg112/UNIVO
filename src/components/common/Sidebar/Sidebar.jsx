@@ -57,8 +57,8 @@ const Sidebar = ({ isCollapsed, onToggle, isMobile, isMobileOpen }) => {
     <aside className={sidebarClass}>
       {/* ── Logo ── */}
       <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">UV</div>
-        <span className="sidebar-logo-text">UniversityVerse</span>
+        <div className="sidebar-logo-icon">U</div>
+        <span className="sidebar-logo-text">UNIVO</span>
         {!isMobile && (
           <button
             className="sidebar-collapse-btn"

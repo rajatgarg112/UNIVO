@@ -16,7 +16,7 @@ body.light-theme .acad-info-val,
 body.light-theme .contact-val-text,
 body.light-theme .modal-title-text,
 body.light-theme .modal-readonly-name {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .profile-subtitle,
@@ -40,7 +40,7 @@ body.light-theme .contact-item-row,
 body.light-theme .modal-input {
   background: #f8fafc;
   border-color: #e2e8f0;
-  color: #0f172a;
+  color: #0B1220;
 }
 
 @keyframes fadeIn {
@@ -107,7 +107,7 @@ body.light-theme .modal-input {
 
 /* 1. Compact Profile Header Card */
 .profile-hero {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -130,7 +130,7 @@ body.light-theme .modal-input {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #D71920, #E8333A);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -138,7 +138,7 @@ body.light-theme .modal-input {
   font-size: 26px;
   font-weight: 800;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 14px rgba(215, 25, 32, 0.35);
 }
 
 .profile-name {
@@ -151,7 +151,7 @@ body.light-theme .modal-input {
 .profile-dept {
   font-size: 13px;
   font-weight: 600;
-  color: #6366f1;
+  color: #D71920;
   margin: 0 0 4px;
 }
 
@@ -164,9 +164,9 @@ body.light-theme .modal-input {
 }
 
 .edit-button {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
+  border: 1px solid rgba(215, 25, 32, 0.25);
   padding: 8px 16px;
   border-radius: 10px;
   font-size: 13px;
@@ -179,7 +179,7 @@ body.light-theme .modal-input {
 }
 
 .edit-button:hover {
-  background: #6366f1;
+  background: #D71920;
   color: #ffffff;
 }
 
@@ -192,7 +192,7 @@ body.light-theme .modal-input {
 }
 
 .profile-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -247,13 +247,13 @@ body.light-theme .modal-input {
 }
 
 .skill-badge {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
   font-size: 12px;
   font-weight: 700;
   padding: 5px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(215, 25, 32, 0.2);
 }
 
 /* 4. Contact Info List */
@@ -287,7 +287,7 @@ body.light-theme .modal-input {
 }
 
 .profile-modal-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 24px;
@@ -338,7 +338,7 @@ body.light-theme .modal-input {
 
 .completion-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  background: linear-gradient(90deg, #D71920, #B5121B);
   border-radius: 999px;
   transition: width 0.3s ease;
 }
@@ -390,7 +390,7 @@ body.light-theme .modal-input {
 }
 
 .acad-color-cgpa {
-  color: #6366f1;
+  color: #D71920;
 }
 
 .acad-color-att {
@@ -525,13 +525,13 @@ body.light-theme .modal-input {
 }
 
 .modal-note-box {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(215, 25, 32, 0.15);
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(215, 25, 32, 0.2);
   margin-bottom: 16px;
   font-size: 11px;
-  color: #6366f1;
+  color: #D71920;
 }
 
 .modal-actions-row {
@@ -552,7 +552,7 @@ body.light-theme .modal-input {
 
 .btn-modal-save {
   padding: 8px 20px;
-  background: #6366f1;
+  background: #D71920;
   color: #ffffff;
   border: none;
   border-radius: 10px;

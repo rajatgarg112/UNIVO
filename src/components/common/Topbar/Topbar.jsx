@@ -32,7 +32,7 @@ const getPageTitle = (pathname) => {
     '/assignments': 'Assignments',
     '/notes': 'Notes',
   };
-  return map[pathname] || 'UniversityVerse';
+  return map[pathname] || 'UNIVO';
 };
 
 const Topbar = ({ isCollapsed, onToggle }) => {
@@ -188,7 +188,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
               top: 'calc(100% + 8px)',
               left: 0,
               right: 0,
-              background: '#0f172a',
+              background: '#0B1220',
               border: '1px solid rgba(255, 255, 255, 0.12)',
               borderRadius: '12px',
               padding: '8px',
@@ -200,7 +200,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
           >
             {searchResults.length === 0 ? (
               <div style={{ padding: '12px 16px', color: '#94a3b8', fontSize: '13px', textAlign: 'center' }}>
-                No matching results found across UniversityVerse.
+                No matching results found across UNIVO.
               </div>
             ) : (
               searchResults.map((res) => (
@@ -218,11 +218,11 @@ const Topbar = ({ isCollapsed, onToggle }) => {
                     marginBottom: '2px'
                   }}
                   className="topbar-search-result-item"
-                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.15)'}
+                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(215, 25, 32, 0.15)'}
                   onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{ color: '#818cf8', background: 'rgba(99, 102, 241, 0.15)', padding: '6px', borderRadius: '6px' }}>
+                    <div style={{ color: '#E8333A', background: 'rgba(215, 25, 32, 0.15)', padding: '6px', borderRadius: '6px' }}>
                       {res.icon}
                     </div>
                     <div>
@@ -248,7 +248,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
           title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
           onClick={toggleTheme}
         >
-          {isDark ? <Sun size={20} color="#f59e0b" /> : <Moon size={20} color="#6366f1" />}
+          {isDark ? <Sun size={20} color="#f59e0b" /> : <Moon size={20} color="#D71920" />}
         </button>
 
         {/* Notification bell */}

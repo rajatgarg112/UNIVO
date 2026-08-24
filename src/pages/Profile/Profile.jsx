@@ -192,7 +192,7 @@ export default function Profile() {
 
       <div className="profile-grid-two-col">
         <div className="profile-col-stack">
-          <Card icon={GraduationCap} color="#6366f1" title="Academic Overview">
+          <Card icon={GraduationCap} color="#D71920" title="Academic Overview">
             <div className="academic-info-grid">
               <InfoBox label="Current CGPA" value={currentStudent.cgpa} className="acad-color-cgpa" />
               <InfoBox label="Attendance" value={`${attendancePercentage}%`} className="acad-color-att" />
@@ -243,7 +243,7 @@ export default function Profile() {
         <div className="profile-col-stack">
           <Card icon={Mail} color="#10b981" title="Personal & Contact Information">
             <div className="contact-info-list">
-              <ContactItem icon={Mail} color="#6366f1" label="University Email" value={currentStudent.email} />
+              <ContactItem icon={Mail} color="#D71920" label="University Email" value={currentStudent.email} />
               <ContactItem icon={Phone} color="#10b981" label="Phone Number" value={currentStudent.phone || 'Not Specified'} />
               <ContactItem icon={MapPin} color="#f59e0b" label="Current Location" value={currentStudent.location || 'Chandigarh, India'} />
 
@@ -256,7 +256,7 @@ export default function Profile() {
               )}
 
               {currentStudent.hostelRoom && (
-                <ContactItem icon={Home} color="#6366f1" label="Hostel Accommodation" value={`Room ${currentStudent.hostelRoom}`} />
+                <ContactItem icon={Home} color="#D71920" label="Hostel Accommodation" value={`Room ${currentStudent.hostelRoom}`} />
               )}
 
               <div className="contact-item-row contact-bio-box">
