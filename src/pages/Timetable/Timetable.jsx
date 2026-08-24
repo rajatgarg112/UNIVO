@@ -72,28 +72,18 @@ export default function Timetable() {
   return (
     <div className="timetable-page">
       {/* Header */}
-      <div className="timetable-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '14px' }}>
+      <div className="timetable-header">
         <div className="timetable-header-left">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px', flexWrap: 'wrap' }}>
-            <h1 style={{ fontSize: '26px', fontWeight: '700', color: 'var(--uv-text-primary)', margin: 0 }}>Class Timetable</h1>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              padding: '4px 10px',
-              borderRadius: '999px',
-              background: 'var(--uv-input-bg)',
-              border: '1px solid var(--uv-border)',
-              color: 'var(--uv-text-muted)',
-              fontSize: '12px',
-              fontWeight: '600'
-            }}>
+          <div className="timetable-header-left-box">
+            <h1 className="timetable-title">Class Timetable</h1>
+            <span className="timetable-view-badge">
               View-only • Official Faculty Schedule
             </span>
           </div>
-          <p style={{ color: 'var(--uv-text-muted)', fontSize: '14px', margin: 0 }}>View your weekly class schedule and upcoming classes</p>
+          <p className="timetable-subtitle">View your weekly class schedule and upcoming classes</p>
         </div>
 
-        <div className="timetable-header-actions" style={{ display: 'flex', gap: '8px' }}>
+        <div className="timetable-header-actions">
           <button
             className={`tt-action-btn ${viewMode === 'day' ? 'active' : ''}`}
             onClick={() => setViewMode('day')}
@@ -129,7 +119,7 @@ export default function Timetable() {
         <>
           {daySlots.length === 0 ? (
             <div className="schedule-empty">
-              <Calendar size={40} color="var(--uv-primary)" style={{ marginBottom: '12px' }} />
+              <Calendar size={40} className="schedule-empty-icon" />
               <p>No classes scheduled for {DAYS[activeDay]}</p>
             </div>
           ) : (
@@ -227,40 +217,40 @@ export default function Timetable() {
 
       {/* Read-Only Class Details Modal */}
       {selectedSlotDetails && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '16px' }}>
-          <div style={{ background: 'var(--uv-bg-card)', padding: '24px', borderRadius: '16px', width: '100%', maxWidth: '400px', border: '1px solid var(--uv-border)', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+        <div className="timetable-modal-overlay">
+          <div className="timetable-modal-card">
+            <div className="timetable-modal-header">
               <div>
-                <span className={`type-badge ${(selectedSlotDetails.type || 'lecture').toLowerCase()}`} style={{ display: 'inline-block', marginBottom: '6px' }}>
+                <span className={`type-badge ${(selectedSlotDetails.type || 'lecture').toLowerCase()} timetable-modal-badge`}>
                   {selectedSlotDetails.type}
                 </span>
-                <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--uv-text-primary)', margin: 0 }}>{selectedSlotDetails.subject}</h3>
-                <span style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-primary)' }}>{selectedSlotDetails.code || selectedSlotDetails.subjectCode}</span>
+                <h3 className="timetable-modal-subject">{selectedSlotDetails.subject}</h3>
+                <span className="timetable-modal-code">{selectedSlotDetails.code || selectedSlotDetails.subjectCode}</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', background: 'var(--uv-input-bg)', padding: '14px', borderRadius: '12px', border: '1px solid var(--uv-border)', marginBottom: '20px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--uv-text-secondary)' }}>
-                <Clock size={16} style={{ color: 'var(--uv-primary)' }} />
+            <div className="timetable-modal-body">
+              <div className="timetable-modal-row">
+                <Clock size={16} className="icon-clock" />
                 <span><strong>Time:</strong> {selectedSlotDetails.time}</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--uv-text-secondary)' }}>
-                <MapPin size={16} style={{ color: 'var(--uv-info)' }} />
+              <div className="timetable-modal-row">
+                <MapPin size={16} className="icon-room" />
                 <span><strong>Room:</strong> {selectedSlotDetails.room}</span>
               </div>
               {selectedSlotDetails.faculty && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--uv-text-secondary)' }}>
-                  <User size={16} style={{ color: 'var(--uv-success)' }} />
+                <div className="timetable-modal-row">
+                  <User size={16} className="icon-user" />
                   <span><strong>Faculty:</strong> {selectedSlotDetails.faculty}</span>
                 </div>
               )}
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <div className="timetable-modal-actions">
               <button
                 type="button"
                 onClick={() => setSelectedSlotDetails(null)}
-                style={{ padding: '8px 20px', background: 'var(--uv-primary)', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontSize: '13px' }}
+                className="timetable-modal-close-btn"
               >
                 Close
               </button>
@@ -271,4 +261,3 @@ export default function Timetable() {
     </div>
   );
 }
-

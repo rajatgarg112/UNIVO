@@ -2,12 +2,57 @@
 
 .profile-page {
   animation: fadeIn 0.4s ease;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
+}
+
+body.light-theme .profile-page {
+  color: #334155;
+}
+
+body.light-theme .profile-title,
+body.light-theme .profile-name,
+body.light-theme .profile-card-title,
+body.light-theme .acad-info-val,
+body.light-theme .contact-val-text,
+body.light-theme .modal-title-text,
+body.light-theme .modal-readonly-name {
+  color: #0f172a;
+}
+
+body.light-theme .profile-subtitle,
+body.light-theme .profile-meta-row,
+body.light-theme .acad-info-lbl,
+body.light-theme .modal-readonly-meta,
+body.light-theme .profile-empty-text {
+  color: #64748b;
+}
+
+body.light-theme .profile-hero,
+body.light-theme .profile-card,
+body.light-theme .profile-modal-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .acad-info-box,
+body.light-theme .contact-item-row,
+body.light-theme .modal-input {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #0f172a;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile-header {
@@ -22,21 +67,21 @@
 .profile-title {
   font-size: 26px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0 0 4px;
 }
 
 .profile-subtitle {
   font-size: 14px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   margin: 0;
 }
 
 /* Success Alert Toast */
 .profile-alert-success {
-  background: var(--uv-success-bg);
+  background: rgba(16, 185, 129, 0.15);
   border: 1px solid rgba(16, 185, 129, 0.3);
-  color: var(--uv-success);
+  color: #10b981;
   padding: 12px 18px;
   border-radius: 12px;
   font-size: 14px;
@@ -49,15 +94,22 @@
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 1. Compact Profile Header Card */
 .profile-hero {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   padding: 20px 24px;
   margin-bottom: 24px;
@@ -92,14 +144,14 @@
 .profile-name {
   font-size: 20px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0 0 2px;
 }
 
 .profile-dept {
   font-size: 13px;
   font-weight: 600;
-  color: var(--uv-primary);
+  color: #6366f1;
   margin: 0 0 4px;
 }
 
@@ -107,13 +159,13 @@
   display: flex;
   gap: 12px;
   font-size: 12px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   flex-wrap: wrap;
 }
 
 .edit-button {
-  background: var(--uv-primary-light);
-  color: var(--uv-primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
   border: 1px solid rgba(99, 102, 241, 0.25);
   padding: 8px 16px;
   border-radius: 10px;
@@ -127,7 +179,7 @@
 }
 
 .edit-button:hover {
-  background: var(--uv-primary);
+  background: #6366f1;
   color: #ffffff;
 }
 
@@ -140,9 +192,9 @@
 }
 
 .profile-card {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   padding: 24px;
 }
@@ -150,7 +202,7 @@
 .profile-card-title {
   font-size: 16px;
   font-weight: 700;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0 0 16px;
   display: flex;
   align-items: center;
@@ -166,8 +218,8 @@
 }
 
 .acad-info-box {
-  background: var(--uv-input-bg);
-  border: 1px solid var(--uv-border);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 12px 14px;
   border-radius: 12px;
 }
@@ -175,7 +227,7 @@
 .acad-info-lbl {
   font-size: 11px;
   font-weight: 700;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 2px;
@@ -184,7 +236,7 @@
 .acad-info-val {
   font-size: 15px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
 }
 
 /* 3. Skills Badge Wrap */
@@ -195,8 +247,8 @@
 }
 
 .skill-badge {
-  background: var(--uv-primary-light);
-  color: var(--uv-primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
   font-size: 12px;
   font-weight: 700;
   padding: 5px 14px;
@@ -212,8 +264,8 @@
 }
 
 .contact-item-row {
-  background: var(--uv-input-bg);
-  border: 1px solid var(--uv-border);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 10px 14px;
   border-radius: 12px;
   display: flex;
@@ -235,8 +287,8 @@
 }
 
 .profile-modal-card {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 24px;
   width: 100%;
@@ -250,9 +302,9 @@
   width: 100%;
   padding: 9px 14px;
   border-radius: 10px;
-  border: 1px solid var(--uv-input-border);
-  background: var(--uv-input-bg);
-  color: var(--uv-input-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
   font-size: 13px;
   margin-bottom: 12px;
 }
@@ -268,6 +320,7 @@
   .academic-info-grid {
     grid-template-columns: 1fr;
   }
+
   .profile-hero {
     flex-direction: column;
     align-items: flex-start;
@@ -278,7 +331,7 @@
 .completion-bar-container {
   width: 100%;
   height: 8px;
-  background: var(--uv-border);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -336,9 +389,17 @@
   object-fit: cover;
 }
 
-.acad-color-cgpa { color: #6366f1; }
-.acad-color-att { color: #10b981; }
-.acad-color-credits { color: #06b6d4; }
+.acad-color-cgpa {
+  color: #6366f1;
+}
+
+.acad-color-att {
+  color: #10b981;
+}
+
+.acad-color-credits {
+  color: #06b6d4;
+}
 
 .completion-header {
   display: flex;
@@ -350,7 +411,7 @@
 .completion-title {
   font-size: 13px;
   font-weight: 600;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
 }
 
 .completion-items-list {
@@ -367,7 +428,7 @@
 }
 
 .profile-empty-text {
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   font-size: 13px;
 }
 
@@ -381,7 +442,7 @@
 .contact-bio-text {
   margin: 0;
   font-size: 13px;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
   line-height: 1.5;
 }
 
@@ -408,26 +469,26 @@
 .modal-title-text {
   font-size: 17px;
   font-weight: 700;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0;
 }
 
 .modal-close-btn-icon {
   background: none;
   border: none;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   cursor: pointer;
 }
 
 .modal-readonly-header {
   margin-bottom: 16px;
-  border-bottom: 1px solid var(--uv-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 12px;
 }
 
 .modal-readonly-tag {
   font-size: 11px;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -436,13 +497,13 @@
 .modal-readonly-name {
   font-size: 16px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin-top: 4px;
 }
 
 .modal-readonly-meta {
   font-size: 12px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   margin-top: 2px;
 }
 
@@ -464,13 +525,13 @@
 }
 
 .modal-note-box {
-  background: var(--uv-primary-light);
+  background: rgba(99, 102, 241, 0.15);
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid rgba(99, 102, 241, 0.2);
   margin-bottom: 16px;
   font-size: 11px;
-  color: var(--uv-primary);
+  color: #6366f1;
 }
 
 .modal-actions-row {
@@ -482,7 +543,7 @@
 .btn-modal-cancel {
   padding: 8px 16px;
   background: transparent;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   border: none;
   cursor: pointer;
   font-size: 13px;

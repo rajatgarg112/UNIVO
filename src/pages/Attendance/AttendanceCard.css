@@ -1,10 +1,10 @@
 /* Redesigned Subject Attendance Card Styles */
 
 .subject-attendance-card {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 4px solid #6366f1;
-  box-shadow: var(--uv-card-shadow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   padding: 20px;
   display: flex;
@@ -12,6 +12,25 @@
   justify-content: space-between;
   gap: 14px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.light-theme .subject-attendance-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .subject-name {
+  color: #0f172a;
+}
+
+body.light-theme .sac-stats-row {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .sac-stat-val {
+  color: #0f172a;
 }
 
 .subject-attendance-card:hover {
@@ -25,12 +44,12 @@
 
 .subject-attendance-card.warning-card {
   border-left-color: #f59e0b;
-  background: var(--uv-bg-card);
+  background: #0f172a;
 }
 
 .subject-attendance-card.danger-card {
   border-left-color: #ef4444;
-  background: var(--uv-bg-card);
+  background: #0f172a;
 }
 
 /* Card Header Block */
@@ -41,17 +60,30 @@
   gap: 12px;
 }
 
+.sac-header-left {
+  flex: 1;
+  padding-right: 8px;
+}
+
+.sac-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
 .subject-name {
   font-size: 16px;
   font-weight: 700;
-  color: var(--uv-text-primary);
-  margin: 0 0 4px;
+  color: #f8fafc;
+  margin: 0;
   line-height: 1.3;
 }
 
 .subject-faculty-row {
   font-size: 12px;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -59,8 +91,8 @@
 
 .code-pill {
   font-weight: 700;
-  color: var(--uv-primary);
-  background: var(--uv-primary-light);
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.15);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 11px;
@@ -75,6 +107,10 @@
   flex-shrink: 0;
 }
 
+.progress-ring-svg {
+  transform: rotate(-90deg);
+}
+
 .progress-ring-text {
   position: absolute;
   top: 50%;
@@ -84,7 +120,7 @@
 }
 
 .progress-ring-percent {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
 }
 
@@ -93,8 +129,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  background: var(--uv-input-bg);
-  border: 1px solid var(--uv-border);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 10px 12px;
   border-radius: 12px;
   text-align: center;
@@ -108,7 +144,7 @@
 
 .sac-stat-label {
   font-size: 11px;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -116,7 +152,15 @@
 .sac-stat-val {
   font-size: 16px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
+}
+
+.sac-stat-val.attended-green {
+  color: #10b981;
+}
+
+.sac-stat-val.missed-red {
+  color: #ef4444;
 }
 
 .status-badge-inline {
@@ -128,61 +172,19 @@
   display: inline-block;
 }
 
-.status-badge-inline.safe { background: var(--uv-success-bg); color: var(--uv-success); }
-.status-badge-inline.warning { background: var(--uv-warning-bg); color: var(--uv-warning); }
-.status-badge-inline.danger { background: var(--uv-danger-bg); color: var(--uv-danger); }
-
-/* Action Buttons */
-.sac-btn-group {
-  display: flex;
-  gap: 10px;
-}
-
-.btn-mark-present {
-  flex: 1;
-  padding: 8px 12px;
-  background: var(--uv-success-bg);
-  color: var(--uv-success);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-mark-present:hover {
-  background: #10b981;
-  color: #ffffff;
-}
-
-.btn-mark-absent {
-  flex: 1;
-  padding: 8px 12px;
-  background: var(--uv-danger-bg);
-  color: var(--uv-danger);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-mark-absent:hover {
-  background: #ef4444;
-  color: #ffffff;
-}
+.status-badge-inline.safe { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.status-badge-inline.warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.status-badge-inline.danger { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
 
 /* Footer Guidance Text */
 .sac-guidance-box {
   font-size: 12px;
   font-weight: 600;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   line-height: 1.4;
   padding-top: 4px;
 }
 
 .sac-guidance-box.warning-guidance {
-  color: var(--uv-warning);
+  color: #f59e0b;
 }

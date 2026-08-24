@@ -36,31 +36,10 @@ function ProtectedRoute({ children }) {
 // Fallback Loading Component
 function LoadingFallback() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        background: '#0a0f1e',
-        color: '#f8fafc',
-        fontFamily: 'sans-serif'
-      }}
-    >
-      <div style={{ textAlign: 'center' }}>
-        <div
-          style={{
-            width: '48px',
-            height: '48px',
-            border: '4px solid rgba(99, 102, 241, 0.2)',
-            borderTopColor: '#6366f1',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 16px'
-          }}
-        />
-        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-        <p style={{ color: '#94a3b8', fontSize: '14px' }}>Loading UniversityVerse...</p>
+    <div className="app-loading-fallback">
+      <div className="app-loading-spinner-box">
+        <div className="app-loading-spinner" />
+        <p className="app-loading-text">Loading UniversityVerse...</p>
       </div>
     </div>
   );

@@ -60,6 +60,8 @@ export default function Dashboard() {
     }
   }, []);
 
+  const warningCount = attendanceBreakdown.filter(item => !item.isSafe).length;
+
   // Demo today's schedule
   const todaySchedule = [
     { time: '09:00 AM – 10:00 AM', subject: 'Machine Learning', room: 'Room CS-301', type: 'Lecture' },
@@ -145,7 +147,7 @@ export default function Dashboard() {
           <div>
             <span className="dash-summary-lbl">Placement Readiness</span>
             <div className="dash-summary-val" style={{ color: '#06b6d4' }}>88%</div>
-            <div className="dash-summary-sub" style={{ color: 'var(--uv-text-muted)' }}>Resume & Skills Audit</div>
+            <div className="dash-summary-sub" style={{ color: '#94a3b8' }}>Resume & Skills Audit</div>
           </div>
           <button onClick={() => navigate('/profile')} className="dash-summary-btn">
             View Career <ArrowRight size={12} />
@@ -173,7 +175,7 @@ export default function Dashboard() {
                     <h4 className="item-title" style={{ marginTop: '2px' }}>{cls.subject}</h4>
                     <span className="item-sub">{cls.room}</span>
                   </div>
-                  <span className="subject-code-tag" style={{ background: cls.type === 'Lab' ? 'var(--uv-warning-bg)' : 'var(--uv-primary-light)', color: cls.type === 'Lab' ? 'var(--uv-warning)' : 'var(--uv-primary)' }}>
+                  <span className="subject-code-tag" style={{ background: cls.type === 'Lab' ? 'rgba(245, 158, 11, 0.15)' : 'rgba(99, 102, 241, 0.15)', color: cls.type === 'Lab' ? '#f59e0b' : '#6366f1' }}>
                     {cls.type}
                   </span>
                 </div>
@@ -189,28 +191,30 @@ export default function Dashboard() {
               </h3>
               <button onClick={() => navigate('/attendance')} className="btn-link">View Attendance <ArrowRight size={14} /></button>
             </div>
-            <div style={{ marginBottom: '16px' }}>
+            <div className="dash-attendance-breakdown">
               {attendanceBreakdown.map((item, idx) => (
                 <div key={idx} className="attendance-prog-item">
                   <div className="attendance-lbl-row">
-                    <span style={{ color: 'var(--uv-text-primary)', fontWeight: '600' }}>{item.subject}</span>
-                    <span style={{ color: item.isSafe ? '#10b981' : '#ef4444', fontWeight: '700' }}>{item.percentage}%</span>
+                    <span className="attendance-subj-name">{item.subject}</span>
+                    <span className={`attendance-subj-pct ${item.isSafe ? 'safe' : 'warning'}`}>{item.percentage}%</span>
                   </div>
                   <div className="attendance-prog-bg">
-                    <div className="attendance-prog-fill" style={{ width: `${item.percentage}%`, background: item.isSafe ? '#10b981' : '#ef4444' }} />
+                    <div className={`attendance-prog-fill ${item.isSafe ? 'fill-safe' : 'fill-warning'}`} style={{ width: `${item.percentage}%` }} />
                   </div>
                 </div>
               ))}
             </div>
-            <div style={{ background: 'var(--uv-warning-bg)', border: '1px solid rgba(245, 158, 11, 0.3)', padding: '10px 14px', borderRadius: '10px', fontSize: '13px', color: 'var(--uv-warning)', fontWeight: '600', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>⚠️ Computer Networks requires attention (74%)</span>
-              <button onClick={() => navigate('/attendance')} style={{ background: 'none', border: 'none', color: 'var(--uv-warning)', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}>
-                View Attendance
-              </button>
-            </div>
+
+            {warningCount > 0 && (
+              <div className="dash-attention-box">
+                <span>{warningCount} subject(s) below 75% threshold</span>
+                <button onClick={() => navigate('/attendance')} className="dash-attention-btn">
+                  Check Attendance
+                </button>
+              </div>
+            )}
           </div>
 
-          {/* SECTION 3 — UPCOMING ASSIGNMENTS */}
           <div className="dashboard-card">
             <div className="card-header-flex">
               <h3 className="card-title">

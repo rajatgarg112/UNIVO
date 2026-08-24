@@ -20,6 +20,11 @@
   scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
 }
 
+body.light-theme .sidebar {
+  background: #ffffff;
+  border-right-color: #e2e8f0;
+}
+
 .sidebar::-webkit-scrollbar {
   width: 4px;
 }
@@ -89,6 +94,41 @@
   overflow: hidden;
   flex: 1;
   letter-spacing: -0.3px;
+}
+
+body.light-theme .sidebar-logo-text {
+  color: #0f172a;
+}
+
+body.light-theme .sidebar-logo {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .sidebar-group-label {
+  color: #64748b;
+}
+
+body.light-theme .sidebar-nav-item {
+  color: #475569;
+}
+
+body.light-theme .sidebar-nav-item:hover {
+  background: rgba(99, 102, 241, 0.08);
+  color: #4f46e5;
+}
+
+body.light-theme .sidebar-nav-item.active {
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  border-left-color: #4f46e5;
+}
+
+body.light-theme .sidebar-user {
+  border-top-color: #e2e8f0;
+}
+
+body.light-theme .sidebar-user-name {
+  color: #0f172a;
 }
 
 .sidebar.collapsed .sidebar-logo-text {

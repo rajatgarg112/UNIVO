@@ -3,7 +3,57 @@
 .timetable-page {
   padding: 0;
   animation: fadeInUp 0.4s ease;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
+}
+
+body.light-theme .timetable-page {
+  color: #334155;
+}
+
+body.light-theme .timetable-title,
+body.light-theme .slot-time-start,
+body.light-theme .class-subject,
+body.light-theme .week-card-subject,
+body.light-theme .timetable-modal-subject {
+  color: #0f172a;
+}
+
+body.light-theme .tt-action-btn,
+body.light-theme .day-tabs,
+body.light-theme .class-card,
+body.light-theme .break-card,
+body.light-theme .schedule-empty,
+body.light-theme .week-view-container,
+body.light-theme .week-class-card,
+body.light-theme .week-off-day-box,
+body.light-theme .timetable-modal-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .tt-action-btn {
+  color: #334155;
+}
+
+body.light-theme .tt-action-btn:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light-theme .day-tab {
+  color: #64748b;
+}
+
+body.light-theme .day-tab:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light-theme .week-day-column,
+body.light-theme .timetable-modal-body {
+  background: #f8fafc;
+  border-color: #e2e8f0;
 }
 
 @keyframes fadeInUp {
@@ -21,16 +71,36 @@
   gap: 14px;
 }
 
-.timetable-header-left h1 {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--uv-text-primary);
-  margin: 0 0 4px;
+.timetable-header-left-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
 }
 
-.timetable-header-left p {
+.timetable-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.timetable-view-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.timetable-subtitle {
   font-size: 14px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   margin: 0;
 }
 
@@ -44,20 +114,20 @@
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: var(--uv-bg-card);
-  color: var(--uv-text-secondary);
-  border: 1px solid var(--uv-border);
+  background: #0f172a;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: var(--uv-card-shadow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
 }
 
 .tt-action-btn:hover {
-  background: var(--uv-bg-hover);
-  color: var(--uv-text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
 }
 
 .tt-action-btn.active {
@@ -72,11 +142,11 @@
   display: flex;
   gap: 6px;
   margin-bottom: 24px;
-  background: var(--uv-bg-card);
+  background: #0f172a;
   padding: 6px;
   border-radius: 14px;
-  border: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow-x: auto;
 }
 
@@ -91,24 +161,24 @@
   transition: all 0.2s;
   border: none;
   background: transparent;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   min-width: 70px;
   flex-shrink: 0;
 }
 
 .day-tab:hover {
-  background: var(--uv-bg-hover);
-  color: var(--uv-text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
 }
 
 .day-tab.active {
-  background: var(--uv-primary-light);
-  color: var(--uv-primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
   font-weight: 700;
 }
 
 .day-tab.today-tab .day-tab-name {
-  color: var(--uv-primary);
+  color: #6366f1;
   font-weight: 700;
 }
 
@@ -125,7 +195,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--uv-primary);
+  background: #6366f1;
   margin-top: 2px;
 }
 
@@ -153,12 +223,12 @@
 .slot-time-start {
   font-size: 14px;
   font-weight: 700;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
 }
 
 .slot-time-end {
   font-size: 12px;
-  color: var(--uv-text-subtle);
+  color: #64748b;
 }
 
 .slot-timeline {
@@ -173,21 +243,21 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--uv-border);
-  border: 2px solid var(--uv-bg-page);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #0a0f1e;
   z-index: 1;
   flex-shrink: 0;
 }
 
 .slot-dot.current-dot {
-  background: var(--uv-primary);
+  background: #6366f1;
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
 .slot-line {
   width: 2px;
   flex: 1;
-  background: var(--uv-border);
+  background: rgba(255, 255, 255, 0.08);
   margin-top: 4px;
   min-height: 40px;
 }
@@ -198,25 +268,25 @@
 
 /* ── Class Card (Day View) ── */
 .class-card {
-  background: var(--uv-bg-card);
+  background: #0f172a;
   border-radius: 14px;
   padding: 16px 20px;
   border-left: 4px solid #6366f1;
-  border-top: 1px solid var(--uv-border);
-  border-right: 1px solid var(--uv-border);
-  border-bottom: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .class-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--uv-card-shadow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .class-card.current-class {
   border-left-color: #6366f1;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3), var(--uv-card-shadow);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3), 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .class-card.type-lab { border-left-color: #06b6d4; }
@@ -233,13 +303,13 @@
 .class-subject {
   font-size: 16px;
   font-weight: 700;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0 0 2px;
 }
 
 .class-code {
   font-size: 12px;
-  color: var(--uv-primary);
+  color: #6366f1;
   font-weight: 700;
   margin: 0;
 }
@@ -260,30 +330,30 @@
 }
 
 .type-badge.lecture {
-  background: var(--uv-primary-light);
-  color: var(--uv-primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
 }
 
 .type-badge.lab {
-  background: var(--uv-info-bg);
-  color: var(--uv-info);
+  background: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
 }
 
 .type-badge.tutorial {
-  background: var(--uv-warning-bg);
-  color: var(--uv-warning);
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
 }
 
 .type-badge.seminar, .type-badge.workshop {
-  background: var(--uv-success-bg);
-  color: var(--uv-success);
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
 }
 
 .current-badge {
   font-size: 11px;
   font-weight: 700;
-  background: var(--uv-primary-light);
-  color: var(--uv-primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
   padding: 4px 10px;
   border-radius: 6px;
   animation: pulse 2s infinite;
@@ -299,7 +369,7 @@
   flex-wrap: wrap;
   gap: 16px;
   font-size: 13px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
 }
 
 .class-meta-item {
@@ -313,14 +383,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--uv-bg-card);
-  border: 1px dashed var(--uv-border);
+  background: #0f172a;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 12px 18px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--uv-text-muted);
-  box-shadow: var(--uv-card-shadow);
+  color: #94a3b8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ── Empty State ── */
@@ -330,23 +400,28 @@
   align-items: center;
   justify-content: center;
   padding: 60px 20px;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   gap: 12px;
-  background: var(--uv-bg-card);
+  background: #0f172a;
   border-radius: 16px;
-  border: 1px solid var(--uv-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .schedule-empty p {
   font-size: 15px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
+}
+
+.schedule-empty-icon {
+  margin-bottom: 12px;
+  color: #6366f1;
 }
 
 /* ── 6-Column Equal Width Week View ── */
 .week-view-container {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   padding: 20px;
   overflow-x: auto;
@@ -360,8 +435,8 @@
 }
 
 .week-day-column {
-  background: var(--uv-input-bg);
-  border: 1px solid var(--uv-border);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -372,7 +447,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid var(--uv-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 8px;
   margin-bottom: 12px;
 }
@@ -380,13 +455,13 @@
 .week-day-title {
   font-size: 14px;
   font-weight: 700;
-  color: var(--uv-primary);
+  color: #6366f1;
 }
 
 .week-day-count {
   font-size: 11px;
   font-weight: 600;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   margin-top: 2px;
 }
 
@@ -398,8 +473,8 @@
 }
 
 .week-class-card {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 3.5px solid #6366f1;
   border-radius: 8px;
   padding: 8px 10px;
@@ -415,7 +490,7 @@
 
 .week-class-card.lab {
   border-left-color: #06b6d4;
-  background: var(--uv-info-bg);
+  background: rgba(6, 182, 212, 0.15);
 }
 
 .week-class-card.tutorial {
@@ -436,15 +511,15 @@
 .week-card-subject {
   font-size: 12px;
   font-weight: 700;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   line-height: 1.3;
 }
 
 .week-card-code {
   font-size: 10px;
   font-weight: 800;
-  color: var(--uv-primary);
-  background: var(--uv-primary-light);
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.15);
   padding: 1px 5px;
   border-radius: 4px;
   flex-shrink: 0;
@@ -455,7 +530,7 @@
   flex-direction: column;
   gap: 2px;
   font-size: 10px;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
 }
 
 .week-card-time, .week-card-room, .week-card-faculty {
@@ -466,12 +541,12 @@
 }
 
 .week-card-room {
-  color: var(--uv-info);
+  color: #06b6d4;
   font-weight: 600;
 }
 
 .week-card-faculty {
-  color: var(--uv-text-subtle);
+  color: #64748b;
 }
 
 .week-off-day-box {
@@ -480,17 +555,17 @@
   align-items: center;
   justify-content: center;
   padding: 24px 10px;
-  background: var(--uv-bg-card);
-  border: 1px dashed var(--uv-border);
+  background: #0f172a;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   font-size: 12px;
   font-weight: 700;
   gap: 4px;
 }
 
 .off-day-icon {
-  color: var(--uv-text-subtle);
+  color: #64748b;
   opacity: 0.6;
 }
 
@@ -498,6 +573,92 @@
   font-size: 10px;
   font-weight: 500;
   opacity: 0.7;
+}
+
+/* Modal Overlay & Card Details */
+.timetable-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.timetable-modal-card {
+  background: #0f172a;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.timetable-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.timetable-modal-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.timetable-modal-subject {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.timetable-modal-code {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.timetable-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+}
+
+.timetable-modal-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.timetable-modal-row .icon-clock { color: #6366f1; }
+.timetable-modal-row .icon-room { color: #06b6d4; }
+.timetable-modal-row .icon-user { color: #10b981; }
+
+.timetable-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timetable-modal-close-btn {
+  padding: 8px 20px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 @media (max-width: 768px) {

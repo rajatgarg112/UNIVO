@@ -13,8 +13,8 @@ function ProgressRing({ percent, size = 56, strokeWidth = 5, status }) {
 
   return (
     <div className="progress-ring-wrapper" style={{ width: size, height: size }}>
-      <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
-        <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="var(--uv-border)" strokeWidth={strokeWidth} />
+      <svg width={size} height={size} className="progress-ring-svg">
+        <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="rgba(255, 255, 255, 0.08)" strokeWidth={strokeWidth} />
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -29,7 +29,7 @@ function ProgressRing({ percent, size = 56, strokeWidth = 5, status }) {
         />
       </svg>
       <div className="progress-ring-text">
-        <span className="progress-ring-percent" style={{ color, fontSize: '13px', fontWeight: '800' }}>
+        <span className="progress-ring-percent" style={{ color }}>
           {safePercent}%
         </span>
       </div>
@@ -55,8 +55,8 @@ function AttendanceCard({ subject }) {
   return (
     <div className={`subject-attendance-card ${status}-card`}>
       <div className="sac-header">
-        <div style={{ flex: 1, paddingRight: '8px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
+        <div className="sac-header-left">
+          <div className="sac-title-row">
             <h3 className="subject-name">{subject.name}</h3>
             <span className={`status-badge-inline ${status}`}>{statusLabel}</span>
           </div>
@@ -72,7 +72,7 @@ function AttendanceCard({ subject }) {
       <div className="sac-stats-row">
         <div className="sac-stat-col">
           <span className="sac-stat-label">Attended</span>
-          <span className="sac-stat-val" style={{ color: '#10b981' }}>{attended}</span>
+          <span className="sac-stat-val attended-green">{attended}</span>
         </div>
         <div className="sac-stat-col">
           <span className="sac-stat-label">Total</span>
@@ -80,7 +80,7 @@ function AttendanceCard({ subject }) {
         </div>
         <div className="sac-stat-col">
           <span className="sac-stat-label">Missed</span>
-          <span className="sac-stat-val" style={{ color: '#ef4444' }}>{missed}</span>
+          <span className="sac-stat-val missed-red">{missed}</span>
         </div>
       </div>
 

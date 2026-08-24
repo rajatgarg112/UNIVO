@@ -43,7 +43,7 @@ function ContactItem({ icon: Icon, color, label, value, children }) {
       <div>
         <div className="acad-info-lbl">{label}</div>
         {children || (
-          <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)' }}>
+          <div style={{ fontSize: '13px', fontWeight: '700', color: '#f8fafc' }}>
             {value}
           </div>
         )}
@@ -59,7 +59,7 @@ function SimpleListCard({ icon: Icon, color, title, items, emptyText }) {
         {items?.length ? items.map((item, index) => (
           <div key={index} className="profile-list-item" style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px' }}>
             <span style={{ color, fontWeight: 'bold' }}>•</span>
-            <span style={{ color: 'var(--uv-text-secondary)' }}>{item}</span>
+            <span style={{ color: '#cbd5e1' }}>{item}</span>
           </div>
         )) : <span className="profile-empty-text">{emptyText}</span>}
       </div>
@@ -219,9 +219,9 @@ export default function Profile() {
                   {item.completed ? (
                     <CheckCircle2 size={16} color="#10b981" style={{ flexShrink: 0 }} />
                   ) : (
-                    <Circle size={16} color="var(--uv-text-muted)" style={{ flexShrink: 0 }} />
+                    <Circle size={16} color="#94a3b8" style={{ flexShrink: 0 }} />
                   )}
-                  <span style={{ color: item.completed ? 'var(--uv-text-primary)' : 'var(--uv-text-muted)' }}>
+                  <span style={{ color: item.completed ? '#f8fafc' : '#94a3b8' }}>
                     {item.label}
                   </span>
                 </div>
@@ -243,13 +243,13 @@ export default function Profile() {
         <div className="profile-col-stack">
           <Card icon={Mail} color="#10b981" title="Personal & Contact Information">
             <div className="contact-info-list">
-              <ContactItem icon={Mail} color="var(--uv-primary)" label="University Email" value={currentStudent.email} />
-              <ContactItem icon={Phone} color="var(--uv-success)" label="Phone Number" value={currentStudent.phone || 'Not Specified'} />
-              <ContactItem icon={MapPin} color="var(--uv-warning)" label="Current Location" value={currentStudent.location || 'Chandigarh, India'} />
+              <ContactItem icon={Mail} color="#6366f1" label="University Email" value={currentStudent.email} />
+              <ContactItem icon={Phone} color="#10b981" label="Phone Number" value={currentStudent.phone || 'Not Specified'} />
+              <ContactItem icon={MapPin} color="#f59e0b" label="Current Location" value={currentStudent.location || 'Chandigarh, India'} />
 
               {currentStudent.address && (
                 <ContactItem icon={BookOpen} color="#ec4899" label="Permanent Address">
-                  <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--uv-text-primary)', lineHeight: '1.4' }}>
+                  <div style={{ fontSize: '13px', fontWeight: '700', color: '#f8fafc', lineHeight: '1.4' }}>
                     {currentStudent.address}
                   </div>
                 </ContactItem>

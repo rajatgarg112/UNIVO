@@ -1,6 +1,48 @@
 .assignments-page {
   animation: fadeIn 0.4s ease;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
+}
+
+body.light-theme .assignments-page {
+  color: #334155;
+}
+
+body.light-theme .assignments-page-title,
+body.light-theme .assignment-title,
+body.light-theme .meta-strong-text,
+body.light-theme .modal-title,
+body.light-theme .modal-value,
+body.light-theme .btn-view-details {
+  color: #0f172a;
+}
+
+body.light-theme .assignments-page-subtitle,
+body.light-theme .assignment-desc,
+body.light-theme .stat-card-lbl,
+body.light-theme .modal-label,
+body.light-theme .modal-text {
+  color: #64748b;
+}
+
+body.light-theme .assignment-item,
+body.light-theme .assignments-stat-card,
+body.light-theme .modal-card,
+body.light-theme .assignments-empty-box {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .search-input-field,
+body.light-theme .filter-select-field,
+body.light-theme .status-pill-group,
+body.light-theme .btn-view-details,
+body.light-theme .attachment-chip,
+body.light-theme .submit-readonly-title,
+body.light-theme .submit-input-field {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #0f172a;
 }
 
 @keyframes fadeIn {
@@ -15,9 +57,9 @@
 }
 
 .assignment-item {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   padding: 16px 20px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -37,14 +79,12 @@
 .subject-badge {
   font-size: 11px;
   font-weight: 700;
-  color: var(--uv-primary);
-  background: var(--uv-primary-light);
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.15);
   padding: 4px 10px;
   border-radius: 999px;
   letter-spacing: 0.2px;
 }
-
-
 
 .status-badge {
   font-size: 11px;
@@ -55,8 +95,8 @@
 }
 
 .status-badge.pending {
-  color: var(--uv-warning);
-  background: var(--uv-warning-bg);
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
 }
 
 .status-badge.submitted {
@@ -65,8 +105,8 @@
 }
 
 .status-badge.graded {
-  color: var(--uv-success);
-  background: var(--uv-success-bg);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
 }
 
 .status-badge.late {
@@ -77,14 +117,14 @@
 .assignment-title {
   font-size: 16px;
   font-weight: 700;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0 0 6px;
   line-height: 1.35;
 }
 
 .assignment-desc {
   font-size: 13px;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
   line-height: 1.5;
   margin: 0 0 12px;
 }
@@ -96,8 +136,8 @@
   flex-wrap: wrap;
   gap: 12px;
   font-size: 12px;
-  color: var(--uv-text-muted);
-  border-top: 1px solid var(--uv-border);
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 10px;
 }
 
@@ -109,17 +149,17 @@
 }
 
 .meta-strong-text {
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   font-weight: 600;
 }
 
 .meta-due-text {
-  color: var(--uv-primary);
+  color: #6366f1;
   font-weight: 700;
 }
 
 .meta-marks-text {
-  color: var(--uv-success);
+  color: #10b981;
   font-weight: 700;
 }
 
@@ -141,27 +181,27 @@
 }
 
 .btn-toggle-status.pending-btn {
-  background: var(--uv-success-bg);
-  color: var(--uv-success);
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
 }
 
 .btn-toggle-status.submitted-btn {
-  background: var(--uv-warning-bg);
-  color: var(--uv-warning);
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
 }
 
 .btn-toggle-status.graded-btn {
-  background: var(--uv-primary-light);
-  color: var(--uv-primary);
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
 }
 
 /* View Details button on each assignment card */
 .btn-view-details {
   padding: 6px 14px;
   border-radius: 8px;
-  border: 1px solid var(--uv-border);
-  background: var(--uv-bg-card);
-  color: var(--uv-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f172a;
+  color: #f8fafc;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -169,31 +209,31 @@
 }
 
 .btn-view-details:hover {
-  background: var(--uv-input-bg);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .search-input-field {
   width: 100%;
   padding: 10px 16px 10px 36px;
   border-radius: 10px;
-  border: 1px solid var(--uv-input-border);
-  background: var(--uv-input-bg);
-  color: var(--uv-input-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
   font-size: 14px;
   outline: none;
   transition: border-color 0.2s ease;
 }
 
 .search-input-field:focus {
-  border-color: var(--uv-primary);
+  border-color: #6366f1;
 }
 
 .filter-select-field {
   padding: 10px 14px;
   border-radius: 10px;
-  background: var(--uv-input-bg);
-  border: 1px solid var(--uv-input-border);
-  color: var(--uv-input-text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
   font-size: 14px;
   cursor: pointer;
   outline: none;
@@ -202,10 +242,10 @@
 .status-pill-group {
   display: flex;
   gap: 4px;
-  background: var(--uv-input-bg);
+  background: rgba(255, 255, 255, 0.05);
   padding: 4px;
   border-radius: 10px;
-  border: 1px solid var(--uv-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .filter-pill-btn {
@@ -228,9 +268,9 @@
 }
 
 .assignments-stat-card {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
-  box-shadow: var(--uv-card-shadow);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   padding: 16px 20px;
   display: flex;
@@ -241,13 +281,13 @@
 
 .assignments-stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--uv-card-shadow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .stat-card-lbl {
   font-size: 11px;
   font-weight: 700;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -288,8 +328,8 @@
 
 /* The white/dark card that contains the modal content */
 .modal-card {
-  background: var(--uv-bg-card);
-  border: 1px solid var(--uv-border);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   width: 100%;
   max-width: 580px;
@@ -311,13 +351,13 @@
   align-items: flex-start;
   gap: 12px;
   padding: 20px 24px 16px;
-  border-bottom: 1px solid var(--uv-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .modal-title {
   font-size: 17px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin: 0;
   line-height: 1.3;
 }
@@ -326,7 +366,7 @@
 .modal-close-btn {
   background: none;
   border: none;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   cursor: pointer;
   padding: 4px;
   border-radius: 6px;
@@ -337,8 +377,8 @@
 }
 
 .modal-close-btn:hover {
-  background: var(--uv-border);
-  color: var(--uv-text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
 }
 
 /* Scrollable body area */
@@ -348,7 +388,7 @@
   flex-direction: column;
   gap: 16px;
   font-size: 14px;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
 }
 
 /* A labelled section inside the body */
@@ -359,7 +399,7 @@
 }
 
 .modal-section-bordered {
-  border-top: 1px solid var(--uv-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 14px;
 }
 
@@ -367,7 +407,7 @@
 .modal-label {
   font-size: 11px;
   font-weight: 700;
-  color: var(--uv-text-subtle);
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
@@ -375,14 +415,14 @@
 .modal-value {
   font-size: 14px;
   font-weight: 600;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin-top: 2px;
 }
 
 .modal-text {
   font-size: 13px;
   line-height: 1.6;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
   margin: 4px 0 0 0;
 }
 
@@ -408,7 +448,7 @@
 
 /* Grading result box (green tinted) */
 .modal-grading-box {
-  background: var(--uv-success-bg);
+  background: rgba(16, 185, 129, 0.15);
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 12px;
   padding: 14px 16px;
@@ -420,7 +460,7 @@
 .modal-grading-title {
   font-size: 14px;
   font-weight: 700;
-  color: var(--uv-success);
+  color: #10b981;
   margin: 0;
 }
 
@@ -430,18 +470,18 @@
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: var(--uv-input-bg);
-  border: 1px solid var(--uv-border);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   text-decoration: none;
-  color: var(--uv-primary);
+  color: #6366f1;
   font-size: 12px;
   font-weight: 600;
   transition: background 0.15s ease;
 }
 
 .attachment-chip:hover {
-  background: var(--uv-primary-light);
+  background: rgba(99, 102, 241, 0.15);
 }
 
 /* Footer row with the Close / Submit buttons */
@@ -450,7 +490,7 @@
   justify-content: flex-end;
   gap: 10px;
   padding: 14px 24px 20px;
-  border-top: 1px solid var(--uv-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* The solid "Close" button at the bottom of the View Details modal */
@@ -478,20 +518,20 @@
 .assignments-page-title {
   font-size: 24px;
   font-weight: 800;
-  color: var(--uv-text-primary);
+  color: #f8fafc;
   margin-bottom: 4px;
 }
 
 .assignments-page-subtitle {
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   font-size: 14px;
   margin: 0;
 }
 
-.stat-val-total { color: var(--uv-primary); }
-.stat-val-pending { color: var(--uv-warning); }
+.stat-val-total { color: #6366f1; }
+.stat-val-pending { color: #f59e0b; }
 .stat-val-submitted { color: #06b6d4; }
-.stat-val-graded { color: var(--uv-success); }
+.stat-val-graded { color: #10b981; }
 
 .assignments-toolbar {
   display: flex;
@@ -512,16 +552,16 @@
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--uv-text-muted);
+  color: #94a3b8;
 }
 
 .assignments-empty-box {
   text-align: center;
   padding: 50px 20px;
-  background: var(--uv-bg-card);
+  background: #0f172a;
   border-radius: 16px;
-  border: 1px solid var(--uv-border);
-  color: var(--uv-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
 }
 
 .modal-subject-tag {
@@ -535,23 +575,23 @@
 }
 
 .modal-instructions-box {
-  background: var(--uv-primary-light);
+  background: rgba(99, 102, 241, 0.15);
   border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: 10px;
   padding: 10px 14px;
 }
 
 .modal-instructions-lbl {
-  color: var(--uv-primary);
+  color: #6366f1;
 }
 
 .modal-instructions-text {
-  color: var(--uv-primary);
+  color: #6366f1;
   margin: 0;
 }
 
 .modal-meta-due {
-  color: var(--uv-primary);
+  color: #6366f1;
   font-weight: 700;
 }
 
@@ -587,18 +627,18 @@
 
 .modal-sub-notes-content {
   margin-top: 4px;
-  background: var(--uv-input-bg);
+  background: rgba(255, 255, 255, 0.05);
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 13px;
   font-style: italic;
-  color: var(--uv-text-secondary);
+  color: #cbd5e1;
 }
 
 .modal-score-val {
   font-size: 18px;
   font-weight: 800;
-  color: var(--uv-success);
+  color: #10b981;
 }
 
 .modal-feedback-box {
@@ -609,7 +649,7 @@
   margin: 4px 0 0 0;
   font-style: italic;
   font-size: 13px;
-  color: var(--uv-success);
+  color: #10b981;
   line-height: 1.5;
 }
 
@@ -622,11 +662,11 @@
 }
 
 .submit-readonly-title {
-  background: var(--uv-input-bg);
+  background: rgba(255, 255, 255, 0.05);
   padding: 9px 12px;
   border-radius: 10px;
-  border: 1px solid var(--uv-border);
-  color: var(--uv-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
   font-size: 13px;
   font-weight: 600;
   margin-top: 4px;
@@ -644,16 +684,16 @@
   width: 100%;
   padding: 9px 12px;
   border-radius: 10px;
-  border: 1px solid var(--uv-input-border);
-  background: var(--uv-input-bg);
-  color: var(--uv-input-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
   font-size: 13px;
 }
 
 .btn-submit-cancel {
   padding: 8px 16px;
   background: transparent;
-  color: var(--uv-text-muted);
+  color: #94a3b8;
   border: none;
   cursor: pointer;
   font-size: 13px;

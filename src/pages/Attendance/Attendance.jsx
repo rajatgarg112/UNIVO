@@ -28,10 +28,13 @@ export default function Attendance() {
   const needed75Overall = overallPercentage < 75 ? Math.max(0, Math.ceil((0.75 * totalClassesCount - attendedClassesCount) / 0.25)) : 0;
 
   const getStatus = (pct) => {
-    if (pct >= 75) return { label: 'Safe', color: '#10b981', bg: 'var(--uv-success-bg)' };
-    if (pct >= 65) return { label: 'Warning', color: '#f59e0b', bg: 'var(--uv-warning-bg)' };
-    return { label: 'Danger', color: '#ef4444', bg: 'var(--uv-danger-bg)' };
+    if (pct >= 75) return { label: 'Safe', colorClass: 'pct-safe', bg: 'rgba(16, 185, 129, 0.15)', color: '#10b981' };
+    if (pct >= 65) return { label: 'Warning', colorClass: 'pct-warning', bg: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b' };
+    return { label: 'Danger', colorClass: 'pct-danger', bg: 'rgba(239, 68, 68, 0.15)', color: '#ef4444' };
   };
+
+  const overallColorClass = overallPercentage >= 75 ? 'overall-safe' : overallPercentage >= 65 ? 'overall-warning' : 'overall-danger';
+  const overallSubClass = overallPercentage >= 75 ? 'sub-safe' : 'sub-warning';
 
   // Chart Dataset
   const chartData = {
@@ -51,83 +54,39 @@ export default function Attendance() {
   return (
     <div className="attendance-page">
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
+      <div className="attendance-header">
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px', flexWrap: 'wrap' }}>
-            <h2 style={{ fontSize: '26px', fontWeight: '800', color: 'var(--uv-text-primary)', margin: 0 }}>Attendance Portal</h2>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              padding: '4px 10px',
-              borderRadius: '999px',
-              background: 'var(--uv-input-bg)',
-              border: '1px solid var(--uv-border)',
-              color: 'var(--uv-text-muted)',
-              fontSize: '12px',
-              fontWeight: '600'
-            }}>
+          <div className="attendance-header-title-box">
+            <h2 className="attendance-header-title">Attendance Portal</h2>
+            <span className="attendance-view-only-badge">
               View-only • Attendance is updated by faculty
             </span>
           </div>
-          <p style={{ color: 'var(--uv-text-muted)', fontSize: '14px', margin: 0 }}>Semester subject-wise class attendance tracking and summary</p>
+          <p className="attendance-header-subtitle">Semester subject-wise class attendance tracking and summary</p>
         </div>
 
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div className="attendance-header-controls">
           <select
             value={selectedSemester}
             onChange={(e) => setSelectedSemester(e.target.value)}
-            style={{
-              padding: '8px 14px',
-              borderRadius: '10px',
-              background: 'var(--uv-bg-card)',
-              border: '1px solid var(--uv-border)',
-              color: 'var(--uv-text-primary)',
-              fontSize: '13px',
-              cursor: 'pointer',
-              fontWeight: '700',
-              boxShadow: 'var(--uv-card-shadow)'
-            }}
+            className="attendance-semester-select"
           >
             {SEMESTERS.map((sem) => (
               <option key={sem} value={sem}>{sem}</option>
             ))}
           </select>
 
-          <div style={{ display: 'flex', gap: '4px', background: 'var(--uv-input-bg)', padding: '4px', borderRadius: '10px', border: '1px solid var(--uv-border)' }}>
+          <div className="attendance-view-toggle">
             <button
               onClick={() => setViewMode('grid')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '8px',
-                border: 'none',
-                background: viewMode === 'grid' ? '#6366f1' : 'transparent',
-                color: viewMode === 'grid' ? '#ffffff' : 'var(--uv-text-muted)',
-                cursor: 'pointer',
-                fontSize: '13px',
-                fontWeight: '700',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
+              className={`attendance-toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
               title="Grid View"
             >
               <LayoutGrid size={15} /> Grid
             </button>
             <button
               onClick={() => setViewMode('table')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '8px',
-                border: 'none',
-                background: viewMode === 'table' ? '#6366f1' : 'transparent',
-                color: viewMode === 'table' ? '#ffffff' : 'var(--uv-text-muted)',
-                cursor: 'pointer',
-                fontSize: '13px',
-                fontWeight: '700',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
+              className={`attendance-toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
               title="Table View"
             >
               <List size={15} /> Table
@@ -140,25 +99,25 @@ export default function Attendance() {
       <div className="attendance-summary-grid">
         <div className="attendance-summary-card">
           <span className="summary-card-lbl">Overall Attendance</span>
-          <span className="summary-card-val" style={{ color: overallPercentage >= 75 ? '#10b981' : overallPercentage >= 65 ? '#f59e0b' : '#ef4444' }}>
+          <span className={`summary-card-val ${overallColorClass}`}>
             {overallPercentage}%
           </span>
-          <span className="summary-card-sub" style={{ color: overallPercentage >= 75 ? '#10b981' : '#f59e0b', fontWeight: '600' }}>
+          <span className={`summary-card-sub ${overallSubClass}`}>
             {overallPercentage < 75 ? `Need ${needed75Overall} classes for 75%` : 'Status: Safe Standing'}
           </span>
         </div>
 
         <div className="attendance-summary-card">
           <span className="summary-card-lbl">Classes Attended</span>
-          <span className="summary-card-val" style={{ color: '#6366f1' }}>
-            {attendedClassesCount} <span style={{ fontSize: '16px', color: 'var(--uv-text-subtle)', fontWeight: '500' }}>/ {totalClassesCount}</span>
+          <span className="summary-card-val attended-color">
+            {attendedClassesCount} <span className="summary-card-val-sub">/ {totalClassesCount}</span>
           </span>
           <span className="summary-card-sub">Total Conducted</span>
         </div>
 
         <div className="attendance-summary-card">
           <span className="summary-card-lbl">Classes Missed</span>
-          <span className="summary-card-val" style={{ color: '#ef4444' }}>
+          <span className="summary-card-val missed-color">
             {missedClassesCount}
           </span>
           <span className="summary-card-sub">Total Absent Classes</span>
@@ -166,7 +125,7 @@ export default function Attendance() {
 
         <div className="attendance-summary-card">
           <span className="summary-card-lbl">Subjects Tracked</span>
-          <span className="summary-card-val" style={{ color: '#06b6d4' }}>
+          <span className="summary-card-val tracked-color">
             {subjectsTrackedCount}
           </span>
           <span className="summary-card-sub">In {selectedSemester}</span>
@@ -181,17 +140,17 @@ export default function Attendance() {
           ))}
         </div>
       ) : (
-        <div style={{ background: 'var(--uv-bg-card)', border: '1px solid var(--uv-border)', boxShadow: 'var(--uv-card-shadow)', borderRadius: '16px', overflow: 'hidden', marginBottom: '24px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="attendance-table-card">
+          <table className="attendance-table">
             <thead>
-              <tr style={{ background: 'var(--uv-bg-page)', borderBottom: '1px solid var(--uv-border)' }}>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Subject</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Code</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Faculty</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Attended</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Total</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Attendance %</th>
-                <th style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase' }}>Status</th>
+              <tr className="attendance-table-header-row">
+                <th className="attendance-th">Subject</th>
+                <th className="attendance-th">Code</th>
+                <th className="attendance-th">Faculty</th>
+                <th className="attendance-th">Attended</th>
+                <th className="attendance-th">Total</th>
+                <th className="attendance-th">Attendance %</th>
+                <th className="attendance-th">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -202,15 +161,15 @@ export default function Attendance() {
                 const statusInfo = getStatus(pct);
 
                 return (
-                  <tr key={subj.id || subj.code} style={{ borderBottom: '1px solid var(--uv-border)' }}>
-                    <td style={{ padding: '14px 16px', color: 'var(--uv-text-primary)', fontWeight: '700' }}>{subj.name}</td>
-                    <td style={{ padding: '14px 16px', color: 'var(--uv-primary)', fontSize: '13px', fontWeight: '700' }}>{subj.code}</td>
-                    <td style={{ padding: '14px 16px', color: 'var(--uv-text-muted)', fontSize: '13px' }}>{subj.faculty}</td>
-                    <td style={{ padding: '14px 16px', color: '#10b981', fontWeight: '700' }}>{att}</td>
-                    <td style={{ padding: '14px 16px', color: 'var(--uv-text-primary)', fontWeight: '700' }}>{tot}</td>
-                    <td style={{ padding: '14px 16px', color: statusInfo.color, fontWeight: '800', fontSize: '15px' }}>{pct}%</td>
-                    <td style={{ padding: '14px 16px' }}>
-                      <span style={{ padding: '3px 10px', borderRadius: '999px', background: statusInfo.bg, color: statusInfo.color, fontSize: '11px', fontWeight: '700', textTransform: 'uppercase' }}>
+                  <tr key={subj.id || subj.code} className="attendance-tr">
+                    <td className="attendance-td attendance-td-subject">{subj.name}</td>
+                    <td className="attendance-td attendance-td-code">{subj.code}</td>
+                    <td className="attendance-td attendance-td-faculty">{subj.faculty}</td>
+                    <td className="attendance-td attendance-td-attended">{att}</td>
+                    <td className="attendance-td attendance-td-total">{tot}</td>
+                    <td className={`attendance-td attendance-td-percent ${statusInfo.colorClass}`}>{pct}%</td>
+                    <td className="attendance-td">
+                      <span className={`attendance-status-badge status-badge-${statusInfo.label.toLowerCase()}`}>
                         {statusInfo.label}
                       </span>
                     </td>
@@ -223,7 +182,7 @@ export default function Attendance() {
       )}
 
       {/* Chart */}
-      <div style={{ marginTop: '24px' }}>
+      <div className="attendance-chart-wrapper">
         <AttendanceChart data={chartData} title={`Subject-wise Attendance Distribution (${selectedSemester})`} />
       </div>
     </div>

@@ -123,11 +123,10 @@ export default function NotesHub() {
 
   return (
     <div className="notes-page">
-      {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
         <div>
-          <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--uv-text-primary)', marginBottom: '4px' }}>Notes Hub</h2>
-          <p style={{ color: 'var(--uv-text-muted)', fontSize: '14px', margin: 0 }}>Shared lecture notes, slides, and downloadable study resources</p>
+          <h2 style={{ fontSize: '24px', fontWeight: '800', color: '#f8fafc', marginBottom: '4px' }}>Notes Hub</h2>
+          <p style={{ color: '#94a3b8', fontSize: '14px', margin: 0 }}>Shared lecture notes, slides, and downloadable study resources</p>
         </div>
         <button
           onClick={handleOpenAdd}
@@ -137,23 +136,22 @@ export default function NotesHub() {
         </button>
       </div>
 
-      {/* Filter and Search Bar */}
       <div style={{ display: 'flex', gap: '12px', marginBottom: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
         <div style={{ position: 'relative', flex: 1, minWidth: '220px' }}>
-          <Search size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--uv-text-subtle)' }} />
+          <Search size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
           <input
             type="text"
             placeholder="Search notes by title, description, subject or faculty author..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            style={{ width: '100%', padding: '10px 16px 10px 36px', borderRadius: '10px', border: '1px solid var(--uv-input-border)', background: 'var(--uv-input-bg)', color: 'var(--uv-input-text)', fontSize: '14px', outline: 'none' }}
+            style={{ width: '100%', padding: '10px 16px 10px 36px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.1)', background: 'rgba(255, 255, 255, 0.05)', color: '#f8fafc', fontSize: '14px', outline: 'none' }}
           />
         </div>
 
         <select
           value={subjectFilter}
           onChange={(e) => setSubjectFilter(e.target.value)}
-          style={{ padding: '10px 14px', borderRadius: '10px', background: 'var(--uv-input-bg)', border: '1px solid var(--uv-input-border)', color: 'var(--uv-input-text)', fontSize: '14px', cursor: 'pointer', fontWeight: '700', outline: 'none' }}
+          style={{ padding: '10px 14px', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', color: '#f8fafc', fontSize: '14px', cursor: 'pointer', fontWeight: '700', outline: 'none' }}
         >
           <option value="all">All Subjects</option>
           {subjectsList.map((s) => (
@@ -162,11 +160,12 @@ export default function NotesHub() {
         </select>
       </div>
 
-      {/* Notes 3-Column Uniform Grid */}
       <div className="notes-grid">
         {filteredNotes.length === 0 ? (
-          <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '50px 20px', background: 'var(--uv-bg-card)', borderRadius: '16px', border: '1px solid var(--uv-border)', color: 'var(--uv-text-muted)' }}>
-            No notes found matching your search or filter criteria.
+          <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '50px 20px', background: '#0f172a', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)', color: '#94a3b8' }}>
+            <FileText size={40} style={{ opacity: 0.4, marginBottom: '12px' }} />
+            <h3>No notes found</h3>
+            <p>Try adjusting your search or filter criteria.</p>
           </div>
         ) : (
           filteredNotes.map((note) => {
@@ -174,7 +173,6 @@ export default function NotesHub() {
             return (
               <div key={note.id} className="note-card">
                 <div>
-                  {/* Top Bar: File Type & Subject Badges Left, Edit/Delete Right */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <span className={`file-type ${fileTypeLower}`}>{note.type || 'PDF'}</span>
@@ -184,14 +182,14 @@ export default function NotesHub() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <button
                         onClick={() => handleOpenEdit(note)}
-                        style={{ background: 'none', border: 'none', color: 'var(--uv-primary)', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
+                        style={{ background: 'none', border: 'none', color: '#6366f1', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
                         title="Edit Note"
                       >
                         <Edit2 size={14} />
                       </button>
                       <button
                         onClick={() => handleDelete(note.id)}
-                        style={{ background: 'none', border: 'none', color: 'var(--uv-danger)', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
+                        style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
                         title="Delete Note"
                       >
                         <Trash2 size={14} />
@@ -199,12 +197,10 @@ export default function NotesHub() {
                     </div>
                   </div>
 
-                  {/* Title & Description */}
                   <h3 className="note-title">{note.title}</h3>
                   <p className="note-desc">{note.contentSnippet || 'Lecture notes & study reference material.'}</p>
                 </div>
 
-                {/* Bottom Meta & Download Button */}
                 <div>
                   <div className="note-meta">
                     <span><User size={13} /> {note.author}</span>
@@ -221,49 +217,48 @@ export default function NotesHub() {
         )}
       </div>
 
-      {/* Modal for Add / Edit */}
       {modalOpen && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '20px' }}>
-          <div style={{ background: 'var(--uv-bg-card)', border: '1px solid var(--uv-border)', borderRadius: '16px', padding: '24px', width: '100%', maxWidth: '480px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
+          <div style={{ background: '#0f172a', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '24px', width: '100%', maxWidth: '480px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--uv-text-primary)', margin: 0 }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#f8fafc', margin: 0 }}>
                 {editingNote ? 'Edit Note' : 'Upload New Note'}
               </h3>
-              <button onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--uv-text-muted)', cursor: 'pointer' }}>
+              <button onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer' }}>
                 <X size={20} />
               </button>
             </div>
 
             <form onSubmit={handleSave}>
               <div style={{ marginBottom: '12px' }}>
-                <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: 'var(--uv-text-subtle)', textTransform: 'uppercase', marginBottom: '4px' }}>Note Title</label>
+                <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '4px' }}>Note Title</label>
                 <input
                   type="text"
                   required
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid var(--uv-input-border)', background: 'var(--uv-input-bg)', color: 'var(--uv-input-text)', fontSize: '13px' }}
+                  style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.1)', background: 'rgba(255, 255, 255, 0.05)', color: '#f8fafc', fontSize: '13px' }}
                 />
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: 'var(--uv-text-subtle)', textTransform: 'uppercase', marginBottom: '4px' }}>Subject Code</label>
+                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '4px' }}>Subject Code</label>
                   <input
                     type="text"
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid var(--uv-input-border)', background: 'var(--uv-input-bg)', color: 'var(--uv-input-text)', fontSize: '13px' }}
+                    style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.1)', background: 'rgba(255, 255, 255, 0.05)', color: '#f8fafc', fontSize: '13px' }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: 'var(--uv-text-subtle)', textTransform: 'uppercase', marginBottom: '4px' }}>File Type</label>
+                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '4px' }}>File Type</label>
                   <select
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid var(--uv-input-border)', background: 'var(--uv-input-bg)', color: 'var(--uv-input-text)', fontSize: '13px' }}
+                    style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.1)', background: 'rgba(255, 255, 255, 0.05)', color: '#f8fafc', fontSize: '13px' }}
                   >
                     <option value="PDF">PDF</option>
                     <option value="PPT">PPT</option>
@@ -273,23 +268,23 @@ export default function NotesHub() {
               </div>
 
               <div style={{ marginBottom: '12px' }}>
-                <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: 'var(--uv-text-subtle)', textTransform: 'uppercase', marginBottom: '4px' }}>Faculty / Author</label>
+                <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '4px' }}>Faculty / Author</label>
                 <input
                   type="text"
                   required
                   value={formData.author}
                   onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                  style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid var(--uv-input-border)', background: 'var(--uv-input-bg)', color: 'var(--uv-input-text)', fontSize: '13px' }}
+                  style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.1)', background: 'rgba(255, 255, 255, 0.05)', color: '#f8fafc', fontSize: '13px' }}
                 />
               </div>
 
               <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: 'var(--uv-text-subtle)', textTransform: 'uppercase', marginBottom: '4px' }}>Description / Snippet</label>
+                <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '4px' }}>Description / Snippet</label>
                 <textarea
                   rows="3"
                   value={formData.contentSnippet}
                   onChange={(e) => setFormData({ ...formData, contentSnippet: e.target.value })}
-                  style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid var(--uv-input-border)', background: 'var(--uv-input-bg)', color: 'var(--uv-input-text)', fontSize: '13px', resize: 'vertical' }}
+                  style={{ width: '100%', padding: '9px 12px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.1)', background: 'rgba(255, 255, 255, 0.05)', color: '#f8fafc', fontSize: '13px', resize: 'vertical' }}
                 />
               </div>
 
@@ -297,7 +292,7 @@ export default function NotesHub() {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  style={{ padding: '8px 16px', background: 'transparent', color: 'var(--uv-text-muted)', border: 'none', cursor: 'pointer', fontSize: '13px', fontWeight: '600' }}
+                  style={{ padding: '8px 16px', background: 'transparent', color: '#94a3b8', border: 'none', cursor: 'pointer', fontSize: '13px', fontWeight: '600' }}
                 >
                   Cancel
                 </button>

@@ -12,8 +12,12 @@
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background: var(--uv-bg-page);
+  background: #0a0f1e;
   position: relative;
+}
+
+body.light-theme .dashboard-wrapper {
+  background: #f1f5f9;
 }
 
 /* Sidebar mobile overlay */
@@ -49,8 +53,12 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  background: var(--uv-bg-page);
+  background: #0a0f1e;
   transition: all 0.3s ease;
+}
+
+body.light-theme .dashboard-main {
+  background: #f1f5f9;
 }
 
 /* Content wrapper with fade-in */

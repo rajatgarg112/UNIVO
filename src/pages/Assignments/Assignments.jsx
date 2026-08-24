@@ -198,7 +198,7 @@ export default function Assignments() {
               className="filter-pill-btn"
               style={{
                 background: statusFilter === st ? '#6366f1' : 'transparent',
-                color: statusFilter === st ? '#ffffff' : 'var(--uv-text-muted)'
+                color: statusFilter === st ? '#ffffff' : '#94a3b8'
               }}
             >
               {st}

@@ -1,102 +1,3 @@
-/* =============================================
-   UniversityVerse – Global Design Tokens & Theme Architecture
-   Centralized CSS Tokens for Dark Mode (default) and Light Mode ([data-theme="light"])
-   ============================================= */
-
-:root {
-  /* ── DARK MODE TOKENS (Default) ── */
-  --uv-bg-page: #0a0f1e;
-  --uv-bg-card: #0f172a;
-  --uv-bg-card-rgb: 15, 23, 42;
-  --uv-bg-secondary: #1e293b;
-  --uv-bg-hover: rgba(255, 255, 255, 0.05);
-  
-  --uv-text-primary: #f8fafc;
-  --uv-text-secondary: #cbd5e1;
-  --uv-text-muted: #94a3b8;
-  --uv-text-subtle: #64748b;
-  
-  --uv-border: rgba(255, 255, 255, 0.08);
-  --uv-border-strong: rgba(255, 255, 255, 0.15);
-  
-  --uv-input-bg: rgba(255, 255, 255, 0.05);
-  --uv-input-border: rgba(255, 255, 255, 0.1);
-  --uv-input-text: #f8fafc;
-  
-  --uv-sidebar-bg: #0f172a;
-  --uv-header-bg: rgba(15, 23, 42, 0.95);
-  --uv-header-title: #f8fafc;
-  
-  --uv-primary: #6366f1;
-  --uv-primary-hover: #4f46e5;
-  --uv-primary-light: rgba(99, 102, 241, 0.15);
-  
-  --uv-success: #10b981;
-  --uv-success-bg: rgba(16, 185, 129, 0.15);
-  
-  --uv-warning: #f59e0b;
-  --uv-warning-bg: rgba(245, 158, 11, 0.15);
-  
-  --uv-danger: #ef4444;
-  --uv-danger-bg: rgba(239, 68, 68, 0.15);
-  
-  --uv-info: #06b6d4;
-  --uv-info-bg: rgba(6, 182, 212, 0.15);
-  
-  --uv-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --uv-modal-bg: #0f172a;
-  --uv-dropdown-bg: #0f172a;
-  --uv-scrollbar-track: #0f172a;
-  --uv-scrollbar-thumb: #334155;
-}
-
-html[data-theme="light"] {
-  /* ── LIGHT MODE TOKENS ── */
-  --uv-bg-page: #f1f5f9;
-  --uv-bg-card: #ffffff;
-  --uv-bg-card-rgb: 255, 255, 255;
-  --uv-bg-secondary: #f8fafc;
-  --uv-bg-hover: rgba(99, 102, 241, 0.06);
-  
-  --uv-text-primary: #0f172a;      /* #0f172a / #111827 strong dark text */
-  --uv-text-secondary: #334155;    /* #334155 readable body text */
-  --uv-text-muted: #475569;        /* #475569 / #64748b subtitles & labels */
-  --uv-text-subtle: #64748b;       /* #64748b secondary text */
-  
-  --uv-border: #e2e8f0;
-  --uv-border-strong: #cbd5e1;
-  
-  --uv-input-bg: #ffffff;
-  --uv-input-border: #cbd5e1;
-  --uv-input-text: #0f172a;
-  
-  --uv-sidebar-bg: #ffffff;
-  --uv-header-bg: rgba(255, 255, 255, 0.95);
-  --uv-header-title: #0f172a;
-  
-  --uv-primary: #4f46e5;
-  --uv-primary-hover: #4338ca;
-  --uv-primary-light: rgba(79, 70, 229, 0.1);
-  
-  --uv-success: #059669;
-  --uv-success-bg: rgba(5, 150, 105, 0.1);
-  
-  --uv-warning: #d97706;
-  --uv-warning-bg: rgba(217, 119, 6, 0.1);
-  
-  --uv-danger: #dc2626;
-  --uv-danger-bg: rgba(220, 38, 38, 0.1);
-  
-  --uv-info: #0891b2;
-  --uv-info-bg: rgba(8, 145, 178, 0.1);
-  
-  --uv-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --uv-modal-bg: #ffffff;
-  --uv-dropdown-bg: #ffffff;
-  --uv-scrollbar-track: #e2e8f0;
-  --uv-scrollbar-thumb: #cbd5e1;
-}
-
 /* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -111,21 +12,35 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-color: var(--uv-bg-page);
-  color: var(--uv-text-secondary);
+  background-color: #0a0f1e;
+  color: #cbd5e1;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.light-theme {
+  background-color: #f1f5f9;
+  color: #334155;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--uv-text-primary);
-  transition: color 0.3s ease;
+  color: #f8fafc;
+  transition: color 0.25s ease;
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+  color: #0f172a;
 }
 
 a {
@@ -162,199 +77,57 @@ ul, ol {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--uv-scrollbar-track);
+  background: #0f172a;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: #e2e8f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--uv-scrollbar-thumb);
+  background: #334155;
   border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--uv-primary);
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
 }
 
-/* =============================================
-   SHARED PAGE HEADER RULES (Guarantees Dark Heading & Muted Subtitle in Light Mode)
-   ============================================= */
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
 
-/* Targets all main page title headings across all routes */
+/* Shared Header Rules */
 .page-title,
 .page-header h1,
 .page-header h2,
-.attendance-header-left h1,
 .timetable-header-left h1,
 .assignments-header h1,
-.assignments-header h2,
-.hostel-title,
-.career-header h1,
-.map-header h1,
-.marketplace-header h1,
-.lostfound-header h1,
-.parent-page-header h1,
-.parent-page h2 {
-  color: var(--uv-text-primary) !important;
+.assignments-header h2 {
+  color: #f8fafc;
 }
 
-/* Targets all page subtitle paragraphs across all routes */
+body.light-theme .page-title,
+body.light-theme .page-header h1,
+body.light-theme .page-header h2,
+body.light-theme .timetable-header-left h1,
+body.light-theme .assignments-header h1,
+body.light-theme .assignments-header h2 {
+  color: #0f172a;
+}
+
 .page-subtitle,
 .page-header p,
-.attendance-header-left p,
 .timetable-header-left p,
-.assignments-header p,
-.hostel-subtitle,
-.career-header p,
-.map-header p,
-.marketplace-header p,
-.lostfound-header p,
-.parent-page-header p,
-.parent-page p {
-  color: var(--uv-text-muted) !important;
+.assignments-header p {
+  color: #94a3b8;
 }
 
-/* =============================================
-   GLOBAL THEME APPLIER
-   ============================================= */
-
-/* Layout & Main Containers */
-.dashboard-wrapper {
-  background-color: var(--uv-bg-page) !important;
-}
-
-.dashboard-main {
-  background-color: var(--uv-bg-page);
-}
-
-/* Sidebar & Navigation */
-.sidebar {
-  background-color: var(--uv-sidebar-bg) !important;
-  border-right: 1px solid var(--uv-border) !important;
-}
-
-.sidebar-logo-text {
-  color: var(--uv-text-primary) !important;
-}
-
-.sidebar-nav-item {
-  color: var(--uv-text-muted) !important;
-}
-
-.sidebar-nav-item:hover {
-  background: var(--uv-bg-hover) !important;
-  color: var(--uv-primary) !important;
-}
-
-.sidebar-nav-item.active {
-  background: var(--uv-primary-light) !important;
-  color: var(--uv-primary) !important;
-  border-left: 3px solid var(--uv-primary) !important;
-}
-
-.sidebar-user-name {
-  color: var(--uv-text-primary) !important;
-}
-
-.sidebar-user-role {
-  color: var(--uv-text-subtle) !important;
-}
-
-/* Topbar Header */
-.topbar {
-  background: var(--uv-header-bg) !important;
-  border-bottom: 1px solid var(--uv-border) !important;
-}
-
-.topbar-title {
-  color: var(--uv-header-title) !important;
-}
-
-.topbar-search-input {
-  background: var(--uv-input-bg) !important;
-  border: 1px solid var(--uv-input-border) !important;
-  color: var(--uv-input-text) !important;
-}
-
-.topbar-dropdown {
-  background: var(--uv-dropdown-bg) !important;
-  border: 1px solid var(--uv-border) !important;
-  box-shadow: var(--uv-card-shadow) !important;
-}
-
-.topbar-dropdown-name {
-  color: var(--uv-text-primary) !important;
-}
-
-.topbar-dropdown-email {
-  color: var(--uv-text-muted) !important;
-}
-
-.topbar-dropdown-item {
-  color: var(--uv-text-secondary) !important;
-}
-
-.topbar-dropdown-item:hover {
-  background: var(--uv-bg-hover) !important;
-}
-
-/* Reusable Cards & Surfaces */
-.dashboard-section,
-.stat-card,
-.assignment-card,
-.assignment-item,
-.book-card,
-.note-card,
-.club-card,
-.event-card,
-.company-card,
-.login-card,
-.class-card,
-.subject-attendance-card,
-.faculty-stat-card,
-.academic-stat-card,
-.achievement-card,
-.cert-card {
-  background: var(--uv-bg-card) !important;
-  border: 1px solid var(--uv-border) !important;
-  box-shadow: var(--uv-card-shadow) !important;
-  color: var(--uv-text-secondary);
-}
-
-.dashboard-welcome {
-  background: linear-gradient(135deg, var(--uv-primary-light), var(--uv-info-bg)) !important;
-  border: 1px solid var(--uv-border) !important;
-}
-
-.dashboard-greeting {
-  color: var(--uv-text-primary) !important;
-}
-
-/* Form Controls & Inputs */
-input:not([type="button"]):not([type="submit"]):not([type="reset"]),
-select,
-textarea {
-  background-color: var(--uv-input-bg) !important;
-  border: 1px solid var(--uv-input-border) !important;
-  color: var(--uv-input-text) !important;
-}
-
-input:focus, select:focus, textarea:focus {
-  border-color: var(--uv-primary) !important;
-}
-
-.form-label {
-  color: var(--uv-text-muted) !important;
-}
-
-/* Modals */
-.modal-content,
-.modal-box {
-  background-color: var(--uv-modal-bg) !important;
-  border: 1px solid var(--uv-border) !important;
-  color: var(--uv-text-primary) !important;
-}
-
-.modal-title, .modal-header h3 {
-  color: var(--uv-text-primary) !important;
+body.light-theme .page-subtitle,
+body.light-theme .page-header p,
+body.light-theme .timetable-header-left p,
+body.light-theme .assignments-header p {
+  color: #64748b;
 }
 
 /* Global Utility Classes */
@@ -394,7 +167,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--uv-primary), var(--uv-info));
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -426,4 +199,39 @@ input:focus, select:focus, textarea:focus {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+/* App Loading Fallback */
+.app-loading-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0f1e;
+  color: #f8fafc;
+  font-family: sans-serif;
+}
+
+body.light-theme .app-loading-fallback {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.app-loading-spinner-box {
+  text-align: center;
+}
+
+.app-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(99, 102, 241, 0.2);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+.app-loading-text {
+  color: #94a3b8;
+  font-size: 14px;
 }
