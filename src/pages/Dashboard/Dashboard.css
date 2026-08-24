@@ -14,7 +14,7 @@ body.light-theme .card-title,
 body.light-theme .attendance-subj-name,
 body.light-theme .item-title,
 body.light-theme .quick-action-btn {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .dashboard-subtitle,
@@ -40,8 +40,8 @@ body.light-theme .quick-action-btn {
 }
 
 body.light-theme .quick-action-btn:hover {
-  background: rgba(99, 102, 241, 0.1);
-  color: #4f46e5;
+  background: rgba(215, 25, 32, 0.1);
+  color: #B5121B;
 }
 
 @keyframes fadeIn {
@@ -73,8 +73,8 @@ body.light-theme .quick-action-btn:hover {
 }
 
 .header-meta-badge {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
   padding: 8px 16px;
   border-radius: 999px;
   font-size: 13px;
@@ -93,7 +93,7 @@ body.light-theme .quick-action-btn:hover {
 }
 
 .dash-summary-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -133,7 +133,7 @@ body.light-theme .quick-action-btn:hover {
 .dash-summary-btn {
   background: none;
   border: none;
-  color: #6366f1;
+  color: #D71920;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -163,7 +163,7 @@ body.light-theme .quick-action-btn:hover {
 
 /* General White Card Container */
 .dashboard-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -194,7 +194,7 @@ body.light-theme .quick-action-btn:hover {
 .btn-link {
   background: none;
   border: none;
-  color: #6366f1;
+  color: #D71920;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -301,8 +301,8 @@ body.light-theme .quick-action-btn:hover {
 .subject-code-tag {
   font-size: 11px;
   font-weight: 700;
-  color: #6366f1;
-  background: rgba(99, 102, 241, 0.15);
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.15);
   padding: 2px 8px;
   border-radius: 6px;
 }
@@ -346,7 +346,7 @@ body.light-theme .quick-action-btn:hover {
 .timetable-item-row {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 4px solid #6366f1;
+  border-left: 4px solid #D71920;
   padding: 14px 16px;
   border-radius: 12px;
   display: flex;
@@ -358,7 +358,7 @@ body.light-theme .quick-action-btn:hover {
 .tt-time {
   font-size: 12px;
   font-weight: 700;
-  color: #6366f1;
+  color: #D71920;
   white-space: nowrap;
 }
 
@@ -425,9 +425,9 @@ body.light-theme .quick-action-btn:hover {
 }
 
 .quick-action-btn:hover {
-  background: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
-  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
+  border-color: rgba(215, 25, 32, 0.3);
   transform: translateY(-2px);
 }
 

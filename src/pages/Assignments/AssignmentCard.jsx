@@ -75,7 +75,7 @@ export default function AssignmentCard({ assignment, onViewDetails, onStatusTogg
             Due:{' '}
             <strong
               className="meta-due-text"
-              style={{ color: isLate ? '#ef4444' : '#6366f1' }}
+              style={{ color: isLate ? '#ef4444' : '#D71920' }}
             >
               {dueDate}
             </strong>

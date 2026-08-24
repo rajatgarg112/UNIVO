@@ -1,7 +1,7 @@
 /* Attendance Chart Container & Styles */
 
 .attendance-chart-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   padding: 24px;
@@ -15,7 +15,7 @@ body.light-theme .attendance-chart-card {
 }
 
 body.light-theme .attendance-chart-title {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .attendance-chart-area {
@@ -131,8 +131,8 @@ body.light-theme .attendance-chart-area {
 }
 
 .chart-bar-fill.bar-safe {
-  background: linear-gradient(180deg, #6366f1, #10b981);
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(180deg, #D71920, #10b981);
+  box-shadow: 0 4px 14px rgba(215, 25, 32, 0.3);
 }
 
 .chart-x-baseline {

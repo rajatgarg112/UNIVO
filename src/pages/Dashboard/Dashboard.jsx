@@ -88,7 +88,7 @@ export default function Dashboard() {
     { label: 'Attendance', route: '/attendance', icon: <CheckSquare size={18} color="#10b981" /> },
     { label: 'Assignments', route: '/assignments', icon: <FileText size={18} color="#f59e0b" /> },
     { label: 'Notes', route: '/notes', icon: <BookOpen size={18} color="#06b6d4" /> },
-    { label: 'Timetable', route: '/timetable', icon: <Calendar size={18} color="#6366f1" /> },
+    { label: 'Timetable', route: '/timetable', icon: <Calendar size={18} color="#D71920" /> },
   ];
 
   return (
@@ -122,8 +122,8 @@ export default function Dashboard() {
         <div className="dash-summary-card">
           <div>
             <span className="dash-summary-lbl">Current CGPA</span>
-            <div className="dash-summary-val" style={{ color: '#6366f1' }}>{currentStudent.cgpa}</div>
-            <div className="dash-summary-sub" style={{ color: '#6366f1' }}>Top 5% in Department</div>
+            <div className="dash-summary-val" style={{ color: '#D71920' }}>{currentStudent.cgpa}</div>
+            <div className="dash-summary-sub" style={{ color: '#D71920' }}>Top 5% in Department</div>
           </div>
           <button onClick={() => navigate('/profile')} className="dash-summary-btn">
             View Profile <ArrowRight size={12} />
@@ -163,19 +163,19 @@ export default function Dashboard() {
           <div className="dashboard-card">
             <div className="card-header-flex">
               <h3 className="card-title">
-                <Clock size={20} color="#6366f1" /> Today's Schedule
+                <Clock size={20} color="#D71920" /> Today's Schedule
               </h3>
               <button onClick={() => navigate('/timetable')} className="btn-link">View Timetable <ArrowRight size={14} /></button>
             </div>
             <div className="list-container">
               {todaySchedule.map((cls, idx) => (
-                <div key={idx} className="timetable-item-row" style={{ borderLeftColor: idx === 2 ? '#f59e0b' : '#6366f1' }}>
+                <div key={idx} className="timetable-item-row" style={{ borderLeftColor: idx === 2 ? '#f59e0b' : '#D71920' }}>
                   <div>
                     <span className="tt-time">{cls.time}</span>
                     <h4 className="item-title" style={{ marginTop: '2px' }}>{cls.subject}</h4>
                     <span className="item-sub">{cls.room}</span>
                   </div>
-                  <span className="subject-code-tag" style={{ background: cls.type === 'Lab' ? 'rgba(245, 158, 11, 0.15)' : 'rgba(99, 102, 241, 0.15)', color: cls.type === 'Lab' ? '#f59e0b' : '#6366f1' }}>
+                  <span className="subject-code-tag" style={{ background: cls.type === 'Lab' ? 'rgba(245, 158, 11, 0.15)' : 'rgba(215, 25, 32, 0.15)', color: cls.type === 'Lab' ? '#f59e0b' : '#D71920' }}>
                     {cls.type}
                   </span>
                 </div>
@@ -259,7 +259,7 @@ export default function Dashboard() {
           {/* SECTION 5 — QUICK ACTIONS */}
           <div className="dashboard-card">
             <h3 className="card-title">
-              <Home size={20} color="#8b5cf6" /> Quick Actions
+              <Home size={20} color="#E8333A" /> Quick Actions
             </h3>
             <div className="quick-actions-grid">
               {quickActions.map((action, idx) => (

@@ -197,7 +197,7 @@ export default function Assignments() {
               onClick={() => setStatusFilter(st)}
               className="filter-pill-btn"
               style={{
-                background: statusFilter === st ? '#6366f1' : 'transparent',
+                background: statusFilter === st ? '#D71920' : 'transparent',
                 color: statusFilter === st ? '#ffffff' : '#94a3b8'
               }}
             >

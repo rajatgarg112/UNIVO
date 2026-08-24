@@ -15,7 +15,7 @@ export default function ForgotPasswordPage() {
       </form>
 
       <p style={{ color: '#64748b', fontSize: '13px', textAlign: 'center', marginTop: '16px' }}>
-        Remember your password? <Link to="/login" style={{ color: '#818cf8' }}>Back to Login</Link>
+        Remember your password? <Link to="/login" style={{ color: '#E8333A' }}>Back to Login</Link>
       </p>
     </div>
   );

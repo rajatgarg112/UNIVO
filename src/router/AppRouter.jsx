@@ -39,7 +39,7 @@ function LoadingFallback() {
     <div className="app-loading-fallback">
       <div className="app-loading-spinner-box">
         <div className="app-loading-spinner" />
-        <p className="app-loading-text">Loading UniversityVerse...</p>
+        <p className="app-loading-text">Loading UNIVO...</p>
       </div>
     </div>
   );

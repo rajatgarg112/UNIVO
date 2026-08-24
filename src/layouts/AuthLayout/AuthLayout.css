@@ -22,7 +22,7 @@ body {
 /* ─── Left Panel ─────────────────────────── */
 
 .auth-left {
-  background: linear-gradient(135deg, #0a0f1e 0%, #1e1b4b 60%, #0f172a 100%);
+  background: linear-gradient(135deg, #070B14 0%, #1e1b4b 60%, #0B1220 100%);
   padding: 60px;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ body {
   left: -120px;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.18) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -73,7 +73,7 @@ body {
 .auth-left-brand-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  background: linear-gradient(135deg, #D71920, #B5121B);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@ body {
 }
 
 .auth-left-title-accent {
-  background: linear-gradient(90deg, #818cf8, #06b6d4);
+  background: linear-gradient(90deg, #E8333A, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -135,7 +135,7 @@ body {
 }
 
 .auth-left-feature-icon {
-  color: #6366f1;
+  color: #D71920;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -186,7 +186,7 @@ body {
 /* ─── Right Panel ─────────────────────────── */
 
 .auth-right {
-  background: #0f172a;
+  background: #0B1220;
   padding: 40px 60px;
   display: flex;
   align-items: center;

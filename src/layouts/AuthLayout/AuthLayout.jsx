@@ -21,7 +21,7 @@ const features = [
 ];
 
 const floatingCards = [
-  { label: 'Active Students', value: '52,400+', color: '#6366f1' },
+  { label: 'Active Students', value: '52,400+', color: '#D71920' },
   { label: 'Assignments Submitted', value: '1.2M+', color: '#06b6d4' },
   { label: 'Placement Rate', value: '94.7%', color: '#10b981' },
 ];
@@ -34,8 +34,8 @@ const AuthLayout = () => {
         {/* Brand */}
         <div className="auth-left-top">
           <Link to="/" className="auth-left-brand">
-            <div className="auth-left-brand-icon">UV</div>
-            <span className="auth-left-brand-name">UniversityVerse</span>
+            <div className="auth-left-brand-icon">U</div>
+            <span className="auth-left-brand-name">UNIVO</span>
           </Link>
 
           <h1 className="auth-left-title">

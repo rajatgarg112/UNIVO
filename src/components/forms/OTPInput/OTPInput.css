@@ -16,20 +16,20 @@
   color: #f8fafc;
   outline: none;
   transition: all 0.2s ease;
-  caret-color: #6366f1;
+  caret-color: #D71920;
   font-family: 'Space Grotesk', sans-serif;
   -webkit-appearance: none;
 }
 
 .otp-input:focus {
-  border-color: #6366f1;
-  background: rgba(99, 102, 241, 0.1);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  border-color: #D71920;
+  background: rgba(215, 25, 32, 0.1);
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.2);
 }
 
 .otp-input.otp-filled {
-  border-color: rgba(99, 102, 241, 0.5);
-  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(215, 25, 32, 0.5);
+  background: rgba(215, 25, 32, 0.08);
 }
 
 .otp-error .otp-input {

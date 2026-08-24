@@ -1,9 +1,9 @@
 /* Redesigned Subject Attendance Card Styles */
 
 .subject-attendance-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 4px solid #6366f1;
+  border-left: 4px solid #D71920;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   padding: 20px;
@@ -21,7 +21,7 @@ body.light-theme .subject-attendance-card {
 }
 
 body.light-theme .subject-name {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .sac-stats-row {
@@ -30,7 +30,7 @@ body.light-theme .sac-stats-row {
 }
 
 body.light-theme .sac-stat-val {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 .subject-attendance-card:hover {
@@ -44,12 +44,12 @@ body.light-theme .sac-stat-val {
 
 .subject-attendance-card.warning-card {
   border-left-color: #f59e0b;
-  background: #0f172a;
+  background: #0B1220;
 }
 
 .subject-attendance-card.danger-card {
   border-left-color: #ef4444;
-  background: #0f172a;
+  background: #0B1220;
 }
 
 /* Card Header Block */
@@ -91,8 +91,8 @@ body.light-theme .sac-stat-val {
 
 .code-pill {
   font-weight: 700;
-  color: #6366f1;
-  background: rgba(99, 102, 241, 0.15);
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.15);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 11px;

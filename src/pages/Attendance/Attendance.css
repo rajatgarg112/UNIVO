@@ -10,7 +10,7 @@ body.light-theme .attendance-page {
 }
 
 body.light-theme .attendance-header-title {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .attendance-subtitle {
@@ -26,7 +26,7 @@ body.light-theme .attendance-history-section {
 }
 
 body.light-theme .att-stat-val {
-  color: #0f172a;
+  color: #0B1220;
 }
 
 body.light-theme .att-table th {
@@ -101,7 +101,7 @@ body.light-theme .att-table tr:hover {
 .attendance-semester-select {
   padding: 8px 14px;
   border-radius: 10px;
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #f8fafc;
   font-size: 13px;
@@ -134,7 +134,7 @@ body.light-theme .att-table tr:hover {
 }
 
 .attendance-toggle-btn.active {
-  background: #6366f1;
+  background: #D71920;
   color: #ffffff;
 }
 
@@ -147,7 +147,7 @@ body.light-theme .att-table tr:hover {
 }
 
 .attendance-summary-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -175,7 +175,7 @@ body.light-theme .att-table tr:hover {
 .summary-card-val.overall-safe { color: #10b981; }
 .summary-card-val.overall-warning { color: #f59e0b; }
 .summary-card-val.overall-danger { color: #ef4444; }
-.summary-card-val.attended-color { color: #6366f1; }
+.summary-card-val.attended-color { color: #D71920; }
 .summary-card-val.missed-color { color: #ef4444; }
 .summary-card-val.tracked-color { color: #06b6d4; }
 
@@ -210,7 +210,7 @@ body.light-theme .att-table tr:hover {
 
 /* Table View */
 .attendance-table-card {
-  background: #0f172a;
+  background: #0B1220;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -225,7 +225,7 @@ body.light-theme .att-table tr:hover {
 }
 
 .attendance-table-header-row {
-  background: #0a0f1e;
+  background: #070B14;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -251,7 +251,7 @@ body.light-theme .att-table tr:hover {
 }
 
 .attendance-td-code {
-  color: #6366f1;
+  color: #D71920;
   font-size: 13px;
   font-weight: 700;
 }

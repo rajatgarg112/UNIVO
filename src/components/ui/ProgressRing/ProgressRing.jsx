@@ -5,7 +5,7 @@ const ProgressRing = ({
   percentage = 0,
   size = 80,
   strokeWidth = 6,
-  color = '#6366f1',
+  color = '#D71920',
   label,
   showText = true,
 }) => {

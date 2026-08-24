@@ -9,7 +9,7 @@ function ProgressRing({ percent, size = 56, strokeWidth = 5, status }) {
   const offset = circumference - (safePercent / 100) * circumference;
 
   const colorMap = { safe: '#10b981', warning: '#f59e0b', danger: '#ef4444' };
-  const color = colorMap[status] || '#6366f1';
+  const color = colorMap[status] || '#D71920';
 
   return (
     <div className="progress-ring-wrapper" style={{ width: size, height: size }}>

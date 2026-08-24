@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Users, BookOpen, Library, Briefcase, Music, Home,
@@ -13,14 +13,14 @@ const features = [
     icon: <CheckCircle size={22} />,
     title: 'Smart Attendance',
     desc: 'Auto-tracking with biometric integration. Instant 75% threshold alerts sent to students and parents.',
-    color: '#6366f1',
-    bg: 'rgba(99,102,241,0.12)',
+    color: '#D71920',
+    bg: 'rgba(215,25,32,0.12)',
   },
   {
     icon: <BookOpen size={22} />,
     title: 'Assignment Hub',
     desc: 'Submit, track, and grade assignments online. Plagiarism detection and rubric-based grading built in.',
-    color: '#8b5cf6',
+    color: '#E8333A',
     bg: 'rgba(139,92,246,0.12)',
   },
   {
@@ -70,11 +70,11 @@ const features = [
 const testimonials = [
   {
     quote:
-      'UniversityVerse completely changed how I manage my semester. Tracking assignments and attendance in one place saves me hours every week.',
+      'UNIVO completely changed how I manage my semester. Tracking assignments and attendance in one place saves me hours every week.',
     name: 'Priya Sharma',
     dept: 'B.Tech CSE, 3rd Year',
     initials: 'PS',
-    avatarBg: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+    avatarBg: 'linear-gradient(135deg, #D71920, #E8333A)',
     stars: 5,
   },
   {
@@ -83,7 +83,7 @@ const testimonials = [
     name: 'Rahul Mehta',
     dept: 'MBA Finance, 2nd Year',
     initials: 'RM',
-    avatarBg: 'linear-gradient(135deg, #06b6d4, #6366f1)',
+    avatarBg: 'linear-gradient(135deg, #06b6d4, #D71920)',
     stars: 5,
   },
   {
@@ -131,69 +131,9 @@ const stats = [
 
 /* ── component ─────────────────────────────────────────── */
 export default function Landing() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="landing-page">
-      {/* ── Navbar ── */}
-      <nav
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          padding: '16px 40px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          background: scrolled ? 'rgba(10,15,30,0.95)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
-          transition: 'all 0.3s ease',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              background: 'linear-gradient(135deg,#6366f1,#8b5cf6)',
-              borderRadius: 10,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Zap size={18} color="#fff" />
-          </div>
-          <span
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 800,
-              fontSize: 20,
-              color: '#f8fafc',
-            }}
-          >
-            UniversityVerse
-          </span>
-        </div>
-
-        <div style={{ display: 'flex', gap: 8 }}>
-          <Link to="/login" className="btn-ghost" style={{ padding: '8px 20px', fontSize: 14 }}>
-            Sign In
-          </Link>
-          <Link to="/login" className="btn-primary" style={{ padding: '8px 20px', fontSize: 14 }}>
-            Get Started
-          </Link>
-        </div>
-      </nav>
 
       {/* ── Hero Section ── */}
       <section className="hero-section">
@@ -234,7 +174,7 @@ export default function Landing() {
               <span className="preview-dot preview-dot-red" />
               <span className="preview-dot preview-dot-yellow" />
               <span className="preview-dot preview-dot-green" />
-              <span className="preview-title">UniversityVerse — Student Dashboard</span>
+              <span className="preview-title">UNIVO — Student Dashboard</span>
             </div>
 
             <div className="dashboard-preview-grid">
@@ -354,7 +294,7 @@ export default function Landing() {
             </div>
             <h2 className="section-title">Loved by students, trusted by institutions</h2>
             <p className="section-subtitle">
-              Hear from the students, faculty, and parents who use UniversityVerse every day.
+              Hear from the students, faculty, and parents who use UNIVO every day.
             </p>
           </div>
 
@@ -416,7 +356,7 @@ export default function Landing() {
           </div>
           <h2 className="cta-title">Ready to Transform Your University?</h2>
           <p className="cta-subtitle">
-            Join 50+ forward-thinking universities already running on UniversityVerse. Setup takes
+            Join 50+ forward-thinking universities already running on UNIVO. Setup takes
             less than a day.
           </p>
           <div className="cta-btn-group">
@@ -429,20 +369,7 @@ export default function Landing() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer
-        style={{
-          background: '#050b1a',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
-          padding: '32px 24px',
-          textAlign: 'center',
-          color: '#475569',
-          fontSize: 14,
-        }}
-      >
-        © 2025 UniversityVerse. Built for the universities of tomorrow.
-      </footer>
     </div>
+
   );
 }

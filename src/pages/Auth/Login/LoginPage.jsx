@@ -103,7 +103,7 @@ export default function LoginPage() {
     <div className="login-card">
       <div className="login-card-header">
         <h2>Welcome Back</h2>
-        <p>Sign in to access your UniversityVerse portal</p>
+        <p>Sign in to access your UNIVO portal</p>
       </div>
 
       {/* Role Selection Tabs */}

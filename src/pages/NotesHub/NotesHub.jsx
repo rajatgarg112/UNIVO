@@ -130,7 +130,7 @@ export default function NotesHub() {
         </div>
         <button
           onClick={handleOpenAdd}
-          style={{ padding: '10px 18px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#fff', borderRadius: '10px', border: 'none', fontWeight: '700', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', boxShadow: '0 4px 14px rgba(99, 102, 241, 0.35)' }}
+          style={{ padding: '10px 18px', background: 'linear-gradient(135deg, #D71920, #E8333A)', color: '#fff', borderRadius: '10px', border: 'none', fontWeight: '700', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', boxShadow: '0 4px 14px rgba(215, 25, 32, 0.35)' }}
         >
           <Plus size={16} /> Upload Note
         </button>
@@ -162,7 +162,7 @@ export default function NotesHub() {
 
       <div className="notes-grid">
         {filteredNotes.length === 0 ? (
-          <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '50px 20px', background: '#0f172a', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)', color: '#94a3b8' }}>
+          <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '50px 20px', background: '#0B1220', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)', color: '#94a3b8' }}>
             <FileText size={40} style={{ opacity: 0.4, marginBottom: '12px' }} />
             <h3>No notes found</h3>
             <p>Try adjusting your search or filter criteria.</p>
@@ -182,7 +182,7 @@ export default function NotesHub() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <button
                         onClick={() => handleOpenEdit(note)}
-                        style={{ background: 'none', border: 'none', color: '#6366f1', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
+                        style={{ background: 'none', border: 'none', color: '#D71920', cursor: 'pointer', padding: '4px', borderRadius: '4px' }}
                         title="Edit Note"
                       >
                         <Edit2 size={14} />
@@ -219,7 +219,7 @@ export default function NotesHub() {
 
       {modalOpen && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '20px' }}>
-          <div style={{ background: '#0f172a', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '24px', width: '100%', maxWidth: '480px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
+          <div style={{ background: '#0B1220', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '24px', width: '100%', maxWidth: '480px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
               <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#f8fafc', margin: 0 }}>
                 {editingNote ? 'Edit Note' : 'Upload New Note'}
@@ -298,7 +298,7 @@ export default function NotesHub() {
                 </button>
                 <button
                   type="submit"
-                  style={{ padding: '8px 20px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#ffffff', border: 'none', borderRadius: '10px', fontSize: '13px', fontWeight: '700', cursor: 'pointer' }}
+                  style={{ padding: '8px 20px', background: 'linear-gradient(135deg, #D71920, #E8333A)', color: '#ffffff', border: 'none', borderRadius: '10px', fontSize: '13px', fontWeight: '700', cursor: 'pointer' }}
                 >
                   Save Note
                 </button>
