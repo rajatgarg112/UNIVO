@@ -21,6 +21,10 @@ const Attendance    = lazy(() => import('../pages/Attendance/Attendance'));
 const Timetable     = lazy(() => import('../pages/Timetable/Timetable'));
 const Assignments   = lazy(() => import('../pages/Assignments/Assignments'));
 const NotesHub      = lazy(() => import('../pages/NotesHub/NotesHub'));
+const HostelOverview = lazy(() => import('../pages/Hostel/HostelOverview/HostelOverview'));
+const RoomDetailsPage = lazy(() => import('../pages/Hostel/RoomDetails/RoomDetailsPage'));
+const HostelRequests = lazy(() => import('../pages/Hostel/HostelRequests/HostelRequests'));
+const GatePass       = lazy(() => import('../pages/Hostel/GatePass/GatePass'));
 const About         = lazy(() => import('../pages/About/About'));
 const NotFound      = lazy(() => import('../pages/NotFound/NotFound'));
 
@@ -77,6 +81,10 @@ function AppRouter() {
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/notes" element={<NotesHub />} />
+          <Route path="/hostel" element={<HostelOverview />} />
+          <Route path="/hostel/room/:roomId" element={<RoomDetailsPage />} />
+          <Route path="/hostel/requests" element={<HostelRequests />} />
+          <Route path="/hostel/gatepass" element={<GatePass />} />
         </Route>
 
         {/* 404 Route */}
