@@ -10,7 +10,8 @@ import {
   X,
   Sun,
   Moon,
-  FileText
+  FileText,
+  BookOpen
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import { useNotifications } from '../../../context/NotificationContext';
@@ -20,6 +21,7 @@ import { useTheme } from '../../../context/ThemeContext';
 import initialStudents from '../../../data/students.json';
 import initialAssignments from '../../../data/assignments.json';
 import initialNotes from '../../../data/notes.json';
+import initialLibrary from '../../../data/library.json';
 import './Topbar.css';
 
 /* ── Derive page title from pathname ── */
@@ -31,6 +33,7 @@ const getPageTitle = (pathname) => {
     '/timetable': 'Timetable',
     '/assignments': 'Assignments',
     '/notes': 'Notes',
+    '/library': 'Library',
   };
   return map[pathname] || 'UNIVO';
 };
@@ -108,6 +111,14 @@ const Topbar = ({ isCollapsed, onToggle }) => {
     notes.forEach((n) => {
       if ((n.title && n.title.toLowerCase().includes(q)) || (n.subject && n.subject.toLowerCase().includes(q))) {
         results.push({ id: `nt_${n.id}`, title: n.title, subtitle: `Subject: ${n.subject} • ${n.type}`, category: 'Notes Resource', path: '/notes', icon: <FileText size={14} /> });
+      }
+    });
+
+    // 4. Library Books
+    const libraryBooks = getLocalOrSeed('uv_library_books_v1', initialLibrary);
+    libraryBooks.forEach((b) => {
+      if ((b.title && b.title.toLowerCase().includes(q)) || (b.author && b.author.toLowerCase().includes(q)) || (b.isbn && b.isbn.toLowerCase().includes(q))) {
+        results.push({ id: `lib_${b.id}`, title: b.title, subtitle: `Author: ${b.author} • ${b.category}`, category: 'Library Book', path: '/library', icon: <BookOpen size={14} /> });
       }
     });
 

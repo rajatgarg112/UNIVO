@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, User, BookOpen, Calendar, ClipboardList, FileText,
-  LogOut, ChevronLeft, ChevronRight,
+  Library, Users, CalendarDays, Building, LogOut, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import './Sidebar.css';
@@ -22,6 +22,15 @@ const navGroups = [
       { label: 'Timetable', path: '/timetable', icon: <Calendar size={18} /> },
       { label: 'Assignments', path: '/assignments', icon: <ClipboardList size={18} /> },
       { label: 'Notes', path: '/notes', icon: <FileText size={18} /> },
+    ],
+  },
+  {
+    label: 'Campus',
+    items: [
+      { label: 'Library', path: '/library', icon: <Library size={18} /> },
+      { label: 'Clubs', path: '/clubs', icon: <Users size={18} /> },
+      { label: 'Events', path: '/events', icon: <CalendarDays size={18} /> },
+      { label: 'Hostel', path: '/hostel', icon: <Building size={18} /> },
     ],
   },
 ];

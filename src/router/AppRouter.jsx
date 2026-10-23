@@ -21,6 +21,7 @@ const Attendance    = lazy(() => import('../pages/Attendance/Attendance'));
 const Timetable     = lazy(() => import('../pages/Timetable/Timetable'));
 const Assignments   = lazy(() => import('../pages/Assignments/Assignments'));
 const NotesHub      = lazy(() => import('../pages/NotesHub/NotesHub'));
+const Library       = lazy(() => import('../pages/Library/Library'));
 const About         = lazy(() => import('../pages/About/About'));
 const NotFound      = lazy(() => import('../pages/NotFound/NotFound'));
 
@@ -77,6 +78,7 @@ function AppRouter() {
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/notes" element={<NotesHub />} />
+          <Route path="/library" element={<Library />} />
         </Route>
 
         {/* 404 Route */}
