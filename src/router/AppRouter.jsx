@@ -28,6 +28,15 @@ const GatePass       = lazy(() => import('../pages/Hostel/GatePass/GatePass'));
 const About         = lazy(() => import('../pages/About/About'));
 const NotFound      = lazy(() => import('../pages/NotFound/NotFound'));
 
+// Placement Module Pages
+const PlacementList    = lazy(() => import('../pages/Placement/PlacementList'));
+const PlacementDetails = lazy(() => import('../pages/Placement/PlacementDetails'));
+const MyApplications   = lazy(() => import('../pages/Placement/MyApplications'));
+
+// Career Module Pages
+const CareerPathways   = lazy(() => import('../pages/Career/CareerPathways'));
+const Internships      = lazy(() => import('../pages/Career/Internships'));
+
 // Protected Route Component
 function ProtectedRoute({ children }) {
   const { user } = useAuth();
@@ -85,6 +94,12 @@ function AppRouter() {
           <Route path="/hostel/room/:roomId" element={<RoomDetailsPage />} />
           <Route path="/hostel/requests" element={<HostelRequests />} />
           <Route path="/hostel/gatepass" element={<GatePass />} />
+          <Route path="/placements" element={<PlacementList />} />
+          <Route path="/placements/:id" element={<PlacementDetails />} />
+          <Route path="/placements/applications" element={<MyApplications />} />
+          <Route path="/placement" element={<Navigate to="/placements" replace />} />
+          <Route path="/career" element={<CareerPathways />} />
+          <Route path="/career/internships" element={<Internships />} />
         </Route>
 
         {/* 404 Route */}

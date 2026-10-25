@@ -1,0 +1,93 @@
+[
+  {
+    "id": "intern-1",
+    "company": "Google",
+    "role": "Summer Engineering Intern (STEP)",
+    "domain": "Software Engineering",
+    "stipend": "₹85,000 / month",
+    "duration": "3 Months",
+    "location": "Bangalore, India",
+    "workMode": "On-site",
+    "deadline": "2026-11-10",
+    "openings": 20,
+    "description": "Collaborate with Google engineers on core web tools, developer infrastructure, and algorithmic pipelines."
+  },
+  {
+    "id": "intern-2",
+    "company": "Microsoft",
+    "role": "Cloud & AI Research Intern",
+    "domain": "Data Science & AI",
+    "stipend": "₹75,000 / month",
+    "duration": "6 Months",
+    "location": "Hyderabad, India",
+    "workMode": "On-site",
+    "deadline": "2026-11-20",
+    "openings": 15,
+    "description": "Explore Azure AI technologies, evaluate natural language models, and assist research teams in building intelligent agents."
+  },
+  {
+    "id": "intern-3",
+    "company": "Zomato",
+    "role": "Frontend Development Intern",
+    "domain": "Web Development",
+    "stipend": "₹40,000 / month",
+    "duration": "3 Months",
+    "location": "Gurgaon, India",
+    "workMode": "Remote",
+    "deadline": "2026-11-05",
+    "openings": 8,
+    "description": "Build snappy, responsive web interfaces using React.js, clean CSS, and modern API integration for food delivery users."
+  },
+  {
+    "id": "intern-4",
+    "company": "Amazon AWS",
+    "role": "Cloud DevOps Intern",
+    "domain": "Cloud & DevOps",
+    "stipend": "₹65,000 / month",
+    "duration": "6 Months",
+    "location": "Bangalore, India",
+    "workMode": "Remote",
+    "deadline": "2026-11-25",
+    "openings": 12,
+    "description": "Work on container orchestration with Docker, setup automated CI/CD pipelines, and monitor distributed cloud metrics."
+  },
+  {
+    "id": "intern-5",
+    "company": "Cisco",
+    "role": "Cybersecurity & Network Intern",
+    "domain": "Cybersecurity",
+    "stipend": "₹45,000 / month",
+    "duration": "4 Months",
+    "location": "Chennai, India",
+    "workMode": "On-site",
+    "deadline": "2026-11-18",
+    "openings": 10,
+    "description": "Analyze enterprise firewall rules, assess network vulnerabilities, and run threat detection diagnostics."
+  },
+  {
+    "id": "intern-6",
+    "company": "Deloitte",
+    "role": "Business Data Analytics Intern",
+    "domain": "Data Science & AI",
+    "stipend": "₹35,000 / month",
+    "duration": "3 Months",
+    "location": "Mumbai / Gurgaon",
+    "workMode": "On-site",
+    "deadline": "2026-12-01",
+    "openings": 25,
+    "description": "Query relational databases with SQL, build stakeholder dashboards in PowerBI/Tableau, and present data-driven solutions."
+  },
+  {
+    "id": "intern-7",
+    "company": "Swiggy",
+    "role": "Full Stack Web Intern",
+    "domain": "Web Development",
+    "stipend": "₹45,000 / month",
+    "duration": "6 Months",
+    "location": "Bangalore, India",
+    "workMode": "Remote",
+    "deadline": "2026-11-12",
+    "openings": 6,
+    "description": "Design REST APIs with Node.js and build customer-facing micro-frontends with React and state management."
+  }
+]

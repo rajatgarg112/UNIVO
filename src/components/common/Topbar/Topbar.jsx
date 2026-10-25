@@ -24,6 +24,12 @@ import './Topbar.css';
 
 /* ── Derive page title from pathname ── */
 const getPageTitle = (pathname) => {
+  if (pathname.startsWith('/placements/applications')) return 'My Applications';
+  if (pathname.startsWith('/placements/')) return 'Placement Drive Details';
+  if (pathname.startsWith('/placements')) return 'Placement Drives';
+  if (pathname.startsWith('/career/internships')) return 'Internships Hub';
+  if (pathname.startsWith('/career')) return 'Career Pathways';
+
   const map = {
     '/dashboard': 'Dashboard',
     '/profile': 'My Profile',

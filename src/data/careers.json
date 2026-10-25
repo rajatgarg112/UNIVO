@@ -1,0 +1,178 @@
+[
+  {
+    "id": "full-stack",
+    "title": "Full Stack Developer",
+    "category": "Software Engineering",
+    "tagline": "Modern Web Apps & APIs",
+    "avgSalary": "₹8 – ₹24 LPA",
+    "difficulty": "Intermediate",
+    "description": "Build scalable, responsive web applications from interactive user interfaces down to secure server APIs and databases.",
+    "skills": [
+      "HTML5 & Modern CSS3",
+      "JavaScript (ES6+)",
+      "React.js & Hooks",
+      "Node.js & Express",
+      "RESTful APIs",
+      "MongoDB / PostgreSQL",
+      "Git & Version Control"
+    ],
+    "roadmap": [
+      {
+        "step": 1,
+        "phase": "Foundations",
+        "title": "Core Web Technologies",
+        "details": "HTML semantics, CSS flexbox/grid, JavaScript DOM manipulation, ES6 syntax, and asynchronous JS (Promises/async-await)."
+      },
+      {
+        "step": 2,
+        "phase": "Frontend Specialization",
+        "title": "React Ecosystem",
+        "details": "Component composition, React Hooks (useState, useEffect, useMemo), state management, routing, and responsive UI design."
+      },
+      {
+        "step": 3,
+        "phase": "Backend & Database",
+        "title": "Server-Side Development",
+        "details": "Building REST APIs with Node.js and Express, database schema design with SQL/MongoDB, authentication, and JWT tokens."
+      },
+      {
+        "step": 4,
+        "phase": "Deployment & Full Stack Projects",
+        "title": "Production Deployment",
+        "details": "CI/CD fundamentals, containerizing apps with Docker, hosting on Vercel/Render/AWS, and end-to-end full stack capstone projects."
+      }
+    ]
+  },
+  {
+    "id": "data-ai",
+    "title": "Data Analyst / AI Engineer",
+    "category": "Data Science & AI",
+    "tagline": "Analytics, ML & Insights",
+    "avgSalary": "₹9 – ₹26 LPA",
+    "difficulty": "Advanced",
+    "description": "Transform raw datasets into actionable business intelligence and design machine learning models that automate complex decisions.",
+    "skills": [
+      "Python Programming",
+      "SQL Querying & Joins",
+      "Data Analysis (Pandas & NumPy)",
+      "Data Visualization (Matplotlib & Tableau)",
+      "Statistics & Probability",
+      "Machine Learning Fundamentals",
+      "Prompt Engineering & LLMs"
+    ],
+    "roadmap": [
+      {
+        "step": 1,
+        "phase": "Foundations",
+        "title": "Python & Relational Databases",
+        "details": "Master Python data structures, SQL queries, relational database normalization, joins, aggregations, and window functions."
+      },
+      {
+        "step": 2,
+        "phase": "Data Manipulation & EDA",
+        "title": "Exploratory Data Analysis",
+        "details": "Data cleaning, wrangling with Pandas and NumPy, handling missing values, outlier detection, and statistical correlation."
+      },
+      {
+        "step": 3,
+        "phase": "Visualization & Storytelling",
+        "title": "Dashboards & Business Metrics",
+        "details": "Building interactive visualizations with Seaborn, Matplotlib, PowerBI or Tableau to communicate insights to stakeholders."
+      },
+      {
+        "step": 4,
+        "phase": "Machine Learning & AI",
+        "title": "Predictive Modeling",
+        "details": "Supervised/unsupervised learning with Scikit-Learn, regression, classification, clustering, model evaluation, and modern LLM APIs."
+      }
+    ]
+  },
+  {
+    "id": "cloud-devops",
+    "title": "Cloud & DevOps Specialist",
+    "category": "Infrastructure & Cloud",
+    "tagline": "Cloud Infrastructure & CI/CD",
+    "avgSalary": "₹10 – ₹28 LPA",
+    "difficulty": "Intermediate to Advanced",
+    "description": "Design reliable cloud architectures, automate software deployments, and manage scalable containerized infrastructure.",
+    "skills": [
+      "Linux Administration & Shell Scripting",
+      "Networking Fundamentals (TCP/IP, DNS)",
+      "Docker & Containerization",
+      "AWS / Azure Cloud Core Services",
+      "CI/CD Pipelines (GitHub Actions)",
+      "Infrastructure as Code (Terraform)",
+      "Kubernetes Basics"
+    ],
+    "roadmap": [
+      {
+        "step": 1,
+        "phase": "System Foundations",
+        "title": "Linux & Computer Networking",
+        "details": "Linux directory hierarchy, file permissions, bash scripting, process management, TCP/IP, OSI layers, DNS, and SSH."
+      },
+      {
+        "step": 2,
+        "phase": "Containerization",
+        "title": "Docker Containers",
+        "details": "Writing Dockerfiles, building multi-stage container images, container networking, volumes, and multi-container Docker Compose setups."
+      },
+      {
+        "step": 3,
+        "phase": "Cloud Services",
+        "title": "Public Cloud Platforms",
+        "details": "Core AWS/Azure services (EC2, S3, VPC, IAM, RDS), security policies, load balancers, and cloud cost management."
+      },
+      {
+        "step": 4,
+        "phase": "Automation & Orchestration",
+        "title": "CI/CD & Kubernetes",
+        "details": "Automated build/test/deploy pipelines using GitHub Actions, Kubernetes cluster pods, deployments, services, and monitoring."
+      }
+    ]
+  },
+  {
+    "id": "cybersecurity",
+    "title": "Cybersecurity Analyst",
+    "category": "Information Security",
+    "tagline": "Threat Defense & Auditing",
+    "avgSalary": "₹8 – ₹22 LPA",
+    "difficulty": "Intermediate",
+    "description": "Defend enterprise computer networks, identify vulnerabilities, perform security audits, and safeguard sensitive student and business data.",
+    "skills": [
+      "Network Security Protocols & Firewalls",
+      "Linux Security & Log Analysis",
+      "Web Security (OWASP Top 10)",
+      "Vulnerability Assessment Tools (Nmap/Wireshark)",
+      "Cryptography & Encryption Basics",
+      "Incident Response Fundamentals",
+      "Security Compliance & Auditing"
+    ],
+    "roadmap": [
+      {
+        "step": 1,
+        "phase": "Foundations",
+        "title": "Security & Network Principles",
+        "details": "Confidentiality, Integrity, Availability (CIA triad), packet analysis with Wireshark, routing protocols, firewalls, and VPNs."
+      },
+      {
+        "step": 2,
+        "phase": "Vulnerability Assessment",
+        "title": "Penetration Testing & Scanning",
+        "details": "Network reconnaissance with Nmap, vulnerability scanning, security configuration assessment, and analyzing open ports."
+      },
+      {
+        "step": 3,
+        "phase": "Application Security",
+        "title": "OWASP Top 10 Defense",
+        "details": "Understanding web vulnerabilities (SQL injection, XSS, CSRF, broken access control), secure coding, and API security."
+      },
+      {
+        "step": 4,
+        "phase": "Incident Response & Forensics",
+        "title": "Threat Monitoring & Compliance",
+        "details": "SIEM log analysis, intrusion detection (IDS/IPS), security incident triage, disaster recovery, and compliance frameworks."
+      }
+    ]
+  }
+]
