@@ -1,0 +1,402 @@
+[
+  {
+    "id": "rm-alpha-101",
+    "roomNumber": "A-101",
+    "blockId": "alpha",
+    "blockName": "Alpha Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-alpha-102",
+    "roomNumber": "A-102",
+    "blockId": "alpha",
+    "blockName": "Alpha Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 0,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-alpha-103",
+    "roomNumber": "A-103",
+    "blockId": "alpha",
+    "blockName": "Alpha Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-alpha-104",
+    "roomNumber": "A-104",
+    "blockId": "alpha",
+    "blockName": "Alpha Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 1,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-alpha-105",
+    "roomNumber": "A-105",
+    "blockId": "alpha",
+    "blockName": "Alpha Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 0,
+    "feePerSemester": 45000,
+    "status": "Maintenance",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-beta-101",
+    "roomNumber": "B-101",
+    "blockId": "beta",
+    "blockName": "Beta Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-beta-102",
+    "roomNumber": "B-102",
+    "blockId": "beta",
+    "blockName": "Beta Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 0,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-beta-103",
+    "roomNumber": "B-103",
+    "blockId": "beta",
+    "blockName": "Beta Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-beta-104",
+    "roomNumber": "B-104",
+    "blockId": "beta",
+    "blockName": "Beta Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 35000,
+    "status": "Occupied",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-beta-105",
+    "roomNumber": "B-105",
+    "blockId": "beta",
+    "blockName": "Beta Hostel",
+    "gender": "Boys",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 1,
+    "feePerSemester": 45000,
+    "status": "Available",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-gamma-101",
+    "roomNumber": "G-101",
+    "blockId": "gamma",
+    "blockName": "Gamma Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-gamma-102",
+    "roomNumber": "G-102",
+    "blockId": "gamma",
+    "blockName": "Gamma Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 0,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-gamma-103",
+    "roomNumber": "G-103",
+    "blockId": "gamma",
+    "blockName": "Gamma Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-gamma-104",
+    "roomNumber": "G-104",
+    "blockId": "gamma",
+    "blockName": "Gamma Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 1,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-gamma-105",
+    "roomNumber": "G-105",
+    "blockId": "gamma",
+    "blockName": "Gamma Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 0,
+    "feePerSemester": 45000,
+    "status": "Maintenance",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-delta-101",
+    "roomNumber": "D-101",
+    "blockId": "delta",
+    "blockName": "Delta Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-delta-102",
+    "roomNumber": "D-102",
+    "blockId": "delta",
+    "blockName": "Delta Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 0,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-delta-103",
+    "roomNumber": "D-103",
+    "blockId": "delta",
+    "blockName": "Delta Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-delta-104",
+    "roomNumber": "D-104",
+    "blockId": "delta",
+    "blockName": "Delta Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater Non-AC",
+    "capacity": 2,
+    "occupiedBeds": 1,
+    "feePerSemester": 35000,
+    "status": "Available",
+    "acType": "Non-AC",
+    "washroomType": "Common",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  },
+  {
+    "id": "rm-delta-105",
+    "roomNumber": "D-105",
+    "blockId": "delta",
+    "blockName": "Delta Hostel",
+    "gender": "Girls",
+    "floor": 1,
+    "category": "2-Seater AC",
+    "capacity": 2,
+    "occupiedBeds": 2,
+    "feePerSemester": 45000,
+    "status": "Occupied",
+    "acType": "AC",
+    "washroomType": "Attached",
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ]
+  }
+]

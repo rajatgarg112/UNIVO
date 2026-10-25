@@ -1,0 +1,112 @@
+/* ── Floating Toast Notification ── */
+@keyframes hostelToastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hostel-toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: hostelToastSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hostel-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hostel-toast-icon {
+  flex-shrink: 0;
+}
+
+.hostel-toast-message {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f8fafc;
+  line-height: 1.4;
+}
+
+/* Close button */
+.hostel-toast-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.hostel-toast-close:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Toast Type Variants ── */
+.hostel-toast-success {
+  border-left: 4px solid #10b981;
+}
+
+.hostel-toast-icon-success {
+  color: #10b981;
+}
+
+.hostel-toast-error {
+  border-left: 4px solid #ef4444;
+}
+
+.hostel-toast-icon-error {
+  color: #ef4444;
+}
+
+.hostel-toast-info {
+  border-left: 4px solid #06b6d4;
+}
+
+.hostel-toast-icon-info {
+  color: #06b6d4;
+}
+
+/* ── Light Theme Adaptations ── */
+body.light-theme .hostel-toast {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .hostel-toast-message {
+  color: #0f172a;
+}
+
+body.light-theme .hostel-toast-close {
+  color: #94a3b8;
+}
+
+body.light-theme .hostel-toast-close:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}

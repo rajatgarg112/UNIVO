@@ -1,0 +1,52 @@
+[
+  {
+    "id": "cmp-001",
+    "title": "Ceiling Fan Regulator Not Working",
+    "category": "Electrical",
+    "roomNumber": "A-105",
+    "description": "The fan regulator in room A-105 is stuck at maximum speed and cannot be turned off.",
+    "priority": "Medium",
+    "status": "Pending",
+    "date": "2026-10-15"
+  },
+  {
+    "id": "cmp-002",
+    "title": "Bathroom Tap Leaking Water",
+    "category": "Plumbing",
+    "roomNumber": "B-105",
+    "description": "Continuous water leakage from the sink faucet in the attached bathroom of room B-105.",
+    "priority": "High",
+    "status": "In Progress",
+    "date": "2026-10-12"
+  },
+  {
+    "id": "cmp-003",
+    "title": "Study Chair Backrest Broken",
+    "category": "Furniture",
+    "roomNumber": "G-105",
+    "description": "The wooden support on the study chair in room G-105 is loose and unsafe to sit on.",
+    "priority": "Low",
+    "status": "Resolved",
+    "date": "2026-10-06"
+  },
+  {
+    "id": "cmp-004",
+    "title": "Wi-Fi Router Not Providing Internet Access",
+    "category": "Internet",
+    "roomNumber": "G-101",
+    "description": "The Wi-Fi access point in the corridor keeps dropping connection and showing no internet.",
+    "priority": "High",
+    "status": "Pending",
+    "date": "2026-10-14"
+  },
+  {
+    "id": "cmp-005",
+    "title": "Corridor Dustbin Overflowing",
+    "category": "Cleanliness",
+    "roomNumber": "D-104",
+    "description": "The shared corridor trash bin near room D-104 has not been cleared for two days.",
+    "priority": "Medium",
+    "status": "Resolved",
+    "date": "2026-10-08"
+  }
+]
