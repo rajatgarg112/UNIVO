@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, User, BookOpen, Calendar, ClipboardList, FileText,
-  LogOut, ChevronLeft, ChevronRight, Briefcase, Send, Compass, GraduationCap
+  LogOut, ChevronLeft, ChevronRight, Briefcase, Send, Compass, GraduationCap,
+  Building2, MessageSquare, Ticket
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import './Sidebar.css';
@@ -36,6 +37,14 @@ const navGroups = [
     items: [
       { label: 'Career Pathways', path: '/career', icon: <Compass size={18} /> },
       { label: 'Internships', path: '/career/internships', icon: <GraduationCap size={18} /> },
+    ],
+  },
+  {
+    label: 'Campus',
+    items: [
+      { label: 'Hostel', path: '/hostel', icon: <Building2 size={18} /> },
+      { label: 'Hostel Requests', path: '/hostel/requests', icon: <MessageSquare size={18} /> },
+      { label: 'Gate Pass', path: '/hostel/gatepass', icon: <Ticket size={18} /> },
     ],
   },
 ];
