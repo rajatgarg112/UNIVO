@@ -1,0 +1,86 @@
+[
+  {
+    "id": "alpha",
+    "name": "Alpha Hostel",
+    "gender": "Boys",
+    "type": "Boys Hostel",
+    "warden": "Dr. Rajesh Verma",
+    "contact": "+91 98765 11001",
+    "totalFloors": 2,
+    "roomsPerFloor": 3,
+    "totalRooms": 5,
+    "totalBeds": 10,
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ],
+    "rules": [
+      "Curfew time is 10:00 PM",
+      "Biometric attendance mandatory"
+    ]
+  },
+  {
+    "id": "beta",
+    "name": "Beta Hostel",
+    "gender": "Boys",
+    "type": "Boys Hostel",
+    "warden": "Prof. Suresh Kumar",
+    "contact": "+91 98765 11002",
+    "totalFloors": 2,
+    "roomsPerFloor": 3,
+    "totalRooms": 5,
+    "totalBeds": 10,
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ],
+    "rules": [
+      "Curfew time is 10:00 PM",
+      "Biometric attendance mandatory"
+    ]
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma Hostel",
+    "gender": "Girls",
+    "type": "Girls Hostel",
+    "warden": "Dr. Sunita Sharma",
+    "contact": "+91 98765 11003",
+    "totalFloors": 2,
+    "roomsPerFloor": 3,
+    "totalRooms": 5,
+    "totalBeds": 10,
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ],
+    "rules": [
+      "Curfew time is 9:30 PM",
+      "Biometric attendance mandatory"
+    ]
+  },
+  {
+    "id": "delta",
+    "name": "Delta Hostel",
+    "gender": "Girls",
+    "type": "Girls Hostel",
+    "warden": "Mrs. Anita Rao",
+    "contact": "+91 98765 11004",
+    "totalFloors": 2,
+    "roomsPerFloor": 3,
+    "totalRooms": 5,
+    "totalBeds": 10,
+    "facilities": [
+      "Wi-Fi",
+      "Drinking Water",
+      "Power Backup"
+    ],
+    "rules": [
+      "Curfew time is 9:30 PM",
+      "Biometric attendance mandatory"
+    ]
+  }
+]

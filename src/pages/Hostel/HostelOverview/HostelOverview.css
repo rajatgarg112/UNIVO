@@ -1,0 +1,1665 @@
+/* ── Hostel Overview Page Styling ── */
+.hostel-overview-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+/* ── Page Header ── */
+.hostel-page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hostel-header-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(215, 25, 32, 0.12);
+  border: 1px solid rgba(215, 25, 32, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hostel-header-icon {
+  color: #D71920;
+}
+
+.hostel-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hostel-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.hostel-page-subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ── Statistics Grid ── */
+.hostel-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .hostel-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hostel-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Section Structure ── */
+.hostel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hostel-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hostel-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-section-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+}
+
+.hostel-badge-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ── Block Selector Tabs ── */
+.hostel-block-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.hostel-tab-btn {
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.hostel-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.hostel-tab-btn.active {
+  background: #D71920;
+  border-color: #D71920;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(215, 25, 32, 0.35);
+}
+
+/* ── Selected Block Info Card ── */
+.hostel-block-info-card {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hostel-block-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hostel-block-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-block-warden {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+}
+
+.hostel-block-warden strong {
+  color: #f8fafc;
+}
+
+.hostel-block-rooms-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.1);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.hostel-block-details-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .hostel-block-details-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hostel-subheading {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.hostel-facility-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hostel-facility-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.hostel-rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.hostel-rules-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ── All Blocks Preview Grid ── */
+.hostel-blocks-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 1024px) {
+  .hostel-blocks-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hostel-blocks-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hostel-preview-card {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.hostel-preview-card:hover {
+  border-color: rgba(215, 25, 32, 0.4);
+  transform: translateY(-2px);
+  background: #111e33;
+}
+
+.hostel-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hostel-preview-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.hostel-preview-type {
+  font-size: 11px;
+  color: #D71920;
+  font-weight: 600;
+}
+
+.hostel-preview-meta {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.hostel-preview-facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.hostel-mini-tag {
+  font-size: 10px;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ── Controls Bar: Search & Status Filters ── */
+.hostel-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.hostel-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 240px;
+}
+
+.hostel-search-icon {
+  position: absolute;
+  left: 14px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.hostel-search-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #f8fafc;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hostel-search-input:focus {
+  border-color: #D71920;
+  background: rgba(215, 25, 32, 0.06);
+}
+
+.hostel-search-clear {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hostel-search-clear:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hostel-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hostel-filter-icon {
+  color: #64748b;
+}
+
+.hostel-filter-label {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.hostel-filter-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.hostel-filter-pill {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hostel-filter-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+.hostel-filter-pill.active {
+  background: #D71920;
+  border-color: #D71920;
+  color: #ffffff;
+}
+
+/* ── Room Inventory Grid ── */
+.hostel-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1024px) {
+  .hostel-rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hostel-rooms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Empty State ── */
+.hostel-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: #0e1726;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  text-align: center;
+  gap: 12px;
+}
+
+.hostel-empty-icon {
+  color: #475569;
+}
+
+.hostel-empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.hostel-empty-desc {
+  font-size: 13px;
+  color: #94a3b8;
+  max-width: 400px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hostel-reset-btn {
+  margin-top: 8px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: #D71920;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hostel-reset-btn:hover {
+  background: #B5121B;
+}
+
+/* ── Light Theme Adaptations ── */
+body.light-theme .hostel-page-header {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .hostel-page-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-page-subtitle {
+  color: #64748b;
+}
+
+body.light-theme .hostel-section-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-section-subtitle {
+  color: #64748b;
+}
+
+body.light-theme .hostel-badge-count {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+body.light-theme .hostel-tab-btn {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+body.light-theme .hostel-tab-btn:hover {
+  background: #f8fafc;
+  color: #0B1220;
+}
+
+body.light-theme .hostel-tab-btn.active {
+  background: #D71920;
+  border-color: #D71920;
+  color: #ffffff;
+}
+
+body.light-theme .hostel-block-info-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-block-info-header {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .hostel-block-name {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-block-warden {
+  color: #64748b;
+}
+
+body.light-theme .hostel-block-warden strong {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-subheading {
+  color: #94a3b8;
+}
+
+body.light-theme .hostel-facility-tag {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+body.light-theme .hostel-rules-list li {
+  color: #64748b;
+}
+
+body.light-theme .hostel-preview-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-preview-card:hover {
+  background: #f8fafc;
+  border-color: rgba(215, 25, 32, 0.4);
+}
+
+body.light-theme .hostel-preview-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-preview-meta {
+  color: #64748b;
+}
+
+body.light-theme .hostel-mini-tag {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+body.light-theme .hostel-controls-bar {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-search-input {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0B1220;
+}
+
+body.light-theme .hostel-search-clear {
+  color: #64748b;
+}
+
+body.light-theme .hostel-search-clear:hover {
+  background: #e2e8f0;
+  color: #0B1220;
+}
+
+body.light-theme .hostel-filter-label {
+  color: #64748b;
+}
+
+body.light-theme .hostel-filter-pill {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+body.light-theme .hostel-filter-pill:hover {
+  background: #e2e8f0;
+  color: #0B1220;
+}
+
+body.light-theme .hostel-filter-pill.active {
+  background: #D71920;
+  border-color: #D71920;
+  color: #ffffff;
+}
+
+body.light-theme .hostel-empty-state {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+body.light-theme .hostel-empty-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-empty-desc {
+  color: #64748b;
+}
+
+/* ── Hostel Notices & Advisories Section (Async Demonstration) ── */
+.hostel-notices-section {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hostel-notices-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hostel-notices-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hostel-notices-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(215, 25, 32, 0.12);
+  border: 1px solid rgba(215, 25, 32, 0.25);
+  color: #D71920;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hostel-notices-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-notices-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 2px 0 0;
+}
+
+.hostel-notices-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.hostel-notices-refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f8fafc;
+}
+
+/* Loading Box */
+.hostel-notices-status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  text-align: center;
+  gap: 10px;
+}
+
+.hostel-notices-spinner {
+  width: 28px;
+  height: 28px;
+  border-width: 3px;
+  margin: 0;
+}
+
+.hostel-notices-status-text {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Error Box */
+.hostel-notices-error-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+}
+
+.hostel-notices-error-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hostel-notices-error-icon {
+  color: #f87171;
+  flex-shrink: 0;
+}
+
+.hostel-notices-error-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #f87171;
+  margin: 0;
+}
+
+.hostel-notices-error-desc {
+  font-size: 12.5px;
+  color: #fca5a5;
+  margin: 2px 0 0;
+}
+
+.hostel-notices-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  background: #D71920;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.hostel-notices-retry-btn:hover {
+  background: #B5121B;
+}
+
+/* Success Notices Grid */
+.hostel-notices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.hostel-notice-card {
+  background: #111e33;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hostel-notice-card:hover {
+  border-color: rgba(215, 25, 32, 0.35);
+  background: #15243e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hostel-notice-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hostel-notice-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #D71920;
+  background: rgba(215, 25, 32, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.hostel-notice-source {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.hostel-notice-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  line-height: 1.35;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-notice-body {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .hostel-notices-grid {
+    grid-template-columns: 1fr;
+  }
+  .hostel-notices-error-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ── Compact Student Info Card (Top) ── */
+.hostel-student-compact-card {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hostel-student-compact-card:hover {
+  border-color: rgba(215, 25, 32, 0.35);
+  box-shadow: 0 6px 24px rgba(215, 25, 32, 0.08);
+}
+
+.hostel-student-compact-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.hostel-student-compact-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111e33;
+  border: 2px solid rgba(215, 25, 32, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hostel-compact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hostel-compact-initials {
+  font-size: 19px;
+  font-weight: 700;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-student-compact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.hostel-compact-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hostel-compact-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+.hostel-compact-roll {
+  font-size: 11px;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.hostel-compact-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  flex-wrap: wrap;
+}
+
+.hostel-compact-email,
+.hostel-compact-dept {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hostel-compact-email svg,
+.hostel-compact-dept svg {
+  color: #D71920;
+}
+
+.hostel-compact-dot {
+  color: #475569;
+}
+
+.hostel-student-compact-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hostel-allocation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hostel-allocation-badge.allocated {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.hostel-allocation-badge.not-allocated {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.28);
+}
+
+.hostel-status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* ── Fallback: No Allocation Card ── */
+.hostel-no-allocation-card {
+  background: #0e1726;
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 44px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hostel-no-allocation-icon {
+  color: #64748b;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.hostel-no-allocation-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-no-allocation-desc {
+  font-size: 14px;
+  color: #94a3b8;
+  max-width: 480px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hostel-primary-action-btn {
+  margin-top: 10px;
+  padding: 10px 22px;
+  background: #D71920;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(215, 25, 32, 0.3);
+}
+
+.hostel-primary-action-btn:hover {
+  background: #b9151b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(215, 25, 32, 0.45);
+}
+
+/* ── Allocated Student Dashboard (Hostel & Room Panels) ── */
+.hostel-allocated-dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hostel-allocated-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hostel-card-panel {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hostel-card-panel:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hostel-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+.hostel-panel-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hostel-panel-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(215, 25, 32, 0.12);
+  border: 1px solid rgba(215, 25, 32, 0.25);
+  color: #D71920;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hostel-room-icon-box {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.25);
+  color: #60a5fa;
+}
+
+.hostel-panel-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+.hostel-panel-subtitle {
+  font-size: 12.5px;
+  color: #94a3b8;
+  margin: 3px 0 0;
+}
+
+.hostel-category-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.hostel-status-pill.hostel-status-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.hostel-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.hostel-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Info Row for Warden & Meta */
+.hostel-info-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.hostel-meta-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hostel-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.hostel-meta-value-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hostel-inline-icon {
+  color: #D71920;
+  flex-shrink: 0;
+}
+
+.hostel-meta-value {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* Facilities & Amenities */
+.hostel-facilities-block,
+.hostel-rules-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hostel-facilities-pills,
+.hostel-rules-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hostel-facility-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+.hostel-facility-pill svg {
+  color: #38bdf8;
+}
+
+.hostel-rule-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.hostel-rule-tag svg {
+  color: #34d399;
+}
+
+/* ── Room Specifications Grid ── */
+.hostel-room-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .hostel-room-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.hostel-room-spec-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.15s ease;
+}
+
+.hostel-room-spec-box:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.hostel-spec-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.hostel-spec-val {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.hostel-spec-highlight {
+  color: #60a5fa;
+  font-weight: 700;
+  font-size: 14.5px;
+}
+
+/* ── Room Actions Bar ── */
+.hostel-room-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+}
+
+.hostel-btn-primary,
+.hostel-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.hostel-btn-primary {
+  background: #D71920;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
+}
+
+.hostel-btn-primary:hover {
+  background: #b9151b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(215, 25, 32, 0.45);
+}
+
+.hostel-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+
+.hostel-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+  .hostel-student-compact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hostel-student-compact-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .hostel-room-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hostel-btn-primary,
+  .hostel-btn-secondary {
+    width: 100%;
+  }
+}
+
+/* ── Light Theme Adaptations for Hostel Overview ── */
+body.light-theme .hostel-page-header {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .hostel-page-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-page-subtitle {
+  color: #64748b;
+}
+
+/* Compact Student Info Card */
+body.light-theme .hostel-student-compact-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-student-compact-card:hover {
+  border-color: rgba(215, 25, 32, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .hostel-student-compact-avatar {
+  background: #f1f5f9;
+  border-color: rgba(215, 25, 32, 0.25);
+}
+
+body.light-theme .hostel-compact-initials {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-compact-name {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-compact-roll {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+body.light-theme .hostel-compact-sub-row {
+  color: #64748b;
+}
+
+body.light-theme .hostel-compact-dot {
+  color: #cbd5e1;
+}
+
+/* Allocated Panels */
+body.light-theme .hostel-card-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-card-panel:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .hostel-panel-header {
+  border-bottom-color: #f1f5f9;
+}
+
+body.light-theme .hostel-panel-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-panel-subtitle {
+  color: #64748b;
+}
+
+body.light-theme .hostel-category-pill {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+body.light-theme .hostel-info-row {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .hostel-meta-value {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-meta-label {
+  color: #64748b;
+}
+
+body.light-theme .hostel-subheading {
+  color: #475569;
+}
+
+body.light-theme .hostel-facility-pill {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+body.light-theme .hostel-rule-tag {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+body.light-theme .hostel-room-spec-box {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .hostel-room-spec-box:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+body.light-theme .hostel-spec-lbl {
+  color: #64748b;
+}
+
+body.light-theme .hostel-spec-val {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-spec-highlight {
+  color: #1d4ed8;
+}
+
+body.light-theme .hostel-btn-secondary {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+body.light-theme .hostel-btn-secondary:hover {
+  background: #e2e8f0;
+  color: #0B1220;
+  border-color: #94a3b8;
+}
+
+/* Fallback: No Allocation Card */
+body.light-theme .hostel-no-allocation-card {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-no-allocation-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-no-allocation-desc {
+  color: #64748b;
+}
+
+/* Notices Section */
+body.light-theme .hostel-notices-section {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-notices-header {
+  border-bottom-color: #f1f5f9;
+}
+
+body.light-theme .hostel-notices-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-notices-subtitle {
+  color: #64748b;
+}
+
+body.light-theme .hostel-notices-refresh-btn {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+body.light-theme .hostel-notices-refresh-btn:hover {
+  background: #e2e8f0;
+  color: #0B1220;
+}
+
+body.light-theme .hostel-notice-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .hostel-notice-card:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .hostel-notice-title {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-notice-body {
+  color: #475569;
+}
+
+body.light-theme .hostel-notices-status-box {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .hostel-notices-status-text {
+  color: #64748b;
+}
+
+body.light-theme .hostel-notices-error-box {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+body.light-theme .hostel-notices-error-title {
+  color: #991b1b;
+}
+
+body.light-theme .hostel-notices-error-desc {
+  color: #b91c1c;
+}
+
+
+
+

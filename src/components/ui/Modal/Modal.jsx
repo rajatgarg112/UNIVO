@@ -10,6 +10,7 @@ const Modal = ({
   children,
   size = 'md',
   showCloseButton = true,
+  className = '',
 }) => {
   useEffect(() => {
     if (!isOpen) return;
@@ -32,7 +33,7 @@ const Modal = ({
 
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className={`modal-content modal-${size}`}>
+      <div className={`modal-content modal-${size} ${className}`.trim()}>
         {(title || showCloseButton) && (
           <div className="modal-header">
             {title && <h2 className="modal-title">{title}</h2>}

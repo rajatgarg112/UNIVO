@@ -1,0 +1,346 @@
+/* ── Complaint Modal Window (Full Light & Dark Theme Support) ── */
+.modal-content.hostel-complaint-modal-window,
+.modal-content:has(.hostel-complaint-form) {
+  background: #0e1726 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45) !important;
+  max-width: 540px !important;
+  color: #f8fafc !important;
+}
+
+.modal-content.hostel-complaint-modal-window .modal-header,
+.modal-content:has(.hostel-complaint-form) .modal-header {
+  background: #0e1726 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 16px 20px !important;
+}
+
+.modal-content.hostel-complaint-modal-window .modal-title,
+.modal-content:has(.hostel-complaint-form) .modal-title {
+  color: #f8fafc !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.modal-content.hostel-complaint-modal-window .modal-close,
+.modal-content:has(.hostel-complaint-form) .modal-close {
+  color: #94a3b8 !important;
+  padding: 6px !important;
+  border-radius: 8px !important;
+  transition: color 0.15s ease, background-color 0.15s ease !important;
+}
+
+.modal-content.hostel-complaint-modal-window .modal-close:hover,
+.modal-content:has(.hostel-complaint-form) .modal-close:hover {
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.modal-content.hostel-complaint-modal-window .modal-body,
+.modal-content:has(.hostel-complaint-form) .modal-body {
+  background: #0e1726 !important;
+  padding: 18px 20px 20px 20px !important;
+  color: #f8fafc !important;
+}
+
+/* Light Theme Modal Overrides */
+body.light-theme .modal-content.hostel-complaint-modal-window,
+body.light-theme .modal-content:has(.hostel-complaint-form) {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16) !important;
+  color: #0f172a !important;
+}
+
+body.light-theme .modal-content.hostel-complaint-modal-window .modal-header,
+body.light-theme .modal-content:has(.hostel-complaint-form) .modal-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body.light-theme .modal-content.hostel-complaint-modal-window .modal-title,
+body.light-theme .modal-content:has(.hostel-complaint-form) .modal-title {
+  color: #0B1220 !important;
+}
+
+body.light-theme .modal-content.hostel-complaint-modal-window .modal-close,
+body.light-theme .modal-content:has(.hostel-complaint-form) .modal-close {
+  color: #64748b !important;
+}
+
+body.light-theme .modal-content.hostel-complaint-modal-window .modal-close:hover,
+body.light-theme .modal-content:has(.hostel-complaint-form) .modal-close:hover {
+  color: #0B1220 !important;
+  background: #f1f5f9 !important;
+}
+
+body.light-theme .modal-content.hostel-complaint-modal-window .modal-body,
+body.light-theme .modal-content:has(.hostel-complaint-form) .modal-body {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* ── Complaint Form Layout ── */
+.hostel-complaint-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hostel-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .hostel-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* ── Form Inputs & Groups ── */
+.hostel-complaint-form .form-group,
+.hostel-form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hostel-complaint-form .form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+
+body.light-theme .hostel-complaint-form .form-label {
+  color: #334155;
+}
+
+.hostel-complaint-form .form-required {
+  color: #D71920;
+  margin-left: 3px;
+}
+
+/* FormInput (Complaint Title, Room Number) */
+.hostel-complaint-form .form-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #111e33;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hostel-complaint-form .form-input::placeholder {
+  color: #64748b;
+}
+
+.hostel-complaint-form .form-input:focus {
+  border-color: #D71920;
+  background: #0e1726;
+  color: #f8fafc;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.18);
+}
+
+.hostel-complaint-form .form-input.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f8fafc;
+}
+
+body.light-theme .hostel-complaint-form .form-input {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+body.light-theme .hostel-complaint-form .form-input::placeholder {
+  color: #94a3b8;
+}
+
+body.light-theme .hostel-complaint-form .form-input:focus {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+body.light-theme .hostel-complaint-form .form-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #0f172a;
+}
+
+/* ── Custom Select & Textarea (Category, Priority, Description) ── */
+.hostel-form-select,
+.hostel-form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: #111e33;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hostel-form-select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.hostel-form-select option {
+  background: #0e1726;
+  color: #f8fafc;
+}
+
+.hostel-form-textarea {
+  resize: vertical;
+  min-height: 85px;
+  line-height: 1.5;
+}
+
+.hostel-form-textarea::placeholder {
+  color: #64748b;
+}
+
+.hostel-form-select:focus,
+.hostel-form-textarea:focus {
+  border-color: #D71920;
+  background: #0e1726;
+  color: #f8fafc;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.18);
+}
+
+.hostel-form-select.error,
+.hostel-form-textarea.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f8fafc;
+}
+
+body.light-theme .hostel-form-select,
+body.light-theme .hostel-form-textarea {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+body.light-theme .hostel-form-select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+body.light-theme .hostel-form-textarea::placeholder {
+  color: #94a3b8;
+}
+
+body.light-theme .hostel-form-select:focus,
+body.light-theme .hostel-form-textarea:focus {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+body.light-theme .hostel-form-select.error,
+body.light-theme .hostel-form-textarea.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #0f172a;
+}
+
+/* Validation error text */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #f87171;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+body.light-theme .form-error {
+  color: #dc2626;
+}
+
+/* Modal Actions */
+.hostel-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light-theme .hostel-modal-actions {
+  border-top: 1px solid #f1f5f9;
+}
+
+.hostel-btn-cancel {
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.hostel-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.light-theme .hostel-btn-cancel {
+  background: transparent;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+body.light-theme .hostel-btn-cancel:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.hostel-btn-submit {
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: #D71920;
+  border: none;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
+}
+
+.hostel-btn-submit:hover {
+  background: #B5121B;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(215, 25, 32, 0.45);
+}
+
+.hostel-btn-submit:active {
+  transform: translateY(0);
+}
