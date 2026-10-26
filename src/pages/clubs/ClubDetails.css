@@ -1,0 +1,794 @@
+/* Club Details Page Styles */
+.club-details-page {
+  animation: fadeIn 0.35s ease;
+  color: #cbd5e1;
+}
+
+body.light-theme .club-details-page {
+  color: #334155;
+}
+
+/* 1. Navigation Breadcrumb */
+.club-details-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: rgba(215, 25, 32, 0.12);
+  border-color: #D71920;
+  color: #D71920;
+}
+
+body.light-theme .btn-back {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+
+body.light-theme .btn-back:hover {
+  background: rgba(215, 25, 32, 0.08);
+  border-color: #D71920;
+  color: #D71920;
+}
+
+.club-nav-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.club-nav-breadcrumb a {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.club-nav-breadcrumb a:hover {
+  color: #f8fafc;
+}
+
+body.light-theme .club-nav-breadcrumb a:hover {
+  color: #0b1220;
+}
+
+.club-nav-breadcrumb .current {
+  color: #D71920;
+  font-weight: 600;
+}
+
+/* 2. Hero Card */
+.club-hero-card {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .club-hero-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.club-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.club-hero-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.club-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.club-hero-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.club-established-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+body.light-theme .club-established-pill {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.club-hero-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+}
+
+body.light-theme .club-hero-title {
+  color: #0b1220;
+}
+
+.club-hero-tagline {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+body.light-theme .club-hero-tagline {
+  color: #64748b;
+}
+
+.btn-hero-membership {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-hero-membership.join {
+  background: #D71920;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(215, 25, 32, 0.35);
+}
+
+.btn-hero-membership.join:hover {
+  background: #b5121b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(215, 25, 32, 0.45);
+}
+
+.btn-hero-membership.leave {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-hero-membership.leave:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* 3. Main Details Layout */
+.club-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .club-details-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.club-details-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.club-section-card {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .club-section-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.section-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+body.light-theme .section-title {
+  color: #0b1220;
+}
+
+.section-icon.red {
+  color: #D71920;
+}
+
+.section-icon.blue {
+  color: #3b82f6;
+}
+
+.section-icon.purple {
+  color: #8b5cf6;
+}
+
+.club-full-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+body.light-theme .club-full-description {
+  color: #334155;
+}
+
+/* Objectives List */
+.objectives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-theme .objective-item {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+.objective-bullet {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Activities Grid */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.activity-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+body.light-theme .activity-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.activity-icon {
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.activity-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+body.light-theme .activity-card p {
+  color: #334155;
+}
+
+/* Upcoming Events inside Club Details */
+.no-events-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  font-style: italic;
+}
+
+.club-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.club-event-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+
+.club-event-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(215, 25, 32, 0.3);
+  transform: translateX(4px);
+}
+
+body.light-theme .club-event-item {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .club-event-item:hover {
+  background: #ffffff;
+  border-color: #D71920;
+}
+
+.club-event-date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(215, 25, 32, 0.12);
+  border-radius: 10px;
+  color: #D71920;
+  flex-shrink: 0;
+}
+
+.event-badge-month {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.event-badge-day {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.club-event-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.club-event-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.club-event-title a {
+  color: #f8fafc;
+  transition: color 0.2s ease;
+}
+
+.club-event-title a:hover {
+  color: #D71920;
+}
+
+body.light-theme .club-event-title a {
+  color: #0b1220;
+}
+
+body.light-theme .club-event-title a:hover {
+  color: #D71920;
+}
+
+.club-event-desc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.light-theme .club-event-desc {
+  color: #64748b;
+}
+
+.club-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  color: #94a3b8;
+  flex-wrap: wrap;
+}
+
+.club-event-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-event-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #D71920;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(215, 25, 32, 0.1);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-event-view:hover {
+  background: #D71920;
+  color: #ffffff;
+}
+
+/* 4. Sidebar Cards */
+.club-details-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-card {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .sidebar-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light-theme .sidebar-card-title {
+  color: #0b1220;
+  border-bottom-color: #f1f5f9;
+}
+
+.sidebar-fact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-fact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fact-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+body.light-theme .fact-label {
+  color: #64748b;
+}
+
+.fact-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+body.light-theme .fact-value {
+  color: #0b1220;
+}
+
+/* Coordinator & Student Lead Boxes */
+.coordinator-box,
+.student-lead-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.coordinator-avatar,
+.student-lead-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.15);
+  color: #D71920;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.coordinator-info,
+.student-lead-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.coordinator-name,
+.student-lead-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+body.light-theme .coordinator-name,
+body.light-theme .student-lead-name {
+  color: #0b1220;
+}
+
+.coordinator-dept,
+.student-lead-role {
+  color: #94a3b8;
+  margin: 0;
+}
+
+body.light-theme .coordinator-dept,
+body.light-theme .student-lead-role {
+  color: #64748b;
+}
+
+.coordinator-office,
+.student-lead-roll {
+  color: #94a3b8;
+  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.coordinator-email {
+  color: #3b82f6;
+  text-decoration: underline;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Related Clubs */
+.related-clubs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.related-club-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.related-club-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(215, 25, 32, 0.3);
+  transform: translateX(3px);
+}
+
+body.light-theme .related-club-item {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .related-club-item:hover {
+  background: #ffffff;
+  border-color: #D71920;
+}
+
+.related-club-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.related-club-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-club-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+body.light-theme .related-club-name {
+  color: #0b1220;
+}
+
+.related-club-members {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.related-arrow {
+  color: #94a3b8;
+}
+
+/* 5. Not-Found State */
+.club-not-found-page {
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-card {
+  max-width: 480px;
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+body.light-theme .not-found-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.not-found-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.not-found-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 10px;
+}
+
+body.light-theme .not-found-title {
+  color: #0b1220;
+}
+
+.not-found-text {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+body.light-theme .not-found-text {
+  color: #64748b;
+}
+
+.btn-back-to-clubs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #D71920;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-back-to-clubs:hover {
+  background: #b5121b;
+}
