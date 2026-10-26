@@ -21,6 +21,7 @@ const Attendance    = lazy(() => import('../pages/Attendance/Attendance'));
 const Timetable     = lazy(() => import('../pages/Timetable/Timetable'));
 const Assignments   = lazy(() => import('../pages/Assignments/Assignments'));
 const NotesHub      = lazy(() => import('../pages/NotesHub/NotesHub'));
+const Library       = lazy(() => import('../pages/Library/Library'));
 const HostelOverview = lazy(() => import('../pages/Hostel/HostelOverview/HostelOverview'));
 const RoomDetailsPage = lazy(() => import('../pages/Hostel/RoomDetails/RoomDetailsPage'));
 const HostelRequests = lazy(() => import('../pages/Hostel/HostelRequests/HostelRequests'));
@@ -96,6 +97,7 @@ function AppRouter() {
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/notes" element={<NotesHub />} />
+          <Route path="/library" element={<Library />} />
           <Route path="/hostel" element={<HostelOverview />} />
           <Route path="/hostel/room/:roomId" element={<RoomDetailsPage />} />
           <Route path="/hostel/requests" element={<HostelRequests />} />
