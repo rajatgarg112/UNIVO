@@ -1,0 +1,318 @@
+[
+  {
+    "id": "codecrafters",
+    "name": "CodeCrafters Club",
+    "category": "Technical",
+    "tagline": "Building the next generation of software innovators and competitive coders.",
+    "description": "CodeCrafters is the premier coding and software development society at UNIVO. We host regular algorithmic bootcamps, open-source sprints, web/app hackathons, and developer meetups to prepare students for top tech roles.",
+    "facultyCoordinator": {
+      "name": "Dr. Arvind Mehta",
+      "department": "Computer Science & Engineering",
+      "email": "arvind.mehta@universityverse.edu",
+      "office": "Tech Tower B, Room 402"
+    },
+    "studentLead": {
+      "name": "Aryan Sharma",
+      "rollNo": "CS2021001",
+      "role": "President"
+    },
+    "established": 2019,
+    "membersCount": 342,
+    "meetingSchedule": "Every Wednesday & Saturday, 5:00 PM - 7:00 PM",
+    "venue": "Turing Lab, Block B, 3rd Floor",
+    "icon": "Code",
+    "color": "#3b82f6",
+    "objectives": [
+      "Foster competitive programming and algorithmic problem-solving excellence",
+      "Guide students in building production-ready open source projects",
+      "Organize HackUNIVO, the annual 36-hour national collegiate hackathon",
+      "Host peer-to-peer interview preparation sessions and system design workshops"
+    ],
+    "activities": [
+      "Weekly LeetCode & Codeforces contests with faculty mentorship",
+      "Hands-on AI/ML and Cloud Native application development bootcamps",
+      "Annual HackUNIVO National Hackathon with industry sponsors",
+      "Open-Source October: Guiding 100+ first-time PRs"
+    ],
+    "upcomingEventIds": [
+      "evt-hackunivo-2026",
+      "evt-ai-workshop-2026"
+    ]
+  },
+  {
+    "id": "robovortex",
+    "name": "RoboVortex Robotics Society",
+    "category": "Technical",
+    "tagline": "Designing, building, and programming intelligent autonomous systems.",
+    "description": "RoboVortex unites hardware tinkerers, embedded systems developers, and AI robotics enthusiasts. Members work on autonomous drones, line followers, combat robots, and IoT micro-grid controllers.",
+    "facultyCoordinator": {
+      "name": "Prof. Rajeshwari Kulkarni",
+      "department": "Mechatronics & Automation",
+      "email": "rajeshwari.k@universityverse.edu",
+      "office": "Robotics Innovation Wing, Room 108"
+    },
+    "studentLead": {
+      "name": "Kavya Patel",
+      "rollNo": "ME2022045",
+      "role": "Vice President"
+    },
+    "established": 2020,
+    "membersCount": 218,
+    "meetingSchedule": "Tuesdays & Fridays, 4:30 PM - 6:30 PM",
+    "venue": "Robotics & IoT Hub, Workshop Complex",
+    "icon": "Cpu",
+    "color": "#06b6d4",
+    "objectives": [
+      "Train students in ROS (Robot Operating System), embedded C, and CAD modeling",
+      "Build combat-ready robots for national Robowars championships",
+      "Develop autonomous aerial drones for smart campus monitoring",
+      "Partner with automotive and automation industries for internships"
+    ],
+    "activities": [
+      "RoboWars Campus Arena Battles",
+      "Autonomous Line-Follower and Maze-Solver Contests",
+      "Arduino & Raspberry Pi Beginner Bootcamp for 1st-year students",
+      "Industrial automation site visits"
+    ],
+    "upcomingEventIds": [
+      "evt-robowars-2026"
+    ]
+  },
+  {
+    "id": "dhwani-music",
+    "name": "Dhwani Music Society",
+    "category": "Cultural",
+    "tagline": "Celebrating melodies, classical traditions, and contemporary fusion rhythms.",
+    "description": "Dhwani is the official music society of UNIVO, comprising vocalists, instrumentalists, percussionists, and sound production engineers. We represent the university at inter-collegiate cultural fests nationwide.",
+    "facultyCoordinator": {
+      "name": "Dr. Ananya Sen",
+      "department": "Humanities & Performing Arts",
+      "email": "ananya.sen@universityverse.edu",
+      "office": "Tagore Auditorium, Level 2"
+    },
+    "studentLead": {
+      "name": "Rohan Deshmukh",
+      "rollNo": "EC2022019",
+      "role": "Lead Vocalist & Secretary"
+    },
+    "established": 2017,
+    "membersCount": 285,
+    "meetingSchedule": "Mondays & Thursdays, 5:30 PM - 7:30 PM",
+    "venue": "Acoustics Music Studio, Tagore Auditorium",
+    "icon": "Music",
+    "color": "#ec4899",
+    "objectives": [
+      "Provide a welcoming space for musicians across classical, rock, jazz, and pop",
+      "Represent UNIVO in youth festivals and national Battle of the Bands",
+      "Train students in audio production, sound mixing, and studio acoustics",
+      "Organize acoustic jam sessions and open mic nights"
+    ],
+    "activities": [
+      "Annual Inter-University Battle of the Bands",
+      "Acoustic Sunset Jams at the Central Amphitheatre",
+      "Digital Audio Workstation (DAW) and logic-mixing masterclasses",
+      "Collaborative soundtrack composition for student short films"
+    ],
+    "upcomingEventIds": [
+      "evt-spring-fest-2026",
+      "evt-battle-of-bands-2026"
+    ]
+  },
+  {
+    "id": "natraj-dance",
+    "name": "Natraj Dance Troupe",
+    "category": "Cultural",
+    "tagline": "Expressing passion, rhythm, and storytelling through classical and modern dance.",
+    "description": "Natraj is UNIVO's award-winning dance troupe, known for spellbinding choreographies spanning Western hip-hop, classical Bharatanatyam, contemporary lyrical, and high-energy folk dances.",
+    "facultyCoordinator": {
+      "name": "Prof. Suniti Rao",
+      "department": "Student Welfare Deanery",
+      "email": "suniti.rao@universityverse.edu",
+      "office": "Student Activity Centre, Room 204"
+    },
+    "studentLead": {
+      "name": "Sneha Roy",
+      "rollNo": "CS2023089",
+      "role": "Chief Choreographer"
+    },
+    "established": 2018,
+    "membersCount": 196,
+    "meetingSchedule": "Daily Evening, 6:00 PM - 8:00 PM",
+    "venue": "Mirrored Dance Studio, Student Activity Centre",
+    "icon": "Sparkles",
+    "color": "#f43f5e",
+    "objectives": [
+      "Promote dance education, body flexibility, and stage confidence",
+      "Compete at premier cultural festivals like Mood Indigo and Oasis",
+      "Create socially relevant dance theatrical productions",
+      "Encourage cross-genre choreography and artistic experimentation"
+    ],
+    "activities": [
+      "Annual Dance Production: Mudra",
+      "Campus flashmobs for mental health and social causes",
+      "Western Hip-Hop and Locking/Popping intensives",
+      "Inter-branch dance faceoffs during freshers week"
+    ],
+    "upcomingEventIds": [
+      "evt-spring-fest-2026"
+    ]
+  },
+  {
+    "id": "titan-strikers",
+    "name": "Titan Strikers Sports Club",
+    "category": "Sports",
+    "tagline": "Champions on the field, leaders in life. Fostering collegiate athletic excellence.",
+    "description": "Titan Strikers oversees varsity teams and intramural leagues for football, basketball, cricket, badminton, volleyball, and track events. We promote physical fitness, team discipline, and collegiate sportsmanship.",
+    "facultyCoordinator": {
+      "name": "Coach Harpreet Singh",
+      "department": "Directorate of Physical Education",
+      "email": "harpreet.singh@universityverse.edu",
+      "office": "University Sports Complex, Pavilion 1"
+    },
+    "studentLead": {
+      "name": "Tanmay Verma",
+      "rollNo": "CE2021077",
+      "role": "Sports Secretary"
+    },
+    "established": 2016,
+    "membersCount": 435,
+    "meetingSchedule": "Daily Morning (6:30 AM) & Evening (5:00 PM)",
+    "venue": "University Central Sports Complex & Floodlit Turf",
+    "icon": "Trophy",
+    "color": "#eab308",
+    "objectives": [
+      "Prepare varsity athletes for All India Inter-University Tournaments",
+      "Conduct competitive semester sports leagues across departments",
+      "Maintain modern gym and training facilities for student fitness",
+      "Foster sportsmanship, team resilience, and mental well-being"
+    ],
+    "activities": [
+      "UNIVO Premier League (Cricket & Football Tournaments)",
+      "Intramural Badminton and Table Tennis Championships",
+      "Annual Campus Marathon for Heart Health",
+      "Strength and conditioning clinics with certified trainers"
+    ],
+    "upcomingEventIds": [
+      "evt-sports-fest-2026"
+    ]
+  },
+  {
+    "id": "e-cell",
+    "name": "E-Cell (Entrepreneurship Cell)",
+    "category": "Entrepreneurship",
+    "tagline": "Igniting student startup ideas, venture mentoring, and seed funding support.",
+    "description": "E-Cell empowers ambitious student entrepreneurs to take their ideas from napkin sketches to venture-backed companies. We provide incubation resources, founder meetups, angel investor connections, and legal support.",
+    "facultyCoordinator": {
+      "name": "Dr. Vikram Sethi",
+      "department": "Centre for Innovation & Entrepreneurship",
+      "email": "vikram.sethi@universityverse.edu",
+      "office": "Startup Incubator, Ground Floor, Admin Block"
+    },
+    "studentLead": {
+      "name": "Aakash Gupta",
+      "rollNo": "IT2022012",
+      "role": "Convenor"
+    },
+    "established": 2018,
+    "membersCount": 315,
+    "meetingSchedule": "Every Thursday, 5:00 PM - 6:30 PM",
+    "venue": "UNIVO Startup Incubator, Admin Block",
+    "icon": "Rocket",
+    "color": "#8b5cf6",
+    "objectives": [
+      "Cultivate an entrepreneurial mindset and business literacy among students",
+      "Connect aspiring founders with angel investors, VCs, and alumni founders",
+      "Facilitate prototyping grants and intellectual property filing assistance",
+      "Host the annual UNIVO E-Summit, one of northern India's premier student conclaves"
+    ],
+    "activities": [
+      "Campus Shark Tank Seed Grant Pitch Competition",
+      "Founder Fireside Chats with Unicorn CEOs",
+      "Startup Legal, Compliance, and Equity Masterclasses",
+      "Summer Incubator Cohort with equity-free seed grants"
+    ],
+    "upcomingEventIds": [
+      "evt-esummit-2026",
+      "evt-pitch-tank-2026"
+    ]
+  },
+  {
+    "id": "sparsh-social",
+    "name": "Sparsh Social Service Society",
+    "category": "Social Service",
+    "tagline": "Empathy in action. Community outreach, child education, and green initiatives.",
+    "description": "Sparsh is UNIVO's volunteer-driven social welfare society. We run weekend evening schools for underprivileged children, conduct mega blood donation camps, lead reforestation drives, and support disaster relief funds.",
+    "facultyCoordinator": {
+      "name": "Dr. Meenakshi Sundaram",
+      "department": "Department of Social Sciences",
+      "email": "meenakshi.s@universityverse.edu",
+      "office": "Block C, Room 215"
+    },
+    "studentLead": {
+      "name": "Diya Nair",
+      "rollNo": "BT2022031",
+      "role": "General Secretary"
+    },
+    "established": 2017,
+    "membersCount": 395,
+    "meetingSchedule": "Every Friday, 4:00 PM - 5:30 PM & Weekend Outreach",
+    "venue": "Community Hall, Block C, Room 102",
+    "icon": "HeartHandshake",
+    "color": "#10b981",
+    "objectives": [
+      "Provide free evening tutoring and digital literacy to disadvantaged children",
+      "Organize bi-annual blood donation drives with the Indian Red Cross",
+      "Drive campus zero-waste, plastic-ban, and tree plantation campaigns",
+      "Sensitize students toward civic duties, empathy, and social equality"
+    ],
+    "activities": [
+      "Project Gyan: Weekend tutoring sessions for 120+ village students",
+      "Annual Mega Blood Donation Drive collecting 400+ units",
+      "Campus Cleanliness and Lake Rejuvenation Drives",
+      "Winter Blanket and Book Donation Campaigns"
+    ],
+    "upcomingEventIds": [
+      "evt-blood-donation-2026",
+      "evt-clean-drive-2026"
+    ]
+  },
+  {
+    "id": "aperture-media",
+    "name": "Aperture Photography & Film Club",
+    "category": "Cultural",
+    "tagline": "Capturing campus moments, cinematic storytelling, and visual arts.",
+    "description": "Aperture is the official visual arts, cinematography, and photography society of UNIVO. We document campus life, produce high-production short films, and train students in camera optics, lighting, and color grading.",
+    "facultyCoordinator": {
+      "name": "Prof. Rahul Sengupta",
+      "department": "Media & Mass Communication",
+      "email": "rahul.s@universityverse.edu",
+      "office": "Media Complex, Studio 3"
+    },
+    "studentLead": {
+      "name": "Nikhil Menon",
+      "rollNo": "CS2022064",
+      "role": "Creative Director"
+    },
+    "established": 2019,
+    "membersCount": 164,
+    "meetingSchedule": "Every Tuesday, 5:00 PM - 6:30 PM",
+    "venue": "Media Production Lab, Block D",
+    "icon": "Camera",
+    "color": "#f97316",
+    "objectives": [
+      "Master DSLR and mirrorless camera operations, lighting, and composition",
+      "Produce the official UNIVO Annual Cinematic Showcase documentary",
+      "Train students in Adobe Premiere Pro, Lightroom, and DaVinci Resolve",
+      "Organize inter-college photography exhibitions and photowalks"
+    ],
+    "activities": [
+      "48-Hour Campus Short Film Contest",
+      "Old City Heritage Street Photowalk",
+      "Cinematic Lighting and Color Grading Workshop",
+      "Official media coverage for UNIVO festivals and sports meets"
+    ],
+    "upcomingEventIds": [
+      "evt-spring-fest-2026"
+    ]
+  }
+]

@@ -37,6 +37,12 @@ const MyApplications   = lazy(() => import('../pages/Placement/MyApplications'))
 const CareerPathways   = lazy(() => import('../pages/Career/CareerPathways'));
 const Internships      = lazy(() => import('../pages/Career/Internships'));
 
+// Clubs & Events Module Pages
+const Clubs        = lazy(() => import('../pages/clubs/Clubs'));
+const ClubDetails  = lazy(() => import('../pages/clubs/ClubDetails'));
+const Events       = lazy(() => import('../pages/events/Events'));
+const EventDetails = lazy(() => import('../pages/events/EventDetails'));
+
 // Protected Route Component
 function ProtectedRoute({ children }) {
   const { user } = useAuth();
@@ -100,6 +106,10 @@ function AppRouter() {
           <Route path="/placement" element={<Navigate to="/placements" replace />} />
           <Route path="/career" element={<CareerPathways />} />
           <Route path="/career/internships" element={<Internships />} />
+          <Route path="/clubs" element={<Clubs />} />
+          <Route path="/clubs/:clubId" element={<ClubDetails />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:eventId" element={<EventDetails />} />
         </Route>
 
         {/* 404 Route */}

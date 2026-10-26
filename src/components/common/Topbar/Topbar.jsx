@@ -10,7 +10,9 @@ import {
   X,
   Sun,
   Moon,
-  FileText
+  FileText,
+  Users,
+  Calendar,
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import { useNotifications } from '../../../context/NotificationContext';
@@ -20,10 +22,16 @@ import { useTheme } from '../../../context/ThemeContext';
 import initialStudents from '../../../data/students.json';
 import initialAssignments from '../../../data/assignments.json';
 import initialNotes from '../../../data/notes.json';
+import initialClubs from '../../../data/clubs.json';
+import initialEvents from '../../../data/events.json';
 import './Topbar.css';
 
 /* ── Derive page title from pathname ── */
 const getPageTitle = (pathname) => {
+  if (pathname.startsWith('/clubs/')) return 'Club Details';
+  if (pathname.startsWith('/clubs')) return 'Clubs & Societies';
+  if (pathname.startsWith('/events/')) return 'Event Details';
+  if (pathname.startsWith('/events')) return 'Campus Events';
   if (pathname.startsWith('/placements/applications')) return 'My Applications';
   if (pathname.startsWith('/placements/')) return 'Placement Drive Details';
   if (pathname.startsWith('/placements')) return 'Placement Drives';
@@ -114,6 +122,20 @@ const Topbar = ({ isCollapsed, onToggle }) => {
     notes.forEach((n) => {
       if ((n.title && n.title.toLowerCase().includes(q)) || (n.subject && n.subject.toLowerCase().includes(q))) {
         results.push({ id: `nt_${n.id}`, title: n.title, subtitle: `Subject: ${n.subject} • ${n.type}`, category: 'Notes Resource', path: '/notes', icon: <FileText size={14} /> });
+      }
+    });
+
+    // 4. Clubs & Societies
+    initialClubs.forEach((c) => {
+      if ((c.name && c.name.toLowerCase().includes(q)) || (c.category && c.category.toLowerCase().includes(q))) {
+        results.push({ id: `club_${c.id}`, title: c.name, subtitle: `${c.category} Society • ${c.membersCount} Members`, category: 'Club', path: `/clubs/${c.id}`, icon: <Users size={14} /> });
+      }
+    });
+
+    // 5. Events & Activities
+    initialEvents.forEach((ev) => {
+      if ((ev.title && ev.title.toLowerCase().includes(q)) || (ev.venue && ev.venue.toLowerCase().includes(q)) || (ev.category && ev.category.toLowerCase().includes(q))) {
+        results.push({ id: `evt_${ev.id}`, title: ev.title, subtitle: `${ev.displayDate} • ${ev.venue}`, category: 'Event', path: `/events/${ev.id}`, icon: <Calendar size={14} /> });
       }
     });
 

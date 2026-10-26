@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, User, BookOpen, Calendar, ClipboardList, FileText,
   LogOut, ChevronLeft, ChevronRight, Briefcase, Send, Compass,
-  GraduationCap, Building2, MessageSquare, Ticket,
+  GraduationCap, Building2, MessageSquare, Ticket, Users, Sparkles,
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import './Sidebar.css';
@@ -25,7 +25,13 @@ const navGroups = [
       { label: 'Notes', path: '/notes', icon: <FileText size={18} /> },
     ],
   },
-  
+  {
+    label: 'Campus Life',
+    items: [
+      { label: 'Clubs & Societies', path: '/clubs', icon: <Users size={18} /> },
+      { label: 'Campus Events', path: '/events', icon: <Sparkles size={18} /> },
+    ],
+  },
   {
     label: 'Placement',
     items: [
@@ -103,7 +109,7 @@ const Sidebar = ({ isCollapsed, onToggle, isMobile, isMobileOpen }) => {
               <NavLink
                 key={item.path}
                 to={item.path}
-                end={item.path === '/placements' || item.path === '/career'}
+                end={item.path === '/placements' || item.path === '/career' || item.path === '/clubs' || item.path === '/events'}
                 className={({ isActive }) =>
                   ['sidebar-nav-item', isActive ? 'active' : ''].filter(Boolean).join(' ')
                 }

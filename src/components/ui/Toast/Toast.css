@@ -1,0 +1,114 @@
+/* Reusable Floating Toast Notification */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.ui-toast-container {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 320px;
+  max-width: 90vw;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  background: #0d1527;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.light-theme .ui-toast-container {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #e2e8f0;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.ui-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.ui-toast-icon {
+  flex-shrink: 0;
+}
+
+.ui-toast-icon.success {
+  color: #10b981;
+}
+
+.ui-toast-icon.error {
+  color: #ef4444;
+}
+
+.ui-toast-icon.warning {
+  color: #f59e0b;
+}
+
+.ui-toast-icon.info {
+  color: #06b6d4;
+}
+
+.ui-toast-message {
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.ui-toast-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  color: #94a3b8;
+  background: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ui-toast-close:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .ui-toast-close:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+/* Variant borders */
+.ui-toast-container.success {
+  border-left: 4px solid #10b981;
+}
+
+.ui-toast-container.error {
+  border-left: 4px solid #ef4444;
+}
+
+.ui-toast-container.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.ui-toast-container.info {
+  border-left: 4px solid #06b6d4;
+}
