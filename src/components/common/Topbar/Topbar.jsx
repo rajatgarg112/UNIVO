@@ -11,7 +11,9 @@ import {
   Sun,
   Moon,
   FileText,
-  BookOpen
+  BookOpen,
+  Users,
+  Calendar,
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import { useNotifications } from '../../../context/NotificationContext';
@@ -22,10 +24,22 @@ import initialStudents from '../../../data/students.json';
 import initialAssignments from '../../../data/assignments.json';
 import initialNotes from '../../../data/notes.json';
 import initialLibrary from '../../../data/library.json';
+import initialClubs from '../../../data/clubs.json';
+import initialEvents from '../../../data/events.json';
 import './Topbar.css';
 
 /* ── Derive page title from pathname ── */
 const getPageTitle = (pathname) => {
+  if (pathname.startsWith('/clubs/')) return 'Club Details';
+  if (pathname.startsWith('/clubs')) return 'Clubs & Societies';
+  if (pathname.startsWith('/events/')) return 'Event Details';
+  if (pathname.startsWith('/events')) return 'Campus Events';
+  if (pathname.startsWith('/placements/applications')) return 'My Applications';
+  if (pathname.startsWith('/placements/')) return 'Placement Drive Details';
+  if (pathname.startsWith('/placements')) return 'Placement Drives';
+  if (pathname.startsWith('/career/internships')) return 'Internships Hub';
+  if (pathname.startsWith('/career')) return 'Career Pathways';
+
   const map = {
     '/dashboard': 'Dashboard',
     '/profile': 'My Profile',
@@ -69,7 +83,7 @@ const Topbar = ({ isCollapsed, onToggle }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  /* Global Live Search Algorithm (Evaluation 1: Students, Assignments, Notes) */
+  /* Global Live Search Algorithm */
   useEffect(() => {
     if (!searchQuery.trim()) {
       setSearchResults([]);
@@ -122,6 +136,20 @@ const Topbar = ({ isCollapsed, onToggle }) => {
       }
     });
 
+    // 5. Clubs & Societies
+    initialClubs.forEach((c) => {
+      if ((c.name && c.name.toLowerCase().includes(q)) || (c.category && c.category.toLowerCase().includes(q))) {
+        results.push({ id: `club_${c.id}`, title: c.name, subtitle: `${c.category} Society • ${c.membersCount} Members`, category: 'Club', path: `/clubs/${c.id}`, icon: <Users size={14} /> });
+      }
+    });
+
+    // 6. Events & Activities
+    initialEvents.forEach((ev) => {
+      if ((ev.title && ev.title.toLowerCase().includes(q)) || (ev.venue && ev.venue.toLowerCase().includes(q)) || (ev.category && ev.category.toLowerCase().includes(q))) {
+        results.push({ id: `evt_${ev.id}`, title: ev.title, subtitle: `${ev.displayDate} • ${ev.venue}`, category: 'Event', path: `/events/${ev.id}`, icon: <Calendar size={14} /> });
+      }
+    });
+
     setSearchResults(results.slice(0, 8));
     setIsSearchOpen(true);
   }, [searchQuery]);
@@ -168,159 +196,159 @@ const Topbar = ({ isCollapsed, onToggle }) => {
       <div className="topbar-right-controls">
         {/* ── Global Search with Dropdown ── */}
         <div ref={searchContainerRef} style={{ position: 'relative', width: '320px' }}>
-        <form className="topbar-search" onSubmit={handleSearchSubmit}>
-          <span className="topbar-search-icon">
-            <Search size={16} />
-          </span>
-          <input
-            type="text"
-            className="topbar-search-input"
-            placeholder="Search students, assignments, notes..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => searchQuery.trim() && setIsSearchOpen(true)}
-          />
-          {searchQuery && (
-            <button
-              type="button"
-              className="topbar-search-clear"
-              onClick={() => { setSearchQuery(''); setIsSearchOpen(false); }}
-            >
-              <X size={14} />
-            </button>
-          )}
-        </form>
-
-        {/* Global Live Search Results Dropdown */}
-        {isSearchOpen && (
-          <div
-            style={{
-              position: 'absolute',
-              top: 'calc(100% + 8px)',
-              left: 0,
-              right: 0,
-              background: '#0B1220',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
-              borderRadius: '12px',
-              padding: '8px',
-              zIndex: 1000,
-              boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
-              maxHeight: '360px',
-              overflowY: 'auto'
-            }}
-          >
-            {searchResults.length === 0 ? (
-              <div style={{ padding: '12px 16px', color: '#94a3b8', fontSize: '13px', textAlign: 'center' }}>
-                No matching results found across UNIVO.
-              </div>
-            ) : (
-              searchResults.map((res) => (
-                <div
-                  key={res.id}
-                  onClick={() => handleResultClick(res.path)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '10px 12px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s ease',
-                    marginBottom: '2px'
-                  }}
-                  className="topbar-search-result-item"
-                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(215, 25, 32, 0.15)'}
-                  onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{ color: '#E8333A', background: 'rgba(215, 25, 32, 0.15)', padding: '6px', borderRadius: '6px' }}>
-                      {res.icon}
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '14px', fontWeight: '600', color: '#f8fafc' }}>{res.title}</div>
-                      <div style={{ fontSize: '12px', color: '#94a3b8' }}>{res.subtitle}</div>
-                    </div>
-                  </div>
-                  <span style={{ fontSize: '10px', fontWeight: '700', color: '#06b6d4', background: 'rgba(6, 182, 212, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
-                    {res.category}
-                  </span>
-                </div>
-              ))
-            )}
-          </div>
-        )}
-      </div>
-
-      {/* ── Actions ── */}
-      <div className="topbar-actions">
-        {/* Theme Toggle Button */}
-        <button
-          className="topbar-notif-btn"
-          title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          onClick={toggleTheme}
-        >
-          {isDark ? <Sun size={20} color="#f59e0b" /> : <Moon size={20} color="#D71920" />}
-        </button>
-
-        {/* Notification bell */}
-        <button
-          className="topbar-notif-btn"
-          title="Notifications"
-          onClick={() => navigate('/notifications')}
-        >
-          <Bell size={20} />
-          {unreadCount > 0 && (
-            <span className="topbar-notif-badge">
-              {unreadCount > 99 ? '99+' : unreadCount}
+          <form className="topbar-search" onSubmit={handleSearchSubmit}>
+            <span className="topbar-search-icon">
+              <Search size={16} />
             </span>
-          )}
-        </button>
-
-        {/* User Avatar & Dropdown */}
-        <div className="topbar-user" ref={dropdownRef}>
-          <div
-            className="topbar-avatar"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          >
-            {user?.avatar ? (
-              <img src={user.avatar} alt={user.name} />
-            ) : (
-              getInitials(user?.name || 'User')
+            <input
+              type="text"
+              className="topbar-search-input"
+              placeholder="Search students, assignments, notes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => searchQuery.trim() && setIsSearchOpen(true)}
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                className="topbar-search-clear"
+                onClick={() => { setSearchQuery(''); setIsSearchOpen(false); }}
+              >
+                <X size={14} />
+              </button>
             )}
-          </div>
+          </form>
 
-              {isDropdownOpen && (
-                <div className="topbar-dropdown">
-                  <div className="topbar-dropdown-header">
-                    <p className="topbar-dropdown-name">{user?.name || 'Aryan Sharma'}</p>
-                    <p className="topbar-dropdown-email">{user?.email || 'aryan@universityverse.edu'}</p>
-                  </div>
-                  <div className="topbar-dropdown-divider" />
-                  <Link
-                    to="/profile"
-                    className="topbar-dropdown-item"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    <User size={16} /> My Profile
-                  </Link>
-                  <Link
-                    to="/settings"
-                    className="topbar-dropdown-item"
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    <Settings size={16} /> Settings
-                  </Link>
-                  <div className="topbar-dropdown-divider" />
-                  <button className="topbar-dropdown-item logout" onClick={handleLogout}>
-                    <LogOut size={16} /> Log Out
-                  </button>
+          {/* Global Live Search Results Dropdown */}
+          {isSearchOpen && (
+            <div
+              style={{
+                position: 'absolute',
+                top: 'calc(100% + 8px)',
+                left: 0,
+                right: 0,
+                background: '#0B1220',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: '12px',
+                padding: '8px',
+                zIndex: 1000,
+                boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
+                maxHeight: '360px',
+                overflowY: 'auto'
+              }}
+            >
+              {searchResults.length === 0 ? (
+                <div style={{ padding: '12px 16px', color: '#94a3b8', fontSize: '13px', textAlign: 'center' }}>
+                  No matching results found across UNIVO.
                 </div>
+              ) : (
+                searchResults.map((res) => (
+                  <div
+                    key={res.id}
+                    onClick={() => handleResultClick(res.path)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '10px 12px',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      transition: 'background 0.2s ease',
+                      marginBottom: '2px'
+                    }}
+                    className="topbar-search-result-item"
+                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(215, 25, 32, 0.15)'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <div style={{ color: '#E8333A', background: 'rgba(215, 25, 32, 0.15)', padding: '6px', borderRadius: '6px' }}>
+                        {res.icon}
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '14px', fontWeight: '600', color: '#f8fafc' }}>{res.title}</div>
+                        <div style={{ fontSize: '12px', color: '#94a3b8' }}>{res.subtitle}</div>
+                      </div>
+                    </div>
+                    <span style={{ fontSize: '10px', fontWeight: '700', color: '#06b6d4', background: 'rgba(6, 182, 212, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
+                      {res.category}
+                    </span>
+                  </div>
+                ))
               )}
             </div>
+          )}
+        </div>
+
+        {/* ── Actions ── */}
+        <div className="topbar-actions">
+          {/* Theme Toggle Button */}
+          <button
+            className="topbar-notif-btn"
+            title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            onClick={toggleTheme}
+          >
+            {isDark ? <Sun size={20} color="#f59e0b" /> : <Moon size={20} color="#D71920" />}
+          </button>
+
+          {/* Notification bell */}
+          <button
+            className="topbar-notif-btn"
+            title="Notifications"
+            onClick={() => navigate('/notifications')}
+          >
+            <Bell size={20} />
+            {unreadCount > 0 && (
+              <span className="topbar-notif-badge">
+                {unreadCount > 99 ? '99+' : unreadCount}
+              </span>
+            )}
+          </button>
+
+          {/* User Avatar & Dropdown */}
+          <div className="topbar-user" ref={dropdownRef}>
+            <div
+              className="topbar-avatar"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              {user?.avatar ? (
+                <img src={user.avatar} alt={user.name} />
+              ) : (
+                getInitials(user?.name || 'User')
+              )}
+            </div>
+
+            {isDropdownOpen && (
+              <div className="topbar-dropdown">
+                <div className="topbar-dropdown-header">
+                  <p className="topbar-dropdown-name">{user?.name || 'Aryan Sharma'}</p>
+                  <p className="topbar-dropdown-email">{user?.email || 'aryan@universityverse.edu'}</p>
+                </div>
+                <div className="topbar-dropdown-divider" />
+                <Link
+                  to="/profile"
+                  className="topbar-dropdown-item"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <User size={16} /> My Profile
+                </Link>
+                <Link
+                  to="/settings"
+                  className="topbar-dropdown-item"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <Settings size={16} /> Settings
+                </Link>
+                <div className="topbar-dropdown-divider" />
+                <button className="topbar-dropdown-item logout" onClick={handleLogout}>
+                  <LogOut size={16} /> Log Out
+                </button>
+              </div>
+            )}
           </div>
         </div>
-      </header>
-    );
-  }
+      </div>
+    </header>
+  );
+};
 
 export default Topbar;

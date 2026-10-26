@@ -1,0 +1,1157 @@
+/* ========================================================
+   UNIVO Career Module Stylesheet (Dark & Light Theme)
+   ======================================================== */
+
+.career-page {
+  animation: fadeIn 0.35s ease-out;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+body.light-theme .career-page {
+  color: #334155;
+}
+
+/* ─── Header ────────────────────────────────────────────── */
+.career-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.career-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.5px;
+}
+
+body.light-theme .career-title {
+  color: #0B1220;
+}
+
+.career-subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+body.light-theme .career-subtitle {
+  color: #64748b;
+}
+
+/* ─── Search Toolbar ────────────────────────────────────── */
+.career-toolbar {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+body.light-theme .career-toolbar {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+
+.career-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 8px 14px;
+  flex: 1;
+  min-width: 260px;
+  color: #94a3b8;
+  transition: border-color 0.2s ease;
+}
+
+body.light-theme .career-search-box {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+.career-search-box:focus-within {
+  border-color: #D71920;
+}
+
+.career-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-size: 13px;
+  width: 100%;
+}
+
+body.light-theme .career-search-input {
+  color: #0B1220;
+}
+
+/* ─── Career Pathway Cards Grid ─────────────────────────── */
+.career-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.career-card {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+body.light-theme .career-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.career-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 25, 32, 0.4);
+}
+
+.career-card.active-card {
+  border-color: #D71920;
+  box-shadow: 0 0 0 1px #D71920, 0 10px 25px rgba(215, 25, 32, 0.15);
+}
+
+.career-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.career-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.25;
+}
+
+body.light-theme .career-card-title {
+  color: #0B1220;
+}
+
+.career-card-tagline {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D71920;
+  margin-top: 3px;
+}
+
+.career-card-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+body.light-theme .career-card-desc {
+  color: #64748b;
+}
+
+.career-skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+body.light-theme .skill-chip {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+.career-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light-theme .career-card-footer {
+  border-top-color: #f1f5f9;
+}
+
+.career-salary {
+  font-size: 12px;
+  font-weight: 700;
+  color: #10b981;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn-select-career {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #D71920;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ─── Detail Section (Checklist & Roadmap) ──────────────── */
+.career-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 6px;
+}
+
+.career-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 22px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .career-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.career-panel-card {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .career-panel-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.panel-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+  gap: 10px;
+}
+
+body.light-theme .panel-header-row {
+  border-bottom-color: #f1f5f9;
+}
+
+.panel-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.light-theme .panel-title {
+  color: #0B1220;
+}
+
+/* ─── Readiness Progress Widget ─────────────────────────── */
+.readiness-widget-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+body.light-theme .readiness-widget-box {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.readiness-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.readiness-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+body.light-theme .readiness-heading {
+  color: #0B1220;
+}
+
+.readiness-subtext {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+body.light-theme .readiness-subtext {
+  color: #64748b;
+}
+
+/* ─── Interactive Skill Checklist ───────────────────────── */
+.skill-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+body.light-theme .skill-check-item {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.skill-check-item:hover {
+  background: rgba(215, 25, 32, 0.05);
+  border-color: rgba(215, 25, 32, 0.2);
+}
+
+.skill-check-item.completed {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.skill-checkbox-input {
+  accent-color: #10b981;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.skill-item-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f8fafc;
+  flex: 1;
+}
+
+body.light-theme .skill-item-text {
+  color: #0B1220;
+}
+
+.skill-check-item.completed .skill-item-text {
+  color: #10b981;
+}
+
+/* ─── Roadmap Timeline ──────────────────────────────────── */
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.roadmap-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-marker {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.15);
+  border: 1px solid rgba(215, 25, 32, 0.3);
+  color: #D71920;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  flex-shrink: 0;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-phase-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #D71920;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+body.light-theme .step-title {
+  color: #0B1220;
+}
+
+.step-details {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+body.light-theme .step-details {
+  color: #64748b;
+}
+
+/* ─── Reset Button ──────────────────────────────────────── */
+.btn-reset-skills {
+  font-size: 12px;
+  color: #94a3b8;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+body.light-theme .btn-reset-skills {
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+.btn-reset-skills:hover {
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .btn-reset-skills:hover {
+  color: #0B1220;
+}
+
+/* ─── Filter Dropdowns ──────────────────────────────────── */
+.career-filter-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.career-select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+body.light-theme .career-select {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0B1220;
+}
+
+.career-select:focus {
+  border-color: #D71920;
+}
+
+.career-select option {
+  background: #0B1220;
+  color: #cbd5e1;
+}
+
+body.light-theme .career-select option {
+  background: #ffffff;
+  color: #0B1220;
+}
+
+/* ─── Internship Card Specific Styles ───────────────────── */
+.internship-card {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.light-theme .internship-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.internship-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 25, 32, 0.4);
+}
+
+.internship-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.internship-company-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.internship-logo-initial {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(215, 25, 32, 0.2), rgba(215, 25, 32, 0.05));
+  border: 1px solid rgba(215, 25, 32, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #D71920;
+  flex-shrink: 0;
+}
+
+.internship-role-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.25;
+}
+
+body.light-theme .internship-role-title {
+  color: #0B1220;
+}
+
+.internship-company-name {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+body.light-theme .internship-company-name {
+  color: #64748b;
+}
+
+.stipend-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.internship-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.btn-bookmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+body.light-theme .btn-bookmark {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #64748b;
+}
+
+.btn-bookmark:hover {
+  background: rgba(215, 25, 32, 0.1);
+  border-color: rgba(215, 25, 32, 0.35);
+  color: #D71920;
+}
+
+body.light-theme .btn-bookmark:hover {
+  background: rgba(215, 25, 32, 0.08);
+  border-color: rgba(215, 25, 32, 0.35);
+  color: #D71920;
+}
+
+.btn-bookmark.saved {
+  background: rgba(215, 25, 32, 0.15);
+  border-color: #D71920;
+  color: #D71920;
+}
+
+body.light-theme .btn-bookmark.saved {
+  background: rgba(215, 25, 32, 0.1);
+  border-color: #D71920;
+  color: #D71920;
+}
+
+.internship-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+}
+
+body.light-theme .internship-meta-grid {
+  background: #f8fafc;
+  border-color: #f1f5f9;
+}
+
+.internship-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+}
+
+body.light-theme .internship-meta-item {
+  color: #64748b;
+}
+
+.internship-meta-item strong {
+  color: #f8fafc;
+}
+
+body.light-theme .internship-meta-item strong {
+  color: #0B1220;
+}
+
+/* ─── Career / Internships Empty State ──────────────────── */
+.career-empty-state {
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+body.light-theme .career-empty-state {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.career-empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D71920;
+  margin-bottom: 4px;
+}
+
+.career-empty-state h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+body.light-theme .career-empty-state h3 {
+  color: #0B1220;
+}
+
+.career-empty-state p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 420px;
+}
+
+body.light-theme .career-empty-state p {
+  color: #64748b;
+}
+
+/* ─── Internships Tab Toggle (All vs Saved) ──────────────── */
+.internship-tabs-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.internship-tab-group {
+  display: flex;
+  gap: 6px;
+  background: #0B1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+body.light-theme .internship-tab-group {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+
+.internship-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+body.light-theme .internship-tab-btn {
+  color: #64748b;
+}
+
+.internship-tab-btn:hover {
+  color: #f8fafc;
+}
+
+body.light-theme .internship-tab-btn:hover {
+  color: #0B1220;
+}
+
+.internship-tab-btn.active {
+  background: #D71920;
+  color: #ffffff;
+}
+
+body.light-theme .internship-tab-btn.active {
+  background: #D71920;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .internship-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .internship-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ─── Internship Card Footer & Apply Button ──────────────── */
+.internship-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 4px;
+}
+
+body.light-theme .internship-card-footer {
+  border-top-color: #f1f5f9;
+}
+
+.btn-apply-internship {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: #D71920;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-apply-internship:hover {
+  background: #b5141a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
+}
+
+.internship-applied-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* ─── Internship Application Modal Content ───────────────── */
+.internship-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.apply-modal-header-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+body.light-theme .apply-modal-header-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.apply-modal-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.apply-company-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D71920;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.apply-role-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+body.light-theme .apply-role-title {
+  color: #0B1220;
+}
+
+.apply-modal-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Already Applied & Success Feedback Banners ─────────── */
+.apply-already-box {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.apply-already-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 4px 0;
+}
+
+body.light-theme .apply-already-box h4 {
+  color: #0B1220;
+}
+
+.apply-already-box p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+body.light-theme .apply-already-box p {
+  color: #64748b;
+}
+
+.apply-success-box {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.apply-success-box h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #10b981;
+  margin: 0;
+}
+
+.apply-success-box p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+body.light-theme .apply-success-box p {
+  color: #64748b;
+}
+
+/* ─── Apply Form Controls ────────────────────────────────── */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.apply-form-error-banner {
+  background: rgba(215, 25, 32, 0.1);
+  border: 1px solid rgba(215, 25, 32, 0.3);
+  color: #ef4444;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apply-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.apply-form-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+body.light-theme .apply-form-label {
+  color: #334155;
+}
+
+.required-star {
+  color: #D71920;
+  font-weight: 700;
+}
+
+.optional-tag {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.apply-form-input,
+.apply-form-textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: #f8fafc;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+body.light-theme .apply-form-input,
+body.light-theme .apply-form-textarea {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0B1220;
+}
+
+.apply-form-input:focus,
+.apply-form-textarea:focus {
+  border-color: #D71920;
+  background: rgba(215, 25, 32, 0.03);
+}
+
+.apply-form-input.error,
+.apply-form-textarea.error {
+  border-color: #ef4444;
+}
+
+.apply-form-textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.apply-field-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #ef4444;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.apply-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .apply-modal-actions {
+  border-top-color: #e2e8f0;
+}
+
+.btn-apply-cancel {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+body.light-theme .btn-apply-cancel {
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+.btn-apply-cancel:hover {
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+body.light-theme .btn-apply-cancel:hover {
+  color: #0B1220;
+  border-color: #94a3b8;
+}
+
+.btn-apply-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #D71920;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-apply-submit:hover {
+  background: #b5141a;
+  transform: translateY(-1px);
+}
+
+.btn-apply-close {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.2s ease;
+}
+
+body.light-theme .btn-apply-close {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0B1220;
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "id": "drive-1",
+    "company": "Microsoft",
+    "role": "Software Development Engineer",
+    "package": 44,
+    "packageDisplay": "₹44 LPA",
+    "minCgpa": 8.5,
+    "eligibility": "CGPA >= 8.5 (CSE, IT, ECE)",
+    "eligibleBranches": ["Computer Science", "Information Technology", "Electronics & Comm."],
+    "deadline": "2026-10-30",
+    "location": "Bangalore / Hyderabad",
+    "jobType": "Full Time",
+    "openings": 12,
+    "bond": "No Service Bond",
+    "category": "Dream Offer",
+    "description": "Microsoft is hiring graduating engineers for core engineering divisions. As an SDE, you will build scalable cloud systems, integrate cutting-edge AI technologies, and create software used by millions worldwide.",
+    "requirements": [
+      "Strong proficiency in Data Structures and Algorithms",
+      "Knowledge of C++, Java, C#, or Python",
+      "Solid foundation in OS, DBMS, and Object-Oriented Design",
+      "Strong problem-solving and communication skills"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "Online Coding Assessment", "details": "3 Algorithmic problems on LeetCode-style platform (90 mins)" },
+      { "round": 2, "name": "Technical Round 1", "details": "DSA, Data Structures, Complexity Analysis & live coding" },
+      { "round": 3, "name": "Technical Round 2", "details": "System Design basics, OOP Principles, and Past Projects" },
+      { "round": 4, "name": "AA / HR Round", "details": "Leadership principles, cultural fit, and managerial evaluation" }
+    ],
+    "postedDate": "2026-10-10"
+  },
+  {
+    "id": "drive-2",
+    "company": "Google",
+    "role": "Associate Software Engineer",
+    "package": 38,
+    "packageDisplay": "₹38 LPA",
+    "minCgpa": 8.0,
+    "eligibility": "CGPA >= 8.0 (CSE, IT)",
+    "eligibleBranches": ["Computer Science", "Information Technology"],
+    "deadline": "2026-11-05",
+    "location": "Bangalore, India",
+    "jobType": "Full Time",
+    "openings": 8,
+    "bond": "No Service Bond",
+    "category": "Super Dream",
+    "description": "Join Google's engineering team to tackle complex computational challenges at internet scale. You will collaborate with world-class engineers on search, cloud platforms, and developer tooling.",
+    "requirements": [
+      "Exceptional grasp of computer science fundamentals",
+      "Expertise in at least one modern language (Go, Java, C++, Python)",
+      "Demonstrated ability to write clean, maintainable, tested code",
+      "High analytical and algorithmic reasoning ability"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "Online Challenge", "details": "2 algorithmic challenges on Google's test platform" },
+      { "round": 2, "name": "Technical Video Interview", "details": "Data structures and algorithm design on Google Docs" },
+      { "round": 3, "name": "Advanced Problem Solving", "details": "Graphs, dynamic programming, and complexity trade-offs" },
+      { "round": 4, "name": "Googlyness & Leadership", "details": "Behavioral assessment and university project walkthrough" }
+    ],
+    "postedDate": "2026-10-12"
+  },
+  {
+    "id": "drive-3",
+    "company": "Amazon",
+    "role": "Cloud Support Associate (AWS)",
+    "package": 22,
+    "packageDisplay": "₹22 LPA",
+    "minCgpa": 7.5,
+    "eligibility": "CGPA >= 7.5 (All Engineering Branches)",
+    "eligibleBranches": ["Computer Science", "Information Technology", "Electronics & Comm.", "Mechanical", "Electrical"],
+    "deadline": "2026-11-12",
+    "location": "Hyderabad / Remote",
+    "jobType": "Full Time",
+    "openings": 25,
+    "bond": "No Service Bond",
+    "category": "Dream Offer",
+    "description": "Amazon Web Services (AWS) is seeking customer-obsessed engineers to troubleshoot, scale, and maintain global cloud infrastructure for enterprise clients.",
+    "requirements": [
+      "Familiarity with Cloud Computing, Linux systems, and Networking protocols",
+      "Basic scripting skills in Python, Bash, or JavaScript",
+      "Knowledge of DNS, TCP/IP, HTTP, and load balancing concepts",
+      "Passionate about troubleshooting and resolving technical bottlenecks"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "AWS Aptitude & Tech MCQs", "details": "Networking, OS fundamentals, and reasoning" },
+      { "round": 2, "name": "Technical Assessment", "details": "Linux commands, network troubleshooting, and script debugging" },
+      { "round": 3, "name": "Amazon Bar Raiser Interview", "details": "Amazon 16 Leadership Principles and behavioral evaluation" }
+    ],
+    "postedDate": "2026-10-14"
+  },
+  {
+    "id": "drive-4",
+    "company": "Cisco",
+    "role": "Network Software Engineer",
+    "package": 18,
+    "packageDisplay": "₹18 LPA",
+    "minCgpa": 7.0,
+    "eligibility": "CGPA >= 7.0 (CSE, IT, ECE, EE)",
+    "eligibleBranches": ["Computer Science", "Information Technology", "Electronics & Comm.", "Electrical"],
+    "deadline": "2026-10-28",
+    "location": "Chennai / Bangalore",
+    "jobType": "Full Time",
+    "openings": 15,
+    "bond": "No Service Bond",
+    "category": "Dream Offer",
+    "description": "Design the next generation of secure, software-defined enterprise networking and cybersecurity systems powering global connectivity at Cisco.",
+    "requirements": [
+      "Strong understanding of Computer Networks (OSI layers, TCP/IP, Routing)",
+      "Proficiency in C, C++, or Python programming",
+      "Familiarity with socket programming and multithreading",
+      "Good communication and collaborative spirit"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "National Level Test", "details": "Aptitude, networking MCQs, and 2 coding problems" },
+      { "round": 2, "name": "Technical Interview", "details": "Deep dive into network protocols and practical scenarios" },
+      { "round": 3, "name": "Managerial & HR Round", "details": "Cultural alignment and team discussion" }
+    ],
+    "postedDate": "2026-10-08"
+  },
+  {
+    "id": "drive-5",
+    "company": "Deloitte",
+    "role": "Technology Analyst",
+    "package": 10,
+    "packageDisplay": "₹10 LPA",
+    "minCgpa": 6.5,
+    "eligibility": "CGPA >= 6.5 (All Branches)",
+    "eligibleBranches": ["Computer Science", "Information Technology", "Electronics & Comm.", "Mechanical", "Civil", "Electrical"],
+    "deadline": "2026-11-20",
+    "location": "Gurgaon / Mumbai / Hyderabad",
+    "jobType": "Full Time",
+    "openings": 45,
+    "bond": "No Service Bond",
+    "category": "Core Placement",
+    "description": "Deloitte Consulting USI is hiring Technology Analysts to deliver cloud transformation, digital strategy, enterprise architecture, and analytics solutions for Fortune 500 clients.",
+    "requirements": [
+      "Strong analytical, logical, and structured problem-solving skills",
+      "Knowledge of SQL, Relational Databases, and SDLC methodologies",
+      "Understanding of web technologies and business workflows",
+      "Excellent presentation and stakeholder communication abilities"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "Online Assessment", "details": "Quantitative, Logical, Verbal, and Tech Basics" },
+      { "round": 2, "name": "Business Case Study & Tech", "details": "Solving a business scenario and explaining technical approach" },
+      { "round": 3, "name": "Partner / HR Interview", "details": "Final fitment and behavioral evaluation" }
+    ],
+    "postedDate": "2026-10-05"
+  },
+  {
+    "id": "drive-6",
+    "company": "Zomato",
+    "role": "Frontend Engineer (React)",
+    "package": 16,
+    "packageDisplay": "₹16 LPA",
+    "minCgpa": 7.0,
+    "eligibility": "CGPA >= 7.0 (CSE, IT)",
+    "eligibleBranches": ["Computer Science", "Information Technology"],
+    "deadline": "2026-10-25",
+    "location": "Gurgaon, India",
+    "jobType": "Full Time",
+    "openings": 10,
+    "bond": "No Service Bond",
+    "category": "Dream Offer",
+    "description": "Build high-speed, delightful user interfaces for millions of foodies and delivery partners using modern React, TypeScript, and responsive design systems.",
+    "requirements": [
+      "Deep understanding of React.js, hooks, state management, and modern JS (ES6+)",
+      "Proficiency in CSS3, responsive layouts, web performance, and accessibility",
+      "Experience consuming RESTful and GraphQL APIs",
+      "Portfolio of interactive web apps or hackathon projects"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "Frontend Machine Coding", "details": "Build a React component with state, search, and responsive UI in 90 mins" },
+      { "round": 2, "name": "Frontend Deep Dive", "details": "DOM, React internals, Virtual DOM, and state patterns" },
+      { "round": 3, "name": "Culture & Product Fit", "details": "Product thinking, UI design sense, and team interaction" }
+    ],
+    "postedDate": "2026-10-15"
+  },
+  {
+    "id": "drive-7",
+    "company": "IBM",
+    "role": "Cloud & AI Engineer",
+    "package": 14,
+    "packageDisplay": "₹14 LPA",
+    "minCgpa": 7.2,
+    "eligibility": "CGPA >= 7.2 (CSE, IT, ECE)",
+    "eligibleBranches": ["Computer Science", "Information Technology", "Electronics & Comm."],
+    "deadline": "2026-11-18",
+    "location": "Bangalore / Kochi",
+    "jobType": "Full Time",
+    "openings": 20,
+    "bond": "No Service Bond",
+    "category": "Core Placement",
+    "description": "Work on enterprise AI solutions, hybrid cloud platforms with Red Hat OpenShift, and automated data pipelines at IBM Software Labs.",
+    "requirements": [
+      "Knowledge of Python, Machine Learning fundamentals, and Cloud containers",
+      "Hands-on experience with Docker, Git, and Linux environments",
+      "Familiarity with REST APIs and database querying",
+      "Strong analytical mindset and continuous learning attitude"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "Cognitive Ability Assessment", "details": "Gamified cognitive tests and coding questions" },
+      { "round": 2, "name": "Technical Evaluation", "details": "Python, data pipelines, containers, and core algorithms" },
+      { "round": 3, "name": "Senior Technical / HR Round", "details": "Project review and role alignment" }
+    ],
+    "postedDate": "2026-10-09"
+  },
+  {
+    "id": "drive-8",
+    "company": "TCS Digital",
+    "role": "Digital Systems Engineer",
+    "package": 7.5,
+    "packageDisplay": "₹7.5 LPA",
+    "minCgpa": 6.5,
+    "eligibility": "CGPA >= 6.5 (All Engineering Streams)",
+    "eligibleBranches": ["Computer Science", "Information Technology", "Electronics & Comm.", "Electrical", "Mechanical", "Civil"],
+    "deadline": "2026-12-01",
+    "location": "Pune / Kolkata / Delhi NCR",
+    "jobType": "Full Time",
+    "openings": 120,
+    "bond": "1 Year Service Agreement",
+    "category": "Mass Placement",
+    "description": "TCS Digital is the premier wing of Tata Consultancy Services, deploying graduates into AI, IoT, Blockchain, and cloud transformation projects for worldwide clients.",
+    "requirements": [
+      "Basic understanding of any programming language (C, Java, Python)",
+      "Familiarity with SQL and Relational Database concepts",
+      "Good problem solving and quantitative ability",
+      "Willingness to learn and adapt to new enterprise technology stacks"
+    ],
+    "selectionRounds": [
+      { "round": 1, "name": "TCS NQT Advanced Test", "details": "Advanced quantitative, verbal, and 2 programming challenges" },
+      { "round": 2, "name": "Technical Interview", "details": "Programming basics, DBMS, project discussion" },
+      { "round": 3, "name": "HR & Managerial Discussion", "details": "Verification of documents and location preference" }
+    ],
+    "postedDate": "2026-10-01"
+  }
+]

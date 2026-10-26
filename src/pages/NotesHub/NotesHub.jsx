@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Edit2, Trash2, Download, Search, Plus, X, User, Calendar } from 'lucide-react';
+import { Edit2, Trash2, Download, Search, Plus, X, User, Calendar, FileText } from 'lucide-react';
 import initialNotesData from '../../data/notes.json';
 import './NotesHub.css';
 

@@ -15,6 +15,7 @@ const FormInput = ({
   icon,
   helpText,
   disabled = false,
+  inputRef,
 }) => {
   return (
     <div className="form-group">
@@ -31,6 +32,7 @@ const FormInput = ({
           </span>
         )}
         <input
+          ref={inputRef}
           id={id}
           name={name}
           type={type}

@@ -1,0 +1,898 @@
+/* ── Gate Pass Page Styling (Full Light & Dark Theme Support) ── */
+.gate-pass-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+/* ── Page Header ── */
+.gate-pass-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .gate-pass-header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.gate-pass-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gate-pass-header-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(215, 25, 32, 0.12);
+  border: 1px solid rgba(215, 25, 32, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gate-pass-header-icon {
+  color: #D71920;
+}
+
+.gate-pass-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gate-pass-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+body.light-theme .gate-pass-title {
+  color: #0B1220;
+}
+
+.gate-pass-subtitle {
+  font-size: 13.5px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+body.light-theme .gate-pass-subtitle {
+  color: #64748b;
+}
+
+/* Apply Gate Pass Button */
+.gate-pass-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #D71920;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
+}
+
+.gate-pass-apply-btn:hover {
+  background: #B5121B;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(215, 25, 32, 0.45);
+}
+
+.gate-pass-apply-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Statistics Summary Grid ── */
+.gate-pass-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* ── Gate Pass History Section ── */
+.gate-pass-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  transition: all 0.2s ease;
+}
+
+body.light-theme .gate-pass-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.gate-pass-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light-theme .gate-pass-section-header {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.gate-pass-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+body.light-theme .gate-pass-section-title {
+  color: #0B1220;
+}
+
+.gate-pass-section-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+}
+
+body.light-theme .gate-pass-section-subtitle {
+  color: #64748b;
+}
+
+.gate-pass-badge-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+body.light-theme .gate-pass-badge-count {
+  color: #475569;
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+/* ── Gate Pass Cards List ── */
+.gate-pass-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.gate-pass-card {
+  background: #111e33;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.gate-pass-card:hover {
+  transform: translateY(-2px);
+  background: #15243e;
+  border-color: rgba(215, 25, 32, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+body.light-theme .gate-pass-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+body.light-theme .gate-pass-card:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Header: Type Pill & Status Badge */
+.gate-pass-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.gate-pass-type-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.gate-pass-type-pill.day-out {
+  background: rgba(2, 132, 199, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(2, 132, 199, 0.3);
+}
+
+.gate-pass-type-pill.night-out {
+  background: rgba(147, 51, 234, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(147, 51, 234, 0.3);
+}
+
+body.light-theme .gate-pass-type-pill.day-out {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+body.light-theme .gate-pass-type-pill.night-out {
+  background: #f3e8ff;
+  color: #6b21a8;
+  border-color: #e9d5ff;
+}
+
+.gate-pass-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.gate-pass-status-approved {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.gate-pass-status-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.gate-pass-status-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+body.light-theme .gate-pass-status-approved {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+body.light-theme .gate-pass-status-pending {
+  background: #fef9c3;
+  color: #a16207;
+  border-color: #fef08a;
+}
+
+body.light-theme .gate-pass-status-rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+/* Card Body */
+.gate-pass-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gate-pass-reason-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gate-pass-reason-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.gate-pass-reason {
+  font-size: 13.5px;
+  color: #f8fafc;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+body.light-theme .gate-pass-reason {
+  color: #1e293b;
+}
+
+/* Timings Grid */
+.gate-pass-timings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .gate-pass-timings {
+  border-top: 1px dashed #cbd5e1;
+}
+
+.gate-pass-time-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gate-pass-time-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.gate-pass-time-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+body.light-theme .gate-pass-time-value {
+  color: #1e293b;
+}
+
+/* Card Footer & Cancel Action */
+.gate-pass-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .gate-pass-card-footer {
+  border-top: 1px dashed #e2e8f0;
+}
+
+.gate-pass-cancel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gate-pass-cancel-btn:hover {
+  background: rgba(239, 68, 68, 0.22);
+  color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+body.light-theme .gate-pass-cancel-btn {
+  color: #dc2626;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+body.light-theme .gate-pass-cancel-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+/* ── Empty State ── */
+.gate-pass-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  gap: 12px;
+  width: 100%;
+}
+
+body.light-theme .gate-pass-empty-state {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+.gate-pass-empty-icon {
+  color: #94a3b8;
+}
+
+.gate-pass-empty-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+body.light-theme .gate-pass-empty-title {
+  color: #0B1220;
+}
+
+.gate-pass-empty-text {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 340px;
+  line-height: 1.45;
+}
+
+body.light-theme .gate-pass-empty-text {
+  color: #64748b;
+}
+
+/* ── Apply Gate Pass Modal Styling ── */
+.modal-content.gate-pass-modal-window,
+.modal-content:has(.gate-pass-modal-form) {
+  background: #0e1726 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45) !important;
+  max-width: 540px !important;
+  color: #f8fafc !important;
+}
+
+.modal-content.gate-pass-modal-window .modal-header,
+.modal-content:has(.gate-pass-modal-form) .modal-header {
+  background: #0e1726 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 16px 20px !important;
+}
+
+.modal-content.gate-pass-modal-window .modal-title,
+.modal-content:has(.gate-pass-modal-form) .modal-title {
+  color: #f8fafc !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.modal-content.gate-pass-modal-window .modal-close,
+.modal-content:has(.gate-pass-modal-form) .modal-close {
+  color: #94a3b8 !important;
+  padding: 6px !important;
+  border-radius: 8px !important;
+  transition: color 0.15s ease, background-color 0.15s ease !important;
+}
+
+.modal-content.gate-pass-modal-window .modal-close:hover,
+.modal-content:has(.gate-pass-modal-form) .modal-close:hover {
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.modal-content.gate-pass-modal-window .modal-body,
+.modal-content:has(.gate-pass-modal-form) .modal-body {
+  background: #0e1726 !important;
+  padding: 18px 20px 20px 20px !important;
+  color: #f8fafc !important;
+}
+
+/* Light Theme Modal Overrides */
+body.light-theme .modal-content.gate-pass-modal-window,
+body.light-theme .modal-content:has(.gate-pass-modal-form) {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16) !important;
+  color: #0f172a !important;
+}
+
+body.light-theme .modal-content.gate-pass-modal-window .modal-header,
+body.light-theme .modal-content:has(.gate-pass-modal-form) .modal-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body.light-theme .modal-content.gate-pass-modal-window .modal-title,
+body.light-theme .modal-content:has(.gate-pass-modal-form) .modal-title {
+  color: #0B1220 !important;
+}
+
+body.light-theme .modal-content.gate-pass-modal-window .modal-close,
+body.light-theme .modal-content:has(.gate-pass-modal-form) .modal-close {
+  color: #64748b !important;
+}
+
+body.light-theme .modal-content.gate-pass-modal-window .modal-close:hover,
+body.light-theme .modal-content:has(.gate-pass-modal-form) .modal-close:hover {
+  color: #0B1220 !important;
+  background: #f1f5f9 !important;
+}
+
+body.light-theme .modal-content.gate-pass-modal-window .modal-body,
+body.light-theme .modal-content:has(.gate-pass-modal-form) .modal-body {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* ── Modal Form Layout ── */
+.gate-pass-modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Conditional Information Boxes ── */
+.gate-pass-info-box {
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gate-pass-info-day {
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: #38bdf8;
+}
+
+.gate-pass-info-night {
+  background: rgba(147, 51, 234, 0.12);
+  border: 1px solid rgba(147, 51, 234, 0.25);
+  color: #c084fc;
+}
+
+body.light-theme .gate-pass-info-day {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+}
+
+body.light-theme .gate-pass-info-night {
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  color: #6b21a8;
+}
+
+.gate-pass-info-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gate-pass-info-icon {
+  flex-shrink: 0;
+}
+
+.gate-pass-info-day .gate-pass-info-icon {
+  color: #38bdf8;
+}
+
+body.light-theme .gate-pass-info-day .gate-pass-info-icon {
+  color: #0284c7;
+}
+
+.gate-pass-info-night .gate-pass-info-icon {
+  color: #c084fc;
+}
+
+body.light-theme .gate-pass-info-night .gate-pass-info-icon {
+  color: #9333ea;
+}
+
+.gate-pass-info-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.gate-pass-info-text {
+  font-size: 12.5px;
+  margin: 0;
+  line-height: 1.45;
+  color: inherit;
+  opacity: 0.95;
+}
+
+.gate-pass-info-text strong {
+  font-weight: 700;
+}
+
+.gate-pass-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .gate-pass-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Form Groups & Inputs */
+.gate-pass-modal-form .form-group,
+.gate-pass-form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gate-pass-modal-form .form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+
+body.light-theme .gate-pass-modal-form .form-label {
+  color: #334155;
+}
+
+.gate-pass-modal-form .form-required {
+  color: #D71920;
+  margin-left: 3px;
+}
+
+.gate-pass-modal-form .form-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #111e33;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gate-pass-modal-form .form-input::placeholder {
+  color: #64748b;
+}
+
+.gate-pass-modal-form .form-input:focus {
+  border-color: #D71920;
+  background: #0e1726;
+  color: #f8fafc;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.18);
+}
+
+.gate-pass-modal-form .form-input.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f8fafc;
+}
+
+body.light-theme .gate-pass-modal-form .form-input {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+body.light-theme .gate-pass-modal-form .form-input::placeholder {
+  color: #94a3b8;
+}
+
+body.light-theme .gate-pass-modal-form .form-input:focus {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+body.light-theme .gate-pass-modal-form .form-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #0f172a;
+}
+
+/* Custom Select & Textarea */
+.gate-pass-form-select,
+.gate-pass-form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: #111e33;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gate-pass-form-select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.gate-pass-form-select option {
+  background: #0e1726;
+  color: #f8fafc;
+}
+
+.gate-pass-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+.gate-pass-form-textarea::placeholder {
+  color: #64748b;
+}
+
+.gate-pass-form-select:focus,
+.gate-pass-form-textarea:focus {
+  border-color: #D71920;
+  background: #0e1726;
+  color: #f8fafc;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.18);
+}
+
+body.light-theme .gate-pass-form-select,
+body.light-theme .gate-pass-form-textarea {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+body.light-theme .gate-pass-form-select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+body.light-theme .gate-pass-form-textarea::placeholder {
+  color: #94a3b8;
+}
+
+body.light-theme .gate-pass-form-select:focus,
+body.light-theme .gate-pass-form-textarea:focus {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.12);
+}
+
+/* Modal Actions */
+.gate-pass-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light-theme .gate-pass-modal-actions {
+  border-top: 1px solid #f1f5f9;
+}
+
+.gate-pass-btn-cancel {
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gate-pass-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.light-theme .gate-pass-btn-cancel {
+  background: transparent;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+body.light-theme .gate-pass-btn-cancel:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.gate-pass-btn-submit {
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: #D71920;
+  border: none;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
+}
+
+.gate-pass-btn-submit:hover {
+  background: #B5121B;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(215, 25, 32, 0.45);
+}
+
+.gate-pass-btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ── Responsive Media Queries ── */
+@media (max-width: 1024px) {
+  .gate-pass-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gate-pass-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gate-pass-apply-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gate-pass-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .gate-pass-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gate-pass-timings {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

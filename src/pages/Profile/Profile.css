@@ -16,7 +16,7 @@ body.light-theme .acad-info-val,
 body.light-theme .contact-val-text,
 body.light-theme .modal-title-text,
 body.light-theme .modal-readonly-name {
-  color: #0B1220;
+  color: #0f172a;
 }
 
 body.light-theme .profile-subtitle,
@@ -40,7 +40,60 @@ body.light-theme .contact-item-row,
 body.light-theme .modal-input {
   background: #f8fafc;
   border-color: #e2e8f0;
-  color: #0B1220;
+  color: #0f172a;
+}
+
+/* Contact Item values override for light mode */
+body.light-theme .contact-item-row div[style*="f8fafc"],
+body.light-theme .contact-item-row > div > div:not(.acad-info-lbl) {
+  color: #0f172a !important;
+}
+
+body.light-theme .contact-bio-text {
+  color: #334155;
+}
+
+/* Profile Completion Light Theme */
+body.light-theme .completion-title {
+  color: #475569;
+}
+
+body.light-theme .completion-percentage {
+  color: #0f172a;
+}
+
+body.light-theme .completion-bar-container {
+  background: #e2e8f0;
+}
+
+body.light-theme .completion-item span[style*="f8fafc"],
+body.light-theme .completion-item span {
+  color: #0f172a !important;
+}
+
+body.light-theme .completion-item span[style*="94a3b8"] {
+  color: #64748b !important;
+}
+
+/* Simple List Card (Achievements & Certifications) Light Theme */
+body.light-theme .profile-list-item span[style*="cbd5e1"],
+body.light-theme .profile-list-item span:last-child {
+  color: #334155 !important;
+}
+
+/* Academic credits contrast boost */
+body.light-theme .acad-color-credits {
+  color: #0891b2;
+}
+
+/* Modal extra light theme refinements */
+body.light-theme .btn-modal-cancel,
+body.light-theme .modal-close-btn-icon {
+  color: #64748b;
+}
+
+body.light-theme .modal-readonly-header {
+  border-bottom-color: #e2e8f0;
 }
 
 @keyframes fadeIn {

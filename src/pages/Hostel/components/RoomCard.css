@@ -1,0 +1,190 @@
+/* ── Hostel Room Card ── */
+.hostel-room-card {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hostel-room-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 25, 32, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Header ── */
+.hostel-room-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hostel-room-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hostel-room-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hostel-room-category {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ── Status Badges ── */
+.hostel-room-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.hostel-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.hostel-status-available {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+.hostel-status-available .hostel-status-dot {
+  background: #10b981;
+}
+
+.hostel-status-occupied {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+.hostel-status-occupied .hostel-status-dot {
+  background: #94a3b8;
+}
+
+.hostel-status-maintenance {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+.hostel-status-maintenance .hostel-status-dot {
+  background: #f59e0b;
+}
+
+.hostel-status-default {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+.hostel-status-default .hostel-status-dot {
+  background: #94a3b8;
+}
+
+/* ── Room Details Grid ── */
+.hostel-room-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+}
+
+.hostel-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hostel-detail-label {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.hostel-detail-value {
+  font-size: 13px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.hostel-fee-value {
+  color: #D71920;
+  font-weight: 600;
+}
+
+/* ── Footer Button ── */
+.hostel-room-footer {
+  margin-top: auto;
+}
+
+.hostel-room-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: #D71920;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.hostel-room-btn:hover {
+  background: #B5121B;
+  transform: translateY(-1px);
+}
+
+/* ── Light Theme Adaptations ── */
+body.light-theme .hostel-room-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .hostel-room-card:hover {
+  border-color: rgba(215, 25, 32, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .hostel-room-number {
+  color: #0B1220;
+}
+
+body.light-theme .hostel-room-category {
+  color: #64748b;
+}
+
+body.light-theme .hostel-room-details {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .hostel-detail-label {
+  color: #94a3b8;
+}
+
+body.light-theme .hostel-detail-value {
+  color: #1e293b;
+}
+
+body.light-theme .hostel-fee-value {
+  color: #D71920;
+}

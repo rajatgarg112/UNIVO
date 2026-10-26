@@ -2,7 +2,9 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, User, BookOpen, Calendar, ClipboardList, FileText,
-  Library, Users, CalendarDays, Building, LogOut, ChevronLeft, ChevronRight,
+  LogOut, ChevronLeft, ChevronRight, Briefcase, Send, Compass,
+  GraduationCap, Building2, MessageSquare, Ticket, Users, Sparkles,
+  Library,
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
 import './Sidebar.css';
@@ -25,12 +27,33 @@ const navGroups = [
     ],
   },
   {
+    label: 'Campus Life',
+    items: [
+      { label: 'Clubs & Societies', path: '/clubs', icon: <Users size={18} /> },
+      { label: 'Campus Events', path: '/events', icon: <Sparkles size={18} /> },
+    ],
+  },
+  {
+    label: 'Placement',
+    items: [
+      { label: 'Placement Drives', path: '/placements', icon: <Briefcase size={18} /> },
+      { label: 'My Applications', path: '/placements/applications', icon: <Send size={18} /> },
+    ],
+  },
+  {
+    label: 'Career',
+    items: [
+      { label: 'Career Pathways', path: '/career', icon: <Compass size={18} /> },
+      { label: 'Internships', path: '/career/internships', icon: <GraduationCap size={18} /> },
+    ],
+  },
+  {
     label: 'Campus',
     items: [
       { label: 'Library', path: '/library', icon: <Library size={18} /> },
-      { label: 'Clubs', path: '/clubs', icon: <Users size={18} /> },
-      { label: 'Events', path: '/events', icon: <CalendarDays size={18} /> },
-      { label: 'Hostel', path: '/hostel', icon: <Building size={18} /> },
+      { label: 'Hostel', path: '/hostel', icon: <Building2 size={18} /> },
+      { label: 'Hostel Requests', path: '/hostel/requests', icon: <MessageSquare size={18} /> },
+      { label: 'Gate Pass', path: '/hostel/gatepass', icon: <Ticket size={18} /> },
     ],
   },
 ];
@@ -88,6 +111,13 @@ const Sidebar = ({ isCollapsed, onToggle, isMobile, isMobileOpen }) => {
               <NavLink
                 key={item.path}
                 to={item.path}
+                end={
+                  item.path === '/placements' ||
+                  item.path === '/career' ||
+                  item.path === '/clubs' ||
+                  item.path === '/events' ||
+                  item.path === '/library'
+                }
                 className={({ isActive }) =>
                   ['sidebar-nav-item', isActive ? 'active' : ''].filter(Boolean).join(' ')
                 }

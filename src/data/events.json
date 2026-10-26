@@ -1,0 +1,428 @@
+[
+  {
+    "id": "evt-hackunivo-2026",
+    "title": "HackUNIVO 2026: 36-Hour National Hackathon",
+    "category": "Technical",
+    "organiser": "CodeCrafters Club",
+    "organiserClubId": "codecrafters",
+    "date": "2026-11-14",
+    "displayDate": "November 14-15, 2026",
+    "time": "09:00 AM - 09:00 PM (36 Hours)",
+    "venue": "Dr. APJ Abdul Kalam Auditorium & CS Labs",
+    "totalSeats": 200,
+    "registeredSeats": 148,
+    "registrationDeadline": "2026-11-10",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "UNIVO's flagship 36-hour hackathon bringing together 200+ developers, designers, and innovators with ₹1,50,000 in cash prizes.",
+    "description": "Join over 200 passionate student developers, engineers, and designers in UNIVO's premier 36-hour national collegiate hackathon. Build innovative software prototypes spanning Generative AI, Web3/DeFi, Sustainable Smart Cities, and HealthTech. Receive 1-on-1 mentorship from top engineering leaders at Microsoft, Google, and unicorn startups, plus access to cloud credits, delicious meals, and swag bags.",
+    "agenda": [
+      {
+        "time": "09:00 AM (Day 1)",
+        "title": "Check-in, Team Badging & Swag Distribution"
+      },
+      {
+        "time": "10:30 AM (Day 1)",
+        "title": "Opening Keynote & Problem Statement Reveal"
+      },
+      {
+        "time": "11:00 AM (Day 1)",
+        "title": "Hacking Commences"
+      },
+      {
+        "time": "04:00 PM (Day 1)",
+        "title": "Mentorship Checkpoint 1 & Idea Validation"
+      },
+      {
+        "time": "11:00 PM (Day 1)",
+        "title": "Midnight Pizza, Red Bull & Esports Mini-tournament"
+      },
+      {
+        "time": "10:00 AM (Day 2)",
+        "title": "Soft Pitch & GitHub Repo Freeze"
+      },
+      {
+        "time": "02:30 PM (Day 2)",
+        "title": "Final Top 10 Stage Demos to Jury"
+      },
+      {
+        "time": "05:00 PM (Day 2)",
+        "title": "Award Ceremony & Cash Prize Distribution"
+      }
+    ],
+    "eligibility": "Open to all enrolled undergraduate and postgraduate students in teams of 2 to 4 members.",
+    "prerequisites": "Bring your personal laptop, charger, student ID card, and enthusiasm to build.",
+    "coordinator": "Dr. Arvind Mehta (Faculty Advisor) & Aryan Sharma (Student Lead)"
+  },
+  {
+    "id": "evt-ai-workshop-2026",
+    "title": "Production GenAI Apps with Google Gemini",
+    "category": "Technical",
+    "organiser": "CodeCrafters Club",
+    "organiserClubId": "codecrafters",
+    "date": "2026-11-05",
+    "displayDate": "November 5, 2026",
+    "time": "02:00 PM - 05:30 PM",
+    "venue": "Seminar Hall 2, Innovation Complex",
+    "totalSeats": 80,
+    "registeredSeats": 66,
+    "registrationDeadline": "2026-11-03",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "Hands-on masterclass on building scalable multimodal GenAI applications using Gemini APIs and structured outputs.",
+    "description": "Learn to architect end-to-end AI applications using Google's latest Gemini 3.8 and Flash models. This hands-on developer session covers prompt engineering techniques, function calling, multimodal audio/vision analysis, and building stateful conversational interfaces using the Google GenAI SDK.",
+    "agenda": [
+      {
+        "time": "02:00 PM",
+        "title": "Welcome & Large Multimodal Models Architecture Overview"
+      },
+      {
+        "time": "02:45 PM",
+        "title": "Prompt Crafting, Function Calling & Structured JSON Extraction"
+      },
+      {
+        "time": "03:45 PM",
+        "title": "Live Coding Lab: Deploying a Context-Aware Campus Assistant"
+      },
+      {
+        "time": "05:00 PM",
+        "title": "Q&A, Certification & GitHub Code Starter Distribution"
+      }
+    ],
+    "eligibility": "Open to all university students with basic familiarity with JavaScript or Python.",
+    "prerequisites": "Personal laptop with Node.js 18+ or Python 3.10+ installed.",
+    "coordinator": "Dr. Arvind Mehta (Dept. of CSE)"
+  },
+  {
+    "id": "evt-robowars-2026",
+    "title": "RoboVortex Arena: Combat Robotics Championship",
+    "category": "Technical",
+    "organiser": "RoboVortex Robotics Society",
+    "organiserClubId": "robovortex",
+    "date": "2026-11-20",
+    "displayDate": "November 20, 2026",
+    "time": "10:00 AM - 06:00 PM",
+    "venue": "Outdoor Polycarbonate Enclosure, Workshop Complex",
+    "totalSeats": 150,
+    "registeredSeats": 112,
+    "registrationDeadline": "2026-11-16",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "High-voltage robot warfare where 15kg and 30kg combat bots battle for campus supremacy.",
+    "description": "Witness sparks, pneumatic flips, and high-rpm drum spinners in the UNIVO Arena! Over 16 student-built combat robots battle in 1-on-1 knockout bouts inside our blast-proof polycarbonate cage. Cheering crowd, commentary, and technical teardowns after every bout.",
+    "agenda": [
+      {
+        "time": "10:00 AM",
+        "title": "Bot Weight Scrutiny, Fail-Safe Radio Test & Safety Briefing"
+      },
+      {
+        "time": "11:30 AM",
+        "title": "Preliminary Knockout Rounds (15kg Featherweight Category)"
+      },
+      {
+        "time": "02:00 PM",
+        "title": "Heavyweight 30kg Quarter-Finals"
+      },
+      {
+        "time": "04:30 PM",
+        "title": "Grand Championship Final & Arena Destruction Match"
+      },
+      {
+        "time": "05:30 PM",
+        "title": "Trophy Presentation & Best Design Honors"
+      }
+    ],
+    "eligibility": "Open to all spectators and registered robot combat builders.",
+    "prerequisites": "Safety goggles provided at the entrance. Valid student ID required.",
+    "coordinator": "Prof. Rajeshwari Kulkarni (Robotics Lab)"
+  },
+  {
+    "id": "evt-esummit-2026",
+    "title": "UNIVO E-Summit 2026: Future of Tech Startups",
+    "category": "Entrepreneurship",
+    "organiser": "E-Cell (Entrepreneurship Cell)",
+    "organiserClubId": "e-cell",
+    "date": "2026-11-28",
+    "displayDate": "November 28, 2026",
+    "time": "09:30 AM - 05:00 PM",
+    "venue": "Main University Convention Centre",
+    "totalSeats": 250,
+    "registeredSeats": 195,
+    "registrationDeadline": "2026-11-25",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "Keynotes from unicorn founders, venture capital panel debates, and early-stage startup networking expo.",
+    "description": "The flagship annual entrepreneurship conclave of UNIVO. Connect directly with angel investors, seed-fund VCs, and successful student startup alumni. Featuring interactive panels on building defensible AI products, navigating regulatory landscapes, and pitching for institutional seed money.",
+    "agenda": [
+      {
+        "time": "09:30 AM",
+        "title": "Inauguration & Keynote Address by Unicorn Founder"
+      },
+      {
+        "time": "11:00 AM",
+        "title": "VC Panel: Where is Venture Capital Investing in 2026?"
+      },
+      {
+        "time": "01:00 PM",
+        "title": "Networking Buffet Lunch & Campus Startup Expo"
+      },
+      {
+        "time": "02:30 PM",
+        "title": "Interactive Masterclass: Achieving Product-Market Fit"
+      },
+      {
+        "time": "04:15 PM",
+        "title": "Young Innovator Awards & Closing Remarks"
+      }
+    ],
+    "eligibility": "Open to all undergraduate, graduate students, and alumni founders.",
+    "prerequisites": "Formal or smart-casual attire recommended.",
+    "coordinator": "Dr. Vikram Sethi (Centre for Innovation)"
+  },
+  {
+    "id": "evt-pitch-tank-2026",
+    "title": "PitchTank: ₹2,00,000 Equity-Free Seed Grant Battle",
+    "category": "Entrepreneurship",
+    "organiser": "E-Cell (Entrepreneurship Cell)",
+    "organiserClubId": "e-cell",
+    "date": "2026-11-22",
+    "displayDate": "November 22, 2026",
+    "time": "02:00 PM - 06:00 PM",
+    "venue": "Senate Hall, Admin Building",
+    "totalSeats": 60,
+    "registeredSeats": 42,
+    "registrationDeadline": "2026-11-18",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "Top 10 shortlisted student startups pitch live before angel investors for equity-free prototype grants.",
+    "description": "Watch 10 student startups take the stage in a high-stakes 5-minute pitch followed by 5 minutes of probing Q&A from prominent angel investors. Grants of ₹1,00,000, ₹60,000, and ₹40,000 will be awarded on the spot.",
+    "agenda": [
+      {
+        "time": "02:00 PM",
+        "title": "Investor Jury Introductions & Pitch Guidelines"
+      },
+      {
+        "time": "02:20 PM",
+        "title": "Pitches 1 to 5 (FinTech & EdTech Ventures)"
+      },
+      {
+        "time": "03:45 PM",
+        "title": "Coffee & High Tea Networking Break"
+      },
+      {
+        "time": "04:15 PM",
+        "title": "Pitches 6 to 10 (SaaS & Hardware Ventures)"
+      },
+      {
+        "time": "05:30 PM",
+        "title": "Jury Deliberation & Seed Grant Announcement"
+      }
+    ],
+    "eligibility": "Audience seats open to all students; pitching slots reserved for shortlisted teams.",
+    "prerequisites": "Notebook and questions for the founders during open networking.",
+    "coordinator": "Dr. Vikram Sethi & Aakash Gupta"
+  },
+  {
+    "id": "evt-spring-fest-2026",
+    "title": "Aura 2026: Annual Inter-University Cultural Fest",
+    "category": "Cultural",
+    "organiser": "Dhwani Music & Natraj Dance Troupe",
+    "organiserClubId": "dhwani-music",
+    "date": "2026-12-05",
+    "displayDate": "December 5, 2026",
+    "time": "04:00 PM - 10:30 PM",
+    "venue": "Open Air Amphitheatre & Quadrangle",
+    "totalSeats": 600,
+    "registeredSeats": 485,
+    "registrationDeadline": "2026-12-01",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "UNIVO's biggest night of celebration featuring fusion live bands, celebrity concerts, and dance showcases.",
+    "description": "The landmark cultural evening of the academic calendar! Aura brings 600+ students together under the campus stars for an unforgettable night of musical ensembles, thrilling choreography from Natraj Dance Troupe, street food stalls, and an electrifying headline band performance.",
+    "agenda": [
+      {
+        "time": "04:00 PM",
+        "title": "Gates Open & Campus Street Food Carnival"
+      },
+      {
+        "time": "05:00 PM",
+        "title": "Classical & Western Fusion Ensemble by Dhwani"
+      },
+      {
+        "time": "06:30 PM",
+        "title": "Mudra: Thematic Dance Showcase by Natraj"
+      },
+      {
+        "time": "08:15 PM",
+        "title": "Celebrity Headline Musical Concert"
+      },
+      {
+        "time": "10:15 PM",
+        "title": "Grand Fireworks Finale"
+      }
+    ],
+    "eligibility": "All UNIVO students and faculty. Mandatory digital pass registration.",
+    "prerequisites": "Must carry valid University ID card alongside digital registration pass.",
+    "coordinator": "Prof. Suniti Rao & Dr. Ananya Sen"
+  },
+  {
+    "id": "evt-sports-fest-2026",
+    "title": "UNIVO Premier League: Football Finals 2026",
+    "category": "Sports",
+    "organiser": "Titan Strikers Sports Club",
+    "organiserClubId": "titan-strikers",
+    "date": "2026-11-08",
+    "displayDate": "November 8, 2026",
+    "time": "04:00 PM - 07:00 PM",
+    "venue": "Main Football Turf & Floodlit Stadium",
+    "totalSeats": 300,
+    "registeredSeats": 265,
+    "registrationDeadline": "2026-11-06",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "CSE Tech Ninjas battle the Mechanical Spartans in the championship match of the UNIVO Football League.",
+    "description": "After 4 weeks of intense group stage battles across 8 engineering branches, the two top teams clash under stadium floodlights for the coveted UNIVO Golden Cup. Free fan jerseys for the first 100 arrivals, live commentary, and halftime performances.",
+    "agenda": [
+      {
+        "time": "04:00 PM",
+        "title": "Stadium Gates Open & Fan Zone Warmup"
+      },
+      {
+        "time": "04:30 PM",
+        "title": "Kickoff: First Half (45 Minutes)"
+      },
+      {
+        "time": "05:15 PM",
+        "title": "Halftime Show by Natraj Hip-Hop Crew"
+      },
+      {
+        "time": "05:30 PM",
+        "title": "Second Half Action & Injury Time"
+      },
+      {
+        "time": "06:30 PM",
+        "title": "Trophy Presentation & Golden Boot Ceremony"
+      }
+    ],
+    "eligibility": "Open to all university students, staff, and faculty supporters.",
+    "prerequisites": "Comfortable footwear. Stand seating is first-come, first-served.",
+    "coordinator": "Coach Harpreet Singh (Directorate of Physical Education)"
+  },
+  {
+    "id": "evt-blood-donation-2026",
+    "title": "Raktadan Mahadan: Annual Red Cross Blood Camp",
+    "category": "Social Service",
+    "organiser": "Sparsh Social Service Society",
+    "organiserClubId": "sparsh-social",
+    "date": "2026-11-12",
+    "displayDate": "November 12, 2026",
+    "time": "09:00 AM - 04:00 PM",
+    "venue": "Student Health Center & Auditorium Lobby",
+    "totalSeats": 150,
+    "registeredSeats": 98,
+    "registrationDeadline": "2026-11-11",
+    "fee": "Free",
+    "status": "Upcoming",
+    "shortDescription": "Voluntary blood donation camp conducted in partnership with the Indian Red Cross Society.",
+    "description": "Every single blood donation can save up to 3 precious lives. Join Sparsh and government certified hematologists for our biannual humanitarian drive. Includes pre-donation health checkups, hemoglobin tests, juice and fruit refreshments, and government donor certificates.",
+    "agenda": [
+      {
+        "time": "09:00 AM",
+        "title": "Donor Registration & Pre-donation Medical Check"
+      },
+      {
+        "time": "09:30 AM",
+        "title": "Blood Collection Drive Begins"
+      },
+      {
+        "time": "01:00 PM",
+        "title": "Midday Donor Care & Hydration Station"
+      },
+      {
+        "time": "03:45 PM",
+        "title": "Certificate & Donor Card Distribution"
+      }
+    ],
+    "eligibility": "Healthy volunteers aged 18+, body weight 45kg+, Hb > 12.5 g/dL.",
+    "prerequisites": "Ensure adequate hydration and a light breakfast before donating.",
+    "coordinator": "Dr. Meenakshi Sundaram & Diya Nair"
+  },
+  {
+    "id": "evt-battle-of-bands-2026",
+    "title": "Echoes: Acoustic Rock & Indie Battle of the Bands",
+    "category": "Cultural",
+    "organiser": "Dhwani Music Society",
+    "organiserClubId": "dhwani-music",
+    "date": "2026-09-18",
+    "displayDate": "September 18, 2026",
+    "time": "05:00 PM - 09:00 PM",
+    "venue": "Tagore Auditorium",
+    "totalSeats": 200,
+    "registeredSeats": 200,
+    "registrationDeadline": "2026-09-14",
+    "fee": "Free",
+    "status": "Past",
+    "shortDescription": "An electric evening of live indie rock, blues, and alternative music with 8 competing bands.",
+    "description": "UNIVO's flagship music competition saw 8 powerhouse collegiate bands perform original compositions and tribute sets. Over 200 passionate music lovers packed Tagore Auditorium as 'The Red Shift' took home the 2026 Golden Plectrum Trophy.",
+    "agenda": [
+      {
+        "time": "05:00 PM",
+        "title": "Opening Riffs & Band 1 to 4 Performances"
+      },
+      {
+        "time": "06:45 PM",
+        "title": "Acoustic Solo Intermission by Dr. Ananya Sen"
+      },
+      {
+        "time": "07:15 PM",
+        "title": "Band 5 to 8 Final Sets"
+      },
+      {
+        "time": "08:45 PM",
+        "title": "Jury Scores & Champion Band Encore"
+      }
+    ],
+    "eligibility": "Completed event.",
+    "prerequisites": "None",
+    "coordinator": "Dr. Ananya Sen & Rohan Deshmukh"
+  },
+  {
+    "id": "evt-clean-drive-2026",
+    "title": "EcoClean: Campus Lake & Green Belt Rejuvenation",
+    "category": "Social Service",
+    "organiser": "Sparsh Social Service Society",
+    "organiserClubId": "sparsh-social",
+    "date": "2026-10-02",
+    "displayDate": "October 2, 2026",
+    "time": "07:00 AM - 11:00 AM",
+    "venue": "University South Lake & Botanical Gardens",
+    "totalSeats": 100,
+    "registeredSeats": 100,
+    "registrationDeadline": "2026-09-30",
+    "fee": "Free",
+    "status": "Past",
+    "shortDescription": "Cleanliness and tree plantation drive celebrating Gandhi Jayanti with 100+ student volunteers.",
+    "description": "On the occasion of Gandhi Jayanti, 100 dedicated student volunteers partnered with the municipal green board to clean up the campus water catchment basin, removing 450+ kg of plastic trash and planting 120 indigenous trees along the perimeter.",
+    "agenda": [
+      {
+        "time": "07:00 AM",
+        "title": "Safety Briefing, Gloves & Bin Bag Distribution"
+      },
+      {
+        "time": "07:30 AM",
+        "title": "Lake Catchment Cleanup Operation"
+      },
+      {
+        "time": "09:30 AM",
+        "title": "Sapling Plantation & Organic Mulching"
+      },
+      {
+        "time": "10:45 AM",
+        "title": "Volunteer Breakfast & Green Pledge"
+      }
+    ],
+    "eligibility": "Completed event.",
+    "prerequisites": "None",
+    "coordinator": "Dr. Meenakshi Sundaram"
+  }
+]
